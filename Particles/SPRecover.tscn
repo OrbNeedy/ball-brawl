@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://b03syodksmbkk"]
+
+[ext_resource type="Texture2D" uid="uid://5brbyoolc5lw" path="res://assets/Sheets/Particles.png" id="1_23vhp"]
+[ext_resource type="Script" uid="uid://ca6q5undb4f5w" path="res://Particles/SelfDeletingParticles.cs" id="1_jh8sr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hu5r6"]
+atlas = ExtResource("1_23vhp")
+region = Rect2(0, 0, 7, 7)
+
+[sub_resource type="Gradient" id="Gradient_pjlw7"]
+colors = PackedColorArray(0.3, 0.3, 0.3, 1, 1, 1, 1, 1)
+
+[node name="SPRecover" type="CPUParticles2D" unique_id=1606313744]
+emitting = false
+texture = SubResource("AtlasTexture_hu5r6")
+one_shot = true
+explosiveness = 0.2
+emission_shape = 1
+emission_sphere_radius = 30.0
+direction = Vector2(0, -1)
+gravity = Vector2(0, 0)
+initial_velocity_min = 5.0
+initial_velocity_max = 25.0
+angle_min = -720.0
+angle_max = 720.0
+color = Color(0.33999997, 0.7469999, 1, 1)
+color_initial_ramp = SubResource("Gradient_pjlw7")
+script = ExtResource("1_jh8sr")
+TimeLeft = 5.0
+
+[connection signal="finished" from="." to="." method="ParticleFinished"]

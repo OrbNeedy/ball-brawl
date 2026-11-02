@@ -1,0 +1,180 @@
+[gd_scene format=3 uid="uid://d3eckp6bp3qsv"]
+
+[ext_resource type="PhysicsMaterial" uid="uid://cpy03a25nm6av" path="res://Resources/HBBMaterial.tres" id="1_1mlh5"]
+[ext_resource type="Script" uid="uid://cfc38hmv0rgyr" path="res://balls/Gunvolt/Asimov.cs" id="1_6souk"]
+[ext_resource type="Texture2D" uid="uid://cbe4g25qugaif" path="res://assets/CharacterBalls/Asimov/0000012b_edited.png" id="1_vtpd4"]
+[ext_resource type="Texture2D" uid="uid://d4j27ue5fuon" path="res://assets/CharacterBalls/Asimov/0000012c_edited.png" id="1_yoahe"]
+[ext_resource type="Texture2D" uid="uid://dmlxe3dqqnchp" path="res://assets/CharacterBalls/Asimov/0000012a_edited.png" id="2_yoahe"]
+[ext_resource type="PackedScene" uid="uid://c73ya7bves027" path="res://Projectiles/Flashfield.tscn" id="3_dabjw"]
+[ext_resource type="Resource" uid="uid://dmswyhr0wye6v" path="res://Resources/DamageStyles/GVDamageStyle.tres" id="4_e1tcp"]
+[ext_resource type="AudioStream" uid="uid://bh0ra6frc08nx" path="res://assets/SoundEffects/Gunvolt/Prevasion1.wav" id="4_eawli"]
+[ext_resource type="Texture2D" uid="uid://cimtt63eu2e2w" path="res://assets/Misc/Victory.png" id="5_2kumg"]
+[ext_resource type="AudioStream" uid="uid://dmt17whyysl7i" path="res://assets/SoundEffects/Gunvolt/Prevasion2.wav" id="5_doqw3"]
+[ext_resource type="Shader" uid="uid://cnqrvkovwkga0" path="res://Resources/Shaders/Prevasion.tres" id="6_mtov4"]
+[ext_resource type="Resource" uid="uid://b5khi6h214np2" path="res://Resources/MusicThemes/LightningCrashesDancingintheChaoticNight.tres" id="7_eawli"]
+[ext_resource type="Script" uid="uid://deb4vsu7xgmm" path="res://Resources/DamageData/DamageData.cs" id="8_ds8m7"]
+[ext_resource type="Script" uid="uid://bvwti3t8udfyp" path="res://balls/AvoidSpriteRotation.cs" id="11_doqw3"]
+[ext_resource type="PackedScene" uid="uid://b7iqthahfbccv" path="res://DynamicObjects/Reticle.tscn" id="14_8yxfa"]
+
+[sub_resource type="Resource" id="Resource_ds8m7"]
+script = ExtResource("8_ds8m7")
+BaseDamage = 3
+metadata/_custom_type_script = "uid://deb4vsu7xgmm"
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_je2fp"]
+output_port_for_preview = 0
+expanded_output_ports = [0]
+input_name = "uv"
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_fugb7"]
+operator = 2
+
+[sub_resource type="VisualShader" id="VisualShader_1mlh5"]
+nodes/vertex/2/node = SubResource("VisualShaderNodeInput_je2fp")
+nodes/vertex/2/position = Vector2(-336, 272)
+nodes/vertex/3/node = SubResource("VisualShaderNodeFloatOp_fugb7")
+nodes/vertex/3/position = Vector2(80, 240)
+nodes/vertex/connections = PackedInt32Array(2, 1, 3, 0, 3, 0, 0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dabjw"]
+render_priority = 0
+shader = SubResource("VisualShader_1mlh5")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hrygd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_yoahe")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_vtpd4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_yoahe")
+}],
+"loop": true,
+"name": &"victory",
+"speed": 5.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u7c3r"]
+shader = ExtResource("6_mtov4")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1mlh5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_yoahe")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_vtpd4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_yoahe")
+}],
+"loop": true,
+"name": &"victory",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yoahe"]
+radius = 30.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e1tcp"]
+radius = 800.0
+
+[node name="Asimov" type="RigidBody2D" unique_id=1449221329 node_paths=PackedStringArray("PrevasionBody", "ViewportContainer", "Body", "Crown", "Reticle")]
+collision_layer = 2
+collision_mask = 11
+physics_material_override = ExtResource("1_1mlh5")
+contact_monitor = true
+max_contacts_reported = 2
+script = ExtResource("1_6souk")
+FlashfieldScene = ExtResource("3_dabjw")
+Prevasion1 = ExtResource("4_eawli")
+Prevasion2 = ExtResource("5_doqw3")
+PrevasionBody = NodePath("SubViewportContainer/SubViewport/AnimatedSprite2D")
+ViewportContainer = NodePath("SubViewportContainer")
+PrevasionChance = 0.15
+MaxPrevasionTimer = 1.4
+PrevasionColor = Color(0.32941177, 0.32156864, 0.81960785, 1)
+Body = NodePath("AnimatedSprite2D2")
+Crown = NodePath("Victory")
+Reticle = NodePath("Reticle")
+SpeedGain = 1.0
+MaxSpeedGain = 60.0
+Power = 4
+Color = Color(0.32941177, 0.32156864, 0.81960785, 1)
+BallName = "Asimov"
+DamageEffectsType = ExtResource("4_e1tcp")
+BackgroundTheme = ExtResource("7_eawli")
+ContactDamage = SubResource("Resource_ds8m7")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=1283895626]
+material = SubResource("ShaderMaterial_dabjw")
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_hrygd")
+script = ExtResource("11_doqw3")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1221505747]
+modulate = Color(1, 1, 1, 0)
+material = SubResource("ShaderMaterial_u7c3r")
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 128.0
+offset_bottom = 128.0
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1472682421]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(256, 256)
+render_target_update_mode = 4
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SubViewportContainer/SubViewport" unique_id=1099132568]
+position = Vector2(127.99999, 127.99999)
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_1mlh5")
+script = ExtResource("11_doqw3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1453980463]
+shape = SubResource("CircleShape2D_yoahe")
+
+[node name="Victory" type="Sprite2D" parent="." unique_id=1989795639]
+visible = false
+position = Vector2(0, -30)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("5_2kumg")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=534236257]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2128453038]
+shape = SubResource("CircleShape2D_e1tcp")
+
+[node name="Reticle" parent="." unique_id=1812006893 instance=ExtResource("14_8yxfa")]
+
+[connection signal="body_entered" from="." to="." method="OnBodyEntered"]
+[connection signal="body_entered" from="Area2D" to="." method="AddDetectedBall"]
+[connection signal="body_exited" from="Area2D" to="." method="RemoveDetectedBall"]

@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://btuho6ymwtbne"]
+
+[ext_resource type="Texture2D" uid="uid://bhc7nu2yp10gr" path="res://assets/CharacterBalls/Makoto/b1_1_3_edited.png" id="1_4gi5b"]
+[ext_resource type="Script" uid="uid://etj2i4s6d0oq" path="res://balls/Persona/Makoto.cs" id="1_5ydhs"]
+[ext_resource type="PhysicsMaterial" uid="uid://cpy03a25nm6av" path="res://Resources/HBBMaterial.tres" id="1_flh7o"]
+[ext_resource type="Texture2D" uid="uid://brl0w8e2t6nst" path="res://assets/CharacterBalls/Makoto/Dead_edited.png" id="1_ogrbu"]
+[ext_resource type="AudioStream" uid="uid://dptju3wr0ptct" path="res://assets/SoundEffects/Persona 3/Evoker Shot Sound Effect - Persona 3.wav" id="3_3unc6"]
+[ext_resource type="Texture2D" uid="uid://cimtt63eu2e2w" path="res://assets/Misc/Victory.png" id="4_0mdbl"]
+[ext_resource type="Resource" uid="uid://bw2aob61gxfom" path="res://Resources/PersonaStats/Cybele.tres" id="4_20f26"]
+[ext_resource type="Resource" uid="uid://dv0bfibe4wskh" path="res://Resources/PersonaStats/Surtr.tres" id="5_srd3l"]
+[ext_resource type="Resource" uid="uid://5tcdbm7720v6" path="res://Resources/PersonaStats/Susano-o.tres" id="6_ahk5v"]
+[ext_resource type="Resource" uid="uid://difxsvui3e8h0" path="res://Resources/DamageStyles/Persona3.tres" id="6_md8m0"]
+[ext_resource type="Resource" uid="uid://cxnxn7rg8hs6g" path="res://Resources/MusicThemes/MassDestruction.tres" id="7_md8m0"]
+[ext_resource type="Script" uid="uid://deb4vsu7xgmm" path="res://Resources/DamageData/DamageData.cs" id="9_20f26"]
+[ext_resource type="Script" uid="uid://bvwti3t8udfyp" path="res://balls/AvoidSpriteRotation.cs" id="11_qyt1c"]
+[ext_resource type="PackedScene" uid="uid://b7iqthahfbccv" path="res://DynamicObjects/Reticle.tscn" id="13_ab0tp"]
+
+[sub_resource type="Resource" id="Resource_srd3l"]
+script = ExtResource("9_20f26")
+BaseDamage = 2
+metadata/_custom_type_script = "uid://deb4vsu7xgmm"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ogrbu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ogrbu")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4gi5b")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4gi5b")
+}],
+"loop": true,
+"name": &"victory",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ogrbu"]
+radius = 30.0
+
+[node name="Makoto" type="RigidBody2D" unique_id=2102896605 node_paths=PackedStringArray("Body", "Crown", "Reticle")]
+collision_layer = 2
+collision_mask = 11
+physics_material_override = ExtResource("1_flh7o")
+contact_monitor = true
+max_contacts_reported = 2
+script = ExtResource("1_5ydhs")
+Evoker = ExtResource("3_3unc6")
+PersonaRotation = Array[Resource]([ExtResource("4_20f26"), ExtResource("5_srd3l"), ExtResource("6_ahk5v")])
+Body = NodePath("AnimatedSprite2D")
+Crown = NodePath("Victory")
+Reticle = NodePath("Reticle")
+SpeedGain = 0.6
+MaxSpeedGain = 50.0
+Color = Color(0, 0.2509804, 1, 1)
+BallName = "Makoto"
+DamageEffectsType = ExtResource("6_md8m0")
+BackgroundTheme = ExtResource("7_md8m0")
+DamagedType = 1
+ContactDamage = SubResource("Resource_srd3l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1201354565]
+scale = Vector2(0.21, 0.21)
+sprite_frames = SubResource("SpriteFrames_ogrbu")
+animation = &"victory"
+script = ExtResource("11_qyt1c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=556560055]
+shape = SubResource("CircleShape2D_ogrbu")
+
+[node name="Victory" type="Sprite2D" parent="." unique_id=1320994179]
+visible = false
+position = Vector2(0, -29)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("4_0mdbl")
+
+[node name="Reticle" parent="." unique_id=1812006893 instance=ExtResource("13_ab0tp")]
+
+[connection signal="body_entered" from="." to="." method="OnBodyEntered"]

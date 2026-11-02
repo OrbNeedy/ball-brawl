@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bonj8gue874xp"
+path="res://.godot/imported/Ragnarok.wav-f83d2054dfd0a2016bf50b5102febfd8.sample"
+
+[deps]
+
+source_file="res://assets/SoundEffects/Persona 3/Ragnarok.wav"
+dest_files=["res://.godot/imported/Ragnarok.wav-f83d2054dfd0a2016bf50b5102febfd8.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" format=3 uid="uid://b0twu6wh8gy5v"]
+
+[ext_resource type="Script" uid="uid://dvbj6o5xkcyb0" path="res://Resources/MusicThemes/MusicTheme.cs" id="1_mfxgy"]
+[ext_resource type="AudioStream" uid="uid://dehu488v74lq7" path="res://assets/BackgroundMusic/Deep Below a Vanishing Cloud ~ Mow Down! (S. remix).mp3" id="1_mha4v"]
+
+[resource]
+script = ExtResource("1_mfxgy")
+Theme = ExtResource("1_mha4v")
+SongName = "Deep below a vanishing cloud ~ Mow down!"
+AuthorName = "Selene"
+Volume = 0.5

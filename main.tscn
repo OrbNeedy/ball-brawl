@@ -1,0 +1,122 @@
+[gd_scene format=3 uid="uid://t3u8836alvoq"]
+
+[ext_resource type="Script" uid="uid://bvr05obmaod6a" path="res://Main.cs" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://bvmypmj64u8ti" path="res://UIElements/Backgrounds/MirrorReflections.tscn" id="2_5vw27"]
+[ext_resource type="PackedScene" uid="uid://ce3nnno1cd3ve" path="res://UIElements/Board.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://nblvtfu05jgs" path="res://UIElements/HealthUI.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://cyxxtddm6l8e7" path="res://UIElements/Backgrounds/Space.tscn" id="3_kek77"]
+[ext_resource type="PackedScene" uid="uid://dnpwqdqwqgwp5" path="res://balls/Gunvolt/Gunvolt.tscn" id="4_4c57u"]
+[ext_resource type="PackedScene" uid="uid://cm4bpidiiakbe" path="res://balls/JJBA/DIO.tscn" id="5_efxa6"]
+[ext_resource type="Script" uid="uid://b3s2piwpt1lay" path="res://WorldViewportContainer.cs" id="6_272bh"]
+[ext_resource type="PackedScene" uid="uid://dhmb5cfrj22lg" path="res://UIElements/Information.tscn" id="7_4c57u"]
+[ext_resource type="PackedScene" uid="uid://cbsjpdohpx3p7" path="res://UIElements/VictoryScreen.tscn" id="8_efxa6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_272bh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4c57u"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kek77"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dg77c"]
+
+[node name="Main" type="Node2D" unique_id=636419272 node_paths=PackedStringArray("WorldPosition", "WorldSize", "ProjectileContainer", "BallContainer", "HealthUI", "VictoryScreen", "InfoUI", "BallsViewport", "ProjectilesViewport", "BackgroundContainer", "viewport")]
+process_mode = 3
+script = ExtResource("1_0xm2m")
+WorldPosition = NodePath("WorldPosition")
+WorldSize = NodePath("WorldSize")
+Backgrounds = [ExtResource("2_5vw27"), ExtResource("3_kek77")]
+ProjectileContainer = NodePath("SubViewportContainer/SubViewport/Balls/BallsViewport/Projectiles")
+BallContainer = NodePath("SubViewportContainer/SubViewport/Balls/BallsViewport/Balls")
+HealthUI = NodePath("Interface/HealthUI")
+VictoryScreen = NodePath("Interface/VictoryScreen")
+InfoUI = NodePath("Interface/Information")
+BallsViewport = NodePath("SubViewportContainer/SubViewport/Balls/BallsViewport")
+ProjectilesViewport = NodePath("SubViewportContainer/SubViewport/Balls/BallsViewport")
+BackgroundContainer = NodePath("SubViewportContainer/SubViewport/Background/BackgroundViewport/Control")
+IndependentBalls = Array[PackedScene]([ExtResource("4_4c57u"), ExtResource("5_efxa6")])
+viewport = NodePath("SubViewportContainer")
+
+[node name="Board" parent="." unique_id=1516484126 instance=ExtResource("2_h2yge")]
+
+[node name="Interface" type="CanvasLayer" parent="." unique_id=1496373727]
+
+[node name="HealthUI" parent="Interface" unique_id=1835592621 instance=ExtResource("3_h2yge")]
+
+[node name="Information" parent="Interface" unique_id=385514175 instance=ExtResource("7_4c57u")]
+offset_left = 288.0
+offset_top = 128.0
+offset_right = -288.0
+offset_bottom = -8.0
+
+[node name="VictoryScreen" parent="Interface" unique_id=930555032 instance=ExtResource("8_efxa6")]
+visible = false
+
+[node name="WorldPosition" type="Marker2D" parent="." unique_id=1708476967]
+position = Vector2(288, 128)
+gizmo_extents = 1000.0
+
+[node name="WorldSize" type="Marker2D" parent="." unique_id=134426527]
+position = Vector2(864, 640)
+gizmo_extents = 1000.0
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=498584817 node_paths=PackedStringArray("BackgroundNode", "BallsNode")]
+material = SubResource("ShaderMaterial_272bh")
+offset_left = 512.0
+offset_top = -192.0
+offset_right = 640.0
+offset_bottom = -64.0
+stretch = true
+script = ExtResource("6_272bh")
+BackgroundNode = NodePath("SubViewport/Background")
+BallsNode = NodePath("SubViewport/Balls")
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1857865876]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(128, 128)
+render_target_update_mode = 4
+
+[node name="Background" type="SubViewportContainer" parent="SubViewportContainer/SubViewport" unique_id=193050208]
+material = SubResource("ShaderMaterial_4c57u")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="BackgroundViewport" type="SubViewport" parent="SubViewportContainer/SubViewport/Background" unique_id=1139187413]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(128, 128)
+render_target_update_mode = 4
+
+[node name="Control" type="Control" parent="SubViewportContainer/SubViewport/Background/BackgroundViewport" unique_id=1471573528]
+material = SubResource("ShaderMaterial_kek77")
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Balls" type="SubViewportContainer" parent="SubViewportContainer/SubViewport" unique_id=1787693587]
+material = SubResource("ShaderMaterial_dg77c")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="BallsViewport" type="SubViewport" parent="SubViewportContainer/SubViewport/Balls" unique_id=2100414635]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(128, 128)
+render_target_update_mode = 4
+
+[node name="Balls" type="Node2D" parent="SubViewportContainer/SubViewport/Balls/BallsViewport" unique_id=314110224]
+process_mode = 1
+
+[node name="Projectiles" type="Node2D" parent="SubViewportContainer/SubViewport/Balls/BallsViewport" unique_id=429807202]
+process_mode = 1

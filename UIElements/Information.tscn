@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dhmb5cfrj22lg"]
+
+[ext_resource type="Script" uid="uid://dsr4rebv860yx" path="res://UIElements/Information.cs" id="1_km0gl"]
+[ext_resource type="PackedScene" uid="uid://c2uaija8fwy0h" path="res://UIElements/MusicInfo.tscn" id="2_qn4cn"]
+
+[node name="Information" type="Control" unique_id=385514175]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_km0gl")
+
+[node name="Music" parent="." unique_id=1818204121 instance=ExtResource("2_qn4cn")]
+layout_mode = 1

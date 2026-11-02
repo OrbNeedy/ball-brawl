@@ -1,0 +1,21 @@
+[gd_resource type="VisualShader" format=3 uid="uid://c54f7tywl7bnk"]
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_6j1x1"]
+input_name = "texture"
+
+[sub_resource type="VisualShaderNodeColorFunc" id="VisualShaderNodeColorFunc_wlio7"]
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_f8ux2"]
+source = 5
+
+[resource]
+mode = 1
+flags/light_only = false
+nodes/vertex/0/position = Vector2(224, 144)
+nodes/fragment/2/node = SubResource("VisualShaderNodeInput_6j1x1")
+nodes/fragment/2/position = Vector2(-608, 352)
+nodes/fragment/3/node = SubResource("VisualShaderNodeColorFunc_wlio7")
+nodes/fragment/3/position = Vector2(16, 304)
+nodes/fragment/4/node = SubResource("VisualShaderNodeTexture_f8ux2")
+nodes/fragment/4/position = Vector2(-253.77766, 388.73615)
+nodes/fragment/connections = PackedInt32Array(3, 0, 0, 0, 2, 0, 4, 2, 4, 0, 3, 0)

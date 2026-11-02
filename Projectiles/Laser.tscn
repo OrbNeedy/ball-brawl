@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://cul1g02h4njwr"]
+
+[ext_resource type="Script" uid="uid://c8ewpovncbm1a" path="res://Projectiles/Laser.cs" id="1_foy5f"]
+[ext_resource type="Texture2D" uid="uid://cme38dk0uylen" path="res://assets/Sheets/LaserBorder.png" id="1_runki"]
+[ext_resource type="Script" uid="uid://deb4vsu7xgmm" path="res://Resources/DamageData/DamageData.cs" id="2_nwnkc"]
+[ext_resource type="Texture2D" uid="uid://bm4ehkeliwqgr" path="res://assets/Sheets/Laser.png" id="2_runki"]
+
+[sub_resource type="Resource" id="Resource_816el"]
+script = ExtResource("2_nwnkc")
+BaseDamage = 1
+IFrames = 0.0
+Almighty = true
+metadata/_custom_type_script = "uid://deb4vsu7xgmm"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_foy5f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_runki")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_runki"]
+b = Vector2(1800, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_runki"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_runki")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Laser" type="Area2D" unique_id=1542231353 node_paths=PackedStringArray("body")]
+scale = Vector2(1, 0.1)
+collision_layer = 4
+collision_mask = 10
+monitoring = false
+monitorable = false
+script = ExtResource("1_foy5f")
+HitsLeft = 9999
+Damage = SubResource("Resource_816el")
+MaxHitCooldown = 0.06
+body = NodePath("AnimatedSprite2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1757564677]
+texture_filter = 1
+position = Vector2(-1, 0)
+sprite_frames = SubResource("SpriteFrames_foy5f")
+
+[node name="Line2D" type="Line2D" parent="." unique_id=1486379108]
+texture_filter = 1
+texture_repeat = 2
+points = PackedVector2Array(0, 0, 1800, 0)
+width = 16.0
+texture = ExtResource("2_runki")
+texture_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1025143345]
+shape = SubResource("SegmentShape2D_runki")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=1347596161]
+texture_filter = 1
+position = Vector2(1801, 0)
+rotation = 3.1415927
+sprite_frames = SubResource("SpriteFrames_runki")
+
+[connection signal="body_entered" from="." to="." method="BodyCollision"]
+[connection signal="body_exited" from="." to="." method="BodyExit"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://br3d6rtscqmd0"
+path="res://.godot/imported/Burn My Dread Last Battle P3+P3 ReincarnatIion+P3 Movie+P3 Reload Ultimate Mashup Mix (Revised).mp3-86c8505dffaa19cdc7cdc4c017d0c265.mp3str"
+
+[deps]
+
+source_file="res://assets/BackgroundMusic/Burn My Dread Last Battle P3+P3 ReincarnatIion+P3 Movie+P3 Reload Ultimate Mashup Mix (Revised).mp3"
+dest_files=["res://.godot/imported/Burn My Dread Last Battle P3+P3 ReincarnatIion+P3 Movie+P3 Reload Ultimate Mashup Mix (Revised).mp3-86c8505dffaa19cdc7cdc4c017d0c265.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://ddmgg2jlwl3q8"]
+
+[ext_resource type="Script" uid="uid://dddh5jy4aq4aq" path="res://Projectiles/Stands/Orpheus.cs" id="1_2hrmr"]
+[ext_resource type="Texture2D" uid="uid://c7mwx52qnfppl" path="res://assets/Persona/PST_001.TMX_1_edited.png" id="1_6g886"]
+[ext_resource type="PackedScene" uid="uid://dwfx7piywqk4w" path="res://Projectiles/Agi.tscn" id="2_7xwy5"]
+[ext_resource type="Texture2D" uid="uid://cyxc5cf5fjjv0" path="res://assets/FireEffects/Part 12/586.png" id="2_r5jrp"]
+[ext_resource type="AudioStream" uid="uid://bonj8gue874xp" path="res://assets/SoundEffects/Persona 3/Ragnarok.wav" id="3_cgmwk"]
+[ext_resource type="Script" uid="uid://deb4vsu7xgmm" path="res://Resources/DamageData/DamageData.cs" id="3_xtymp"]
+[ext_resource type="Script" uid="uid://qp6hjhv6tlrw" path="res://Scripts/FunctioningAnimatedSprite.cs" id="5_n52ur"]
+
+[sub_resource type="Resource" id="Resource_n52ur"]
+script = ExtResource("3_xtymp")
+BaseDamage = 2
+IFrames = 0.0
+metadata/_custom_type_script = "uid://deb4vsu7xgmm"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7xwy5"]
+atlas = ExtResource("2_r5jrp")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xtymp"]
+atlas = ExtResource("2_r5jrp")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n52ur"]
+atlas = ExtResource("2_r5jrp")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r5jrp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7xwy5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xtymp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n52ur")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2hrmr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_6g886")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6g886"]
+radius = 30.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n52ur"]
+radius = 416.0
+
+[node name="Orpheus" type="Area2D" unique_id=2132899333 node_paths=PackedStringArray("body")]
+collision_layer = 4
+collision_mask = 10
+script = ExtResource("1_2hrmr")
+AgiScene = ExtResource("2_7xwy5")
+FireSound = ExtResource("3_cgmwk")
+MaxAgiTime = 1.5
+HitsLeft = 9999
+Damage = SubResource("Resource_n52ur")
+TimeLeft = 9999.0
+body = NodePath("AnimatedSprite2D")
+
+[node name="Aura" type="AnimatedSprite2D" parent="." unique_id=59328662]
+modulate = Color(1, 1, 1, 0.6431373)
+position = Vector2(3, 2)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_r5jrp")
+autoplay = "default"
+frame_progress = 0.42285264
+script = ExtResource("5_n52ur")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=815464392]
+sprite_frames = SubResource("SpriteFrames_2hrmr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1626092732]
+shape = SubResource("CircleShape2D_6g886")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1128266880]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=379674405]
+shape = SubResource("CircleShape2D_n52ur")
+
+[connection signal="body_entered" from="." to="." method="BodyCollision"]
+[connection signal="body_exited" from="." to="." method="BodyExit"]
+[connection signal="body_entered" from="Area2D" to="." method="DetectBall"]
+[connection signal="body_exited" from="Area2D" to="." method="DetectExit"]

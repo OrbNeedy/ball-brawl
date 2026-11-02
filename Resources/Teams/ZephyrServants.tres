@@ -1,0 +1,11 @@
+[gd_resource type="Resource" format=3 uid="uid://7nbtqs0juhun"]
+
+[ext_resource type="PackedScene" uid="uid://dpmwayc01ajda" path="res://balls/Touhou/Sakuya.tscn" id="1_qu366"]
+[ext_resource type="Script" uid="uid://bid6x8uroegjt" path="res://Resources/Teams/TeamData.cs" id="1_r4xp1"]
+
+[resource]
+script = ExtResource("1_r4xp1")
+TeamName = "Zephyr Servants"
+TeamColor = Color(0.26704782, 0.59762865, 0.9705232, 1)
+SpawnDistance = 25.0
+Balls = Array[PackedScene]([ExtResource("1_qu366"), ExtResource("1_qu366"), ExtResource("1_qu366")])

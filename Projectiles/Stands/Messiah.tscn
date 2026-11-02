@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://bb1pu6uxvf6n7"]
+
+[ext_resource type="Script" uid="uid://ce41w0cwx0wa2" path="res://Projectiles/Stands/Messiah.cs" id="1_c84i2"]
+[ext_resource type="Texture2D" uid="uid://ntxoh3mv7mi2" path="res://assets/Persona/PST_08A.TMX_1_edited.png" id="1_j0itn"]
+[ext_resource type="PackedScene" uid="uid://vc6ny2a12u7g" path="res://Projectiles/Megidolaon.tscn" id="2_int4m"]
+[ext_resource type="Script" uid="uid://deb4vsu7xgmm" path="res://Resources/DamageData/DamageData.cs" id="3_e5yiy"]
+[ext_resource type="PackedScene" uid="uid://23idi8tgc1ye" path="res://Projectiles/GodHand.tscn" id="3_wxmke"]
+[ext_resource type="PackedScene" uid="uid://hfb48imjggqb" path="res://Particles/Healing.tscn" id="4_mn4c2"]
+[ext_resource type="PackedScene" uid="uid://b03syodksmbkk" path="res://Particles/SPRecover.tscn" id="5_6b5ya"]
+[ext_resource type="Texture2D" uid="uid://btpsvn7m2h6kp" path="res://assets/KenneyParticles/star_06.png" id="5_d5d32"]
+[ext_resource type="AudioStream" uid="uid://cc1sgbtjlw5q1" path="res://assets/SoundEffects/Persona 3/Salvation.wav" id="6_1l3dh"]
+[ext_resource type="AudioStream" uid="uid://o6w8e4b5i8ny" path="res://assets/SoundEffects/Persona 3/Revive.wav" id="7_lk81x"]
+
+[sub_resource type="Resource" id="Resource_wxmke"]
+script = ExtResource("3_e5yiy")
+BaseDamage = 5
+IFrames = 0.4
+metadata/_custom_type_script = "uid://deb4vsu7xgmm"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w0e3t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_d5d32")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c84i2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_j0itn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_int4m"]
+radius = 32.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wxmke"]
+radius = 384.0833
+
+[node name="Messiah" type="Area2D" unique_id=1116845528 node_paths=PackedStringArray("Shine", "body")]
+collision_layer = 4
+collision_mask = 10
+script = ExtResource("1_c84i2")
+Shine = NodePath("Shine")
+MegidolaonScene = ExtResource("2_int4m")
+GodHandScene = ExtResource("3_wxmke")
+HealParticles = ExtResource("4_mn4c2")
+SPParticles = ExtResource("5_6b5ya")
+SalvationSound = ExtResource("6_1l3dh")
+EnduringSound = ExtResource("7_lk81x")
+MaxGodHandTimer = 2.5
+HitsLeft = 99999
+Damage = SubResource("Resource_wxmke")
+MaxHitCooldown = 0.8
+TimeLeft = 9999.0
+body = NodePath("AnimatedSprite2D")
+TimeResistant = true
+
+[node name="Shine" type="AnimatedSprite2D" parent="." unique_id=1261676420]
+z_index = -1
+sprite_frames = SubResource("SpriteFrames_w0e3t")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1307612923]
+scale = Vector2(1.6, 1.6)
+sprite_frames = SubResource("SpriteFrames_c84i2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1046535300]
+visible = false
+shape = SubResource("CircleShape2D_int4m")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=913101361]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1861822093]
+visible = false
+shape = SubResource("CircleShape2D_wxmke")
+
+[connection signal="body_entered" from="." to="." method="BodyCollision"]
+[connection signal="body_exited" from="." to="." method="BodyExit"]
+[connection signal="body_entered" from="Area2D" to="." method="DetectBall"]
+[connection signal="body_exited" from="Area2D" to="." method="DetectExit"]

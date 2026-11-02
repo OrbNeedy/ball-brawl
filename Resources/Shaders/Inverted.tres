@@ -1,0 +1,16 @@
+[gd_resource type="VisualShader" format=3 uid="uid://3ah0cpdanjjn"]
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_jals3"]
+input_name = "color"
+
+[sub_resource type="VisualShaderNodeVectorFunc" id="VisualShaderNodeVectorFunc_v8h0c"]
+function = 32
+
+[resource]
+mode = 1
+flags/light_only = false
+nodes/fragment/2/node = SubResource("VisualShaderNodeInput_jals3")
+nodes/fragment/2/position = Vector2(-496, 192)
+nodes/fragment/3/node = SubResource("VisualShaderNodeVectorFunc_v8h0c")
+nodes/fragment/3/position = Vector2(-64, 208)
+nodes/fragment/connections = PackedInt32Array(2, 0, 3, 0, 3, 0, 0, 0)

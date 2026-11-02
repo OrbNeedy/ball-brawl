@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://c2uaija8fwy0h"]
+
+[ext_resource type="Script" uid="uid://clmmur7y4ce8i" path="res://UIElements/MusicInfo.cs" id="1_snk66"]
+
+[node name="Music" type="RichTextLabel" unique_id=1818204121 node_paths=PackedStringArray("showTimer", "hideTimer")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 0
+bbcode_enabled = true
+text = "♪[b]Song Name[/b] by [b]Creator[/b]♪"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 2
+script = ExtResource("1_snk66")
+showTimer = NodePath("Show")
+hideTimer = NodePath("Hide")
+
+[node name="Show" type="Timer" parent="." unique_id=1505433093]
+one_shot = true
+
+[node name="Hide" type="Timer" parent="." unique_id=1230721694]
+one_shot = true
+
+[connection signal="timeout" from="Show" to="." method="OnShowTimerUp"]
+[connection signal="timeout" from="Hide" to="." method="OnHideTimerUp"]

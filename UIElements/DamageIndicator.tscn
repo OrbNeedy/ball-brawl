@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://ms6vk85x12v8"]
+
+[ext_resource type="Script" uid="uid://djdewl08j48ux" path="res://UIElements/DamageIndicator.cs" id="1_5w48u"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5w48u"]
+font_size = 48
+outline_size = 14
+outline_color = Color(0, 0, 0, 1)
+
+[node name="DamageNumber" type="Label" unique_id=2059771726]
+offset_left = -192.0
+offset_top = -64.0
+offset_right = 192.0
+offset_bottom = 64.0
+text = "-999"
+label_settings = SubResource("LabelSettings_5w48u")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_5w48u")

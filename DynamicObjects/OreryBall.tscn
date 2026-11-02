@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://c76k4lvqgm2j7"]
+
+[ext_resource type="Texture2D" uid="uid://c7vmae2iju7ec" path="res://assets/Marisa/MorsBalls.png" id="1_q8r1f"]
+[ext_resource type="Script" uid="uid://n8dto13twc4l" path="res://DynamicObjects/OreryBall.cs" id="1_qihs1"]
+[ext_resource type="PackedScene" uid="uid://bmikn440jcqx" path="res://Projectiles/CircularProjectile.tscn" id="2_hwr7o"]
+[ext_resource type="PackedScene" uid="uid://dx171n7rukroy" path="res://Projectiles/MarisaStar.tscn" id="3_bhotq"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hwr7o"]
+rough = true
+bounce = 0.5
+absorbent = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qihs1"]
+atlas = ExtResource("1_q8r1f")
+region = Rect2(0, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6apkj"]
+atlas = ExtResource("1_q8r1f")
+region = Rect2(34, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hwr7o"]
+atlas = ExtResource("1_q8r1f")
+region = Rect2(68, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bhotq"]
+atlas = ExtResource("1_q8r1f")
+region = Rect2(102, 0, 34, 34)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4g7d2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qihs1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6apkj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hwr7o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bhotq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q8r1f"]
+radius = 16.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hwr7o"]
+radius = 16.0
+
+[node name="OreryBall" type="AnimatableBody2D" unique_id=1877243487 node_paths=PackedStringArray("Body")]
+collision_layer = 2
+collision_mask = 14
+physics_material_override = SubResource("PhysicsMaterial_hwr7o")
+script = ExtResource("1_qihs1")
+ProjectileScene = ExtResource("2_hwr7o")
+StarScene = ExtResource("3_bhotq")
+Body = NodePath("AnimatedSprite2D")
+ExitTime = 2.0
+InitialLife = 18
+MaxShootTimer = 3.0
+MaxContinuousCout = 5
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2053647133]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_4g7d2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=574300111]
+shape = SubResource("CircleShape2D_q8r1f")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=250079334]
+collision_layer = 0
+collision_mask = 14
+priority = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=187754150]
+shape = SubResource("CircleShape2D_hwr7o")
+
+[connection signal="area_entered" from="Area2D" to="." method="OnProjectileHit"]
+[connection signal="body_entered" from="Area2D" to="." method="OnBodyHit"]

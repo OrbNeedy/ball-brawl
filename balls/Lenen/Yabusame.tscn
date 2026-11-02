@@ -1,0 +1,121 @@
+[gd_scene format=3 uid="uid://cyx3486kja7j5"]
+
+[ext_resource type="Script" uid="uid://bvwti3t8udfyp" path="res://balls/AvoidSpriteRotation.cs" id="1_e3dfm"]
+[ext_resource type="PhysicsMaterial" uid="uid://cpy03a25nm6av" path="res://Resources/HBBMaterial.tres" id="1_htgi3"]
+[ext_resource type="Script" uid="uid://1pwuh2vra5vh" path="res://balls/Lenen/Yabusame.cs" id="2_05n4r"]
+[ext_resource type="PackedScene" uid="uid://blqn1v2wead1r" path="res://Projectiles/TranscendantBullets.tscn" id="3_abh8x"]
+[ext_resource type="PackedScene" uid="uid://boqifufhquf73" path="res://balls/Lenen/VisualClone.tscn" id="3_bw1re"]
+[ext_resource type="Texture2D" uid="uid://dcu2v2lxp6ant" path="res://assets/CharacterBalls/Yabusame/talk_0_03_edited.png" id="3_tdfd4"]
+[ext_resource type="AudioStream" uid="uid://r6e1cypg611h" path="res://assets/SoundEffects/Lenen/LenenShoot.wav" id="3_ylfuq"]
+[ext_resource type="Resource" uid="uid://cd6dkmubfvxwo" path="res://Resources/DamageStyles/YabusameDamageStyle.tres" id="4_bw1re"]
+[ext_resource type="Texture2D" uid="uid://b5kd32h3p3r32" path="res://assets/CharacterBalls/Yabusame/talk_0_04_edited.png" id="4_khb0p"]
+[ext_resource type="Resource" uid="uid://copqc5mfyeqoq" path="res://Resources/MusicThemes/LayersAbove.tres" id="5_lr6d5"]
+[ext_resource type="Texture2D" uid="uid://duefhvhoe04ep" path="res://assets/CharacterBalls/Yabusame/talk_0_06_edited.png" id="6_qvwmv"]
+[ext_resource type="Texture2D" uid="uid://m2aowy7ucpjs" path="res://assets/CharacterBalls/Yabusame/talk_0_07_edited.png" id="7_8p11i"]
+[ext_resource type="Script" uid="uid://deb4vsu7xgmm" path="res://Resources/DamageData/DamageData.cs" id="8_khb0p"]
+[ext_resource type="Texture2D" uid="uid://c13by4t0kya0t" path="res://assets/CharacterBalls/Yabusame/talk_0_10_edited.png" id="10_k5b1k"]
+[ext_resource type="Texture2D" uid="uid://cimtt63eu2e2w" path="res://assets/Misc/Victory.png" id="13_4r015"]
+[ext_resource type="Texture2D" uid="uid://beumyvrim7c4g" path="res://assets/CharacterBalls/Yabusame/talk_0_13_edited.png" id="13_4syxq"]
+[ext_resource type="PackedScene" uid="uid://b7iqthahfbccv" path="res://DynamicObjects/Reticle.tscn" id="16_tdfd4"]
+
+[sub_resource type="Resource" id="Resource_x1iql"]
+script = ExtResource("8_khb0p")
+BaseDamage = 1
+CanBeDodged = false
+metadata/_custom_type_script = "uid://deb4vsu7xgmm"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k2kt4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_k5b1k")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_4syxq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_tdfd4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_khb0p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_qvwmv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_8p11i")
+}],
+"loop": true,
+"name": &"victory",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_homib"]
+radius = 24.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_abh8x"]
+radius = 384.0833
+
+[node name="Yabusame" type="RigidBody2D" unique_id=793726505 node_paths=PackedStringArray("Body", "Crown", "Reticle")]
+collision_layer = 2
+collision_mask = 10
+physics_material_override = ExtResource("1_htgi3")
+gravity_scale = 0.0
+contact_monitor = true
+max_contacts_reported = 2
+script = ExtResource("2_05n4r")
+ShootSound = ExtResource("3_ylfuq")
+BulletScene = ExtResource("3_abh8x")
+MaxShootTimer = 7.5
+MaxBulletSpeed = 500.0
+ContinuousMaxCount = 5
+VisualCloneScene = ExtResource("3_bw1re")
+Body = NodePath("AnimatedSprite2D")
+Crown = NodePath("Victory")
+Reticle = NodePath("Reticle")
+SpeedGain = 0.35
+MaxSpeedGain = 100.0
+Color = Color(0.5803922, 0.67058825, 0.5372549, 1)
+BallName = "Yabusame"
+DamageEffectsType = ExtResource("4_bw1re")
+BackgroundTheme = ExtResource("5_lr6d5")
+DamagedType = 2
+ContactDamage = SubResource("Resource_x1iql")
+MaxTimeResistance = 8.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=850025817]
+scale = Vector2(0.48, 0.48)
+sprite_frames = SubResource("SpriteFrames_k2kt4")
+script = ExtResource("1_e3dfm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1721343179]
+shape = SubResource("CircleShape2D_homib")
+
+[node name="Victory" type="Sprite2D" parent="." unique_id=741177842]
+visible = false
+position = Vector2(0, -24)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("13_4r015")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=695239218]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1180858871]
+shape = SubResource("CircleShape2D_abh8x")
+
+[node name="Reticle" parent="." unique_id=1812006893 instance=ExtResource("16_tdfd4")]
+
+[connection signal="body_entered" from="." to="." method="OnBodyEntered"]
+[connection signal="body_entered" from="Area2D" to="." method="AddDetectedBall"]
+[connection signal="body_exited" from="Area2D" to="." method="RemoveDetectedBall"]

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" format=3 uid="uid://bsd2k551jrfhw"]
+
+[ext_resource type="Script" uid="uid://bid6x8uroegjt" path="res://Resources/Teams/TeamData.cs" id="1_d7ypn"]
+[ext_resource type="PackedScene" uid="uid://dpmwayc01ajda" path="res://balls/Touhou/Sakuya.tscn" id="1_m4tc4"]
+[ext_resource type="PackedScene" uid="uid://cyx3486kja7j5" path="res://balls/Lenen/Yabusame.tscn" id="2_c6swf"]
+
+[resource]
+script = ExtResource("1_d7ypn")
+TeamName = "Wings of Time"
+TeamColor = Color(0, 0.9, 0.31500012, 1)
+SpawnDistance = 20.0
+Balls = Array[PackedScene]([ExtResource("1_m4tc4"), ExtResource("2_c6swf")])

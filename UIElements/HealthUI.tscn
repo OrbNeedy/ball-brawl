@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://nblvtfu05jgs"]
+
+[ext_resource type="Script" uid="uid://bh8nwf7g8inp7" path="res://UIElements/HealthUi.cs" id="1_c52yf"]
+[ext_resource type="PackedScene" uid="uid://c0xk0rwoxoxl5" path="res://UIElements/Lifebar.tscn" id="2_8fx08"]
+[ext_resource type="PackedScene" uid="uid://ms6vk85x12v8" path="res://UIElements/DamageIndicator.tscn" id="3_lvser"]
+
+[node name="HealthUI" type="Control" unique_id=1835592621 node_paths=PackedStringArray("LifeBarContainer", "DamageIndicatorContainer", "center")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c52yf")
+LifeBarContainer = NodePath("LifeBars")
+DamageIndicatorContainer = NodePath("DamageNumbers")
+Bar = ExtResource("2_8fx08")
+Indicator = ExtResource("3_lvser")
+center = NodePath("Middle")
+
+[node name="LifeBars" type="Control" parent="." unique_id=34710655]
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="DamageNumbers" type="Control" parent="." unique_id=224210550]
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Middle" type="Marker2D" parent="." unique_id=158078884]
+position = Vector2(576, 64)

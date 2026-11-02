@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://c5amwxhcihtrq"]
+
+[ext_resource type="Script" uid="uid://cfkxwn1drhyjy" path="res://Projectiles/Stands/Surtr.cs" id="1_ag65i"]
+[ext_resource type="Texture2D" uid="uid://c6b568xnts7cs" path="res://assets/Persona/PST_030.TMX_1_edited.png" id="2_an5yi"]
+[ext_resource type="PackedScene" uid="uid://yb64n6s133t4" path="res://Projectiles/Ragnarok.tscn" id="2_l8k0b"]
+[ext_resource type="Script" uid="uid://deb4vsu7xgmm" path="res://Resources/DamageData/DamageData.cs" id="3_slpwq"]
+
+[sub_resource type="Resource" id="Resource_nh1iu"]
+script = ExtResource("3_slpwq")
+BaseDamage = 2
+IFrames = 0.0
+metadata/_custom_type_script = "uid://deb4vsu7xgmm"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l8k0b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_an5yi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_slpwq"]
+radius = 80.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l8k0b"]
+radius = 1000.0
+
+[node name="Surtr" type="Area2D" unique_id=228982445 node_paths=PackedStringArray("body")]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_ag65i")
+RagnarokScene = ExtResource("2_l8k0b")
+HitsLeft = 9999
+Damage = SubResource("Resource_nh1iu")
+MaxHitCooldown = 0.4
+TimeLeft = 9999.0
+body = NodePath("AnimatedSprite2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1945971133]
+scale = Vector2(3.1, 3.1)
+sprite_frames = SubResource("SpriteFrames_l8k0b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1665424527]
+shape = SubResource("CircleShape2D_slpwq")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=665549712]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1894918481]
+shape = SubResource("CircleShape2D_l8k0b")
+
+[connection signal="body_entered" from="." to="." method="BodyCollision"]
+[connection signal="body_exited" from="." to="." method="BodyExit"]
+[connection signal="body_entered" from="Area2D" to="." method="OnDetectBall"]
+[connection signal="body_exited" from="Area2D" to="." method="OnBallExitDetection"]

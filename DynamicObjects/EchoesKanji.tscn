@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b7dnooe8v6jmv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_64i76"]
+
+[node name="EchoesKanji" type="AnimatedSprite2D" unique_id=1497456372]
+sprite_frames = SubResource("SpriteFrames_64i76")

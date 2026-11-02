@@ -1,0 +1,120 @@
+[gd_scene format=3 uid="uid://hgs4i1nmsyug"]
+
+[ext_resource type="Script" uid="uid://inxb0q1b5rc" path="res://Projectiles/BraveBlade.cs" id="1_gfaea"]
+[ext_resource type="Texture2D" uid="uid://cc8blkmejxxhv" path="res://assets/FireEffects/Part 9/438.png" id="1_uxtkb"]
+[ext_resource type="AudioStream" uid="uid://dcourkrbipnan" path="res://assets/SoundEffects/Persona 3/Cut.wav" id="2_xlhaf"]
+[ext_resource type="Script" uid="uid://deb4vsu7xgmm" path="res://Resources/DamageData/DamageData.cs" id="3_ixxyn"]
+
+[sub_resource type="Resource" id="Resource_e1e6e"]
+script = ExtResource("3_ixxyn")
+BaseDamage = 7
+metadata/_custom_type_script = "uid://deb4vsu7xgmm"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gfaea"]
+atlas = ExtResource("1_uxtkb")
+region = Rect2(0, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xlhaf"]
+atlas = ExtResource("1_uxtkb")
+region = Rect2(64, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ixxyn"]
+atlas = ExtResource("1_uxtkb")
+region = Rect2(128, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e1e6e"]
+atlas = ExtResource("1_uxtkb")
+region = Rect2(192, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3m3tk"]
+atlas = ExtResource("1_uxtkb")
+region = Rect2(256, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q8v2u"]
+atlas = ExtResource("1_uxtkb")
+region = Rect2(320, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7fkna"]
+atlas = ExtResource("1_uxtkb")
+region = Rect2(384, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q2klv"]
+atlas = ExtResource("1_uxtkb")
+region = Rect2(448, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mhsqn"]
+atlas = ExtResource("1_uxtkb")
+region = Rect2(512, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqn6s"]
+atlas = ExtResource("1_uxtkb")
+region = Rect2(576, 320, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1qdg6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gfaea")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xlhaf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ixxyn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e1e6e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3m3tk")
+}],
+"loop": false,
+"name": &"default",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q8v2u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7fkna")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q2klv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mhsqn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bqn6s")
+}],
+"loop": false,
+"name": &"end",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uxtkb"]
+radius = 56.0
+
+[node name="BraveBlade" type="Area2D" unique_id=984404610 node_paths=PackedStringArray("body")]
+collision_layer = 4
+collision_mask = 10
+script = ExtResource("1_gfaea")
+SlashSound = ExtResource("2_xlhaf")
+HitsLeft = 9999
+Damage = SubResource("Resource_e1e6e")
+MaxHitCooldown = 3.0
+body = NodePath("AnimatedSprite2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=812238178]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_1qdg6")
+autoplay = "default"
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1882158687]
+shape = SubResource("CircleShape2D_uxtkb")
+
+[connection signal="body_entered" from="." to="." method="BodyCollision"]
+[connection signal="body_exited" from="." to="." method="BodyExit"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="OnAnimationEnd"]

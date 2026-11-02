@@ -1,0 +1,14 @@
+[gd_resource type="Resource" format=3 uid="uid://5tcdbm7720v6"]
+
+[ext_resource type="Script" uid="uid://g1q8flp0lkiv" path="res://Resources/PersonaStats/PersonaData.cs" id="1_juhpk"]
+[ext_resource type="PackedScene" uid="uid://c1wfvq3geljeh" path="res://Projectiles/Stands/Susano-o.tscn" id="1_u1bpw"]
+
+[resource]
+script = ExtResource("1_juhpk")
+Persona = ExtResource("1_u1bpw")
+Power = 2
+ContactDamage = 3
+ContactDamageReduction = 2
+WeaponDamageReduction = 2
+SpeedGainModification = 0.2
+MaxSpeedGainModification = 60.0

@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://dt6pyr4kwmqfe"]
+
+[ext_resource type="Texture2D" uid="uid://ddxdcq0rudcf7" path="res://assets/HBB Asset Pack/Misc/Ball_Damaged_4.png" id="1_7f86k"]
+[ext_resource type="PhysicsMaterial" uid="uid://cpy03a25nm6av" path="res://Resources/HBBMaterial.tres" id="1_mhvuk"]
+[ext_resource type="Texture2D" uid="uid://dtjo5l8c5p20u" path="res://assets/HBB Asset Pack/Misc/Ball.png" id="1_yqnmq"]
+[ext_resource type="Script" uid="uid://b201c0y0qxfg0" path="res://balls/Ball.cs" id="1_yy3we"]
+[ext_resource type="Texture2D" uid="uid://b4u1kgdarmcmn" path="res://assets/HBB Asset Pack/Misc/Ball_Damaged_1.png" id="2_nito6"]
+[ext_resource type="Texture2D" uid="uid://d1v516xayye4u" path="res://assets/HBB Asset Pack/Misc/Ball_Damaged_2.png" id="3_7f86k"]
+[ext_resource type="Texture2D" uid="uid://duucpol1oarho" path="res://assets/HBB Asset Pack/Misc/Ball_Damaged_3.png" id="4_yy3we"]
+[ext_resource type="PackedScene" uid="uid://dupwpbbws7v2t" path="res://Weapons/Sword.tscn" id="8_fft66"]
+[ext_resource type="Script" uid="uid://bvwti3t8udfyp" path="res://balls/AvoidSpriteRotation.cs" id="9_mmjfr"]
+[ext_resource type="Texture2D" uid="uid://cimtt63eu2e2w" path="res://assets/Misc/Victory.png" id="10_o1wr0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0ij5l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7f86k")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_yqnmq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_nito6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7f86k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yy3we")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"victory",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yy3we"]
+radius = 39.0
+
+[node name="Al" type="RigidBody2D" unique_id=811123762 node_paths=PackedStringArray("Body", "Crown")]
+collision_layer = 2
+collision_mask = 11
+physics_material_override = ExtResource("1_mhvuk")
+contact_monitor = true
+max_contacts_reported = 2
+script = ExtResource("1_yy3we")
+Body = NodePath("AnimatedSprite2D")
+Crown = NodePath("Victory")
+SpeedGain = 0.8
+MaxSpeedGain = 20.0
+Power = 2
+Color = Color(0.11900202, 0.29424003, 0.58807695, 1)
+BallName = "Al"
+DamagedType = 1
+
+[node name="Sword" parent="." unique_id=428085339 node_paths=PackedStringArray("Holder") instance=ExtResource("8_fft66")]
+position = Vector2(48, -56)
+Holder = NodePath("..")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=38120234]
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_0ij5l")
+script = ExtResource("9_mmjfr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1016821499]
+shape = SubResource("CircleShape2D_yy3we")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="." unique_id=1461472238]
+node_a = NodePath("..")
+node_b = NodePath("../Sword")
+bias = 0.9
+
+[node name="Victory" type="Sprite2D" parent="." unique_id=1306697546]
+visible = false
+position = Vector2(0, -37.999996)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("10_o1wr0")
+
+[connection signal="body_entered" from="." to="." method="OnBodyEntered"]

@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://s8syeodnjgde"]
+
+[ext_resource type="Texture2D" uid="uid://b5yv5jlm0xxx7" path="res://assets/CharacterBalls/Gengetsu/Gen1_edited.png" id="1_4q1mk"]
+[ext_resource type="PhysicsMaterial" uid="uid://cpy03a25nm6av" path="res://Resources/HBBMaterial.tres" id="1_7lo5s"]
+[ext_resource type="Texture2D" uid="uid://cg0bqu1glxy4i" path="res://assets/CharacterBalls/Gengetsu/Gen3_edited.png" id="1_i2r6d"]
+[ext_resource type="Script" uid="uid://c7573h7ri7v4h" path="res://balls/Touhou/Gengetsu.cs" id="2_5idgh"]
+[ext_resource type="Texture2D" uid="uid://b4fv5umv6kbrw" path="res://assets/CharacterBalls/Gengetsu/Gen2_edited.png" id="2_5koor"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xnlfa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_i2r6d")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4q1mk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_5koor")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5koor")
+}],
+"loop": true,
+"name": &"victory",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4q1mk"]
+radius = 24.0
+
+[node name="Gengetsu" type="RigidBody2D" unique_id=1964366792]
+collision_layer = 2
+collision_mask = 13
+physics_material_override = ExtResource("1_7lo5s")
+gravity_scale = 0.0
+contact_monitor = true
+max_contacts_reported = 2
+script = ExtResource("2_5idgh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=159323504]
+texture_filter = 1
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_xnlfa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1400124120]
+shape = SubResource("CircleShape2D_4q1mk")

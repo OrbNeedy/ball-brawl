@@ -1,0 +1,12 @@
+[gd_resource type="Resource" format=3 uid="uid://x5bwjpv5n5cf"]
+
+[ext_resource type="AudioStream" uid="uid://c24twj5kumod6" path="res://assets/BackgroundMusic/The Maid and the Pocked Watch of Blood Subterranean Mix.mp3" id="1_mt02e"]
+[ext_resource type="Script" uid="uid://dvbj6o5xkcyb0" path="res://Resources/MusicThemes/MusicTheme.cs" id="2_fmsvp"]
+
+[resource]
+script = ExtResource("2_fmsvp")
+Theme = ExtResource("1_mt02e")
+SongName = "The Maid and the Pocket Watch of Blood"
+AuthorName = "OrientalNexus"
+StartingTime = 1.5
+Volume = 0.35

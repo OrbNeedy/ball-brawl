@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://ce3nnno1cd3ve"]
+
+[ext_resource type="Texture2D" uid="uid://cxnsq2mcakoad" path="res://Resources/BackgroundGradient.tres" id="1_vl8mf"]
+
+[node name="Board" type="Control" unique_id=1516484126]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1614479368]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=94503144]
+visible = false
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_vl8mf")

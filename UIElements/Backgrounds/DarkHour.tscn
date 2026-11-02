@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://blk53ikfgh5jy"]
+
+[ext_resource type="Shader" uid="uid://di8b2ikx1usu5" path="res://Resources/Shaders/IncreaseBrightness.tres" id="1_ddfra"]
+[ext_resource type="Script" uid="uid://db7tpvfn8ipod" path="res://UIElements/Backgrounds/DarkHour.cs" id="1_wvoum"]
+[ext_resource type="Texture2D" uid="uid://c0y1pa1hhtm8g" path="res://assets/Persona/Full-Moon-Hikes-4253739798.png" id="1_yc1rv"]
+[ext_resource type="Texture2D" uid="uid://do4cbfopomkbu" path="res://assets/Misc/Clouds3.png" id="4_abdxl"]
+[ext_resource type="Texture2D" uid="uid://cc8qv48x78ntr" path="res://assets/Misc/Clouds2.png" id="4_dxbxc"]
+[ext_resource type="Texture2D" uid="uid://br0qra1p3ltuc" path="res://assets/Misc/Clouds 1.png" id="5_ja58o"]
+
+[sub_resource type="Gradient" id="Gradient_h1hn8"]
+colors = PackedColorArray(0.040799998, 0.04912, 0.06, 1, 0.057, 0.1, 0.05915, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_yc1rv"]
+gradient = SubResource("Gradient_h1hn8")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yc1rv"]
+shader = ExtResource("1_ddfra")
+
+[sub_resource type="Environment" id="Environment_ddfra"]
+background_mode = 3
+glow_enabled = true
+glow_intensity = 2.0
+glow_hdr_threshold = 0.5
+glow_hdr_scale = 1.8
+
+[node name="DarkHour" type="Control" unique_id=266974507 node_paths=PackedStringArray("Far", "Mid", "Close")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wvoum")
+Far = NodePath("Far")
+Mid = NodePath("Mid")
+Close = NodePath("Close")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1300462039]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = SubResource("GradientTexture2D_yc1rv")
+
+[node name="FullMoonHikes4253739798" type="TextureRect" parent="." unique_id=543501879]
+modulate = Color(0.927, 1.54, 0.619, 1)
+material = SubResource("ShaderMaterial_yc1rv")
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -176.0
+offset_top = 24.0
+offset_right = 524.0
+offset_bottom = 724.0
+grow_horizontal = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_yc1rv")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="FullMoonHikes4253739798" unique_id=571100202]
+environment = SubResource("Environment_ddfra")
+
+[node name="Far" type="Parallax2D" parent="." unique_id=1226115399]
+repeat_size = Vector2(2304, 0)
+autoscroll = Vector2(10, 0)
+
+[node name="TextureRect" type="TextureRect" parent="Far" unique_id=137786517]
+modulate = Color(0.7019608, 0.7019608, 0.7019608, 0.7058824)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("4_dxbxc")
+
+[node name="Mid" type="Parallax2D" parent="." unique_id=1879260331]
+repeat_size = Vector2(2304, 0)
+autoscroll = Vector2(35, 0)
+
+[node name="TextureRect" type="TextureRect" parent="Mid" unique_id=1350520429]
+modulate = Color(0.7019608, 0.7019608, 0.7019608, 0.7058824)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("5_ja58o")
+
+[node name="Close" type="Parallax2D" parent="." unique_id=174028201]
+repeat_size = Vector2(2304, 0)
+autoscroll = Vector2(60, 0)
+
+[node name="TextureRect" type="TextureRect" parent="Close" unique_id=560376259]
+modulate = Color(0.7019608, 0.7019608, 0.7019608, 0.7058824)
+offset_right = 1408.0
+offset_bottom = 624.0
+texture = ExtResource("4_abdxl")

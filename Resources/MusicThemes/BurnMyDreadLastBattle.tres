@@ -1,0 +1,11 @@
+[gd_resource type="Resource" format=3 uid="uid://duc2y1e1m4rye"]
+
+[ext_resource type="AudioStream" uid="uid://br3d6rtscqmd0" path="res://assets/BackgroundMusic/Burn My Dread Last Battle P3+P3 ReincarnatIion+P3 Movie+P3 Reload Ultimate Mashup Mix (Revised).mp3" id="1_5k28i"]
+[ext_resource type="Script" uid="uid://dvbj6o5xkcyb0" path="res://Resources/MusicThemes/MusicTheme.cs" id="1_kntsh"]
+
+[resource]
+script = ExtResource("1_kntsh")
+Theme = ExtResource("1_5k28i")
+SongName = "Burn My Dread Last Battle"
+AuthorName = "JoGeo"
+Volume = 0.8

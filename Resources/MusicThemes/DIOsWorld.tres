@@ -1,0 +1,12 @@
+[gd_resource type="Resource" format=3 uid="uid://c2mcaau0jf3b2"]
+
+[ext_resource type="Script" uid="uid://dvbj6o5xkcyb0" path="res://Resources/MusicThemes/MusicTheme.cs" id="1_ioxwb"]
+[ext_resource type="AudioStream" uid="uid://8wjwfqmwdohp" path="res://assets/BackgroundMusic/DIO's World (darksynth 80s remix).mp3" id="1_yuk4b"]
+
+[resource]
+script = ExtResource("1_ioxwb")
+Theme = ExtResource("1_yuk4b")
+SongName = "DIO's World [Darksynth/80s Remix]"
+AuthorName = "Astrophysics"
+StartingTime = 36.0
+Volume = 0.65

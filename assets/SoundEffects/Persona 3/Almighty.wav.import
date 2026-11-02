@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b3dhhsymgx3ab"
+path="res://.godot/imported/Almighty.wav-ac8562ebf08e85485dceab594af0657f.sample"
+
+[deps]
+
+source_file="res://assets/SoundEffects/Persona 3/Almighty.wav"
+dest_files=["res://.godot/imported/Almighty.wav-ac8562ebf08e85485dceab594af0657f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

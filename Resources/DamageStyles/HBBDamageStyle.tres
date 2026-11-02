@@ -1,0 +1,6 @@
+[gd_resource type="Resource" format=3 uid="uid://csrj234hy4ms"]
+
+[ext_resource type="Script" uid="uid://bdd8k4ap51ul1" path="res://Resources/DamageStyles/HBBDamageStyle.cs" id="1_wlg1j"]
+
+[resource]
+script = ExtResource("1_wlg1j")

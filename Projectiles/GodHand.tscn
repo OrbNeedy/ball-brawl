@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://23idi8tgc1ye"]
+
+[ext_resource type="Texture2D" uid="uid://dnljpohs316wl" path="res://assets/Persona/GodHand.png" id="1_ndsyt"]
+[ext_resource type="Script" uid="uid://esnpel84xw6b" path="res://Projectiles/GodHand.cs" id="1_qnuji"]
+[ext_resource type="Script" uid="uid://deb4vsu7xgmm" path="res://Resources/DamageData/DamageData.cs" id="2_2affw"]
+[ext_resource type="PackedScene" uid="uid://bii4nkiirau0e" path="res://Particles/Holy.tscn" id="2_36iyy"]
+[ext_resource type="AudioStream" uid="uid://gjt6x6trnkgw" path="res://assets/SoundEffects/Persona 3/Hit.wav" id="3_db2lm"]
+
+[sub_resource type="Resource" id="Resource_36iyy"]
+script = ExtResource("2_2affw")
+BaseDamage = 9
+IFrames = 0.0
+Almighty = true
+metadata/_custom_type_script = "uid://deb4vsu7xgmm"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2affw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ndsyt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ndsyt"]
+size = Vector2(96, 224)
+
+[node name="GodHand" type="Area2D" unique_id=308784467 node_paths=PackedStringArray("body")]
+collision_layer = 4
+collision_mask = 10
+script = ExtResource("1_qnuji")
+holyParticles = ExtResource("2_36iyy")
+HitSound = ExtResource("3_db2lm")
+HitsLeft = 9999
+Damage = SubResource("Resource_36iyy")
+MaxHitCooldown = 1.2
+body = NodePath("GodHand")
+
+[node name="GodHand" type="AnimatedSprite2D" parent="." unique_id=640213119]
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_2affw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=42764241]
+shape = SubResource("RectangleShape2D_ndsyt")
+
+[connection signal="body_entered" from="." to="." method="BodyCollision"]
+[connection signal="body_exited" from="." to="." method="BodyExit"]

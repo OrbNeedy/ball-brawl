@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cggayldxwhpdr"
+path="res://.godot/imported/Stas Gavrik - Touhou Ambient Project ~X~ - 14 Love-Colored Magic (Ambient Ver.).mp3-ad43afd2b80fc9e51097483a29082e73.mp3str"
+
+[deps]
+
+source_file="res://assets/BackgroundMusic/Stas Gavrik - Touhou Ambient Project ~X~ - 14 Love-Colored Magic (Ambient Ver.).mp3"
+dest_files=["res://.godot/imported/Stas Gavrik - Touhou Ambient Project ~X~ - 14 Love-Colored Magic (Ambient Ver.).mp3-ad43afd2b80fc9e51097483a29082e73.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

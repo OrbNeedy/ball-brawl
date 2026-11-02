@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cyd1tmyc8prih"
+path="res://.godot/imported/[Len'en Arrange] Layers Above.mp3-5aa3e8ab3626eac7c3677904d413ae07.mp3str"
+
+[deps]
+
+source_file="res://assets/BackgroundMusic/[Len'en Arrange] Layers Above.mp3"
+dest_files=["res://.godot/imported/[Len'en Arrange] Layers Above.mp3-5aa3e8ab3626eac7c3677904d413ae07.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

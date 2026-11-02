@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://lkc086vgfq25"]
+
+[ext_resource type="PackedScene" uid="uid://8h6n4r0oiqt3" path="res://assets/Models/BetterCross.glb" id="1_b8xo4"]
+[ext_resource type="Script" uid="uid://bfcyqogccfqq7" path="res://assets/Models/BetterCross.cs" id="2_vh0tp"]
+
+[node name="SubViewportContainer" type="SubViewportContainer" unique_id=1003858284]
+offset_right = 1152.0
+offset_bottom = 648.0
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=380571722]
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="SubViewport" unique_id=1215170450]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0055742264)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewport" unique_id=90507765]
+transform = Transform3D(0.9218632, -0.23059551, 0.31143865, 0, 0.8036804, 0.59506124, -0.3875156, -0.5485651, 0.7408833, 1.3599863, 4.7927394, 0)
+shadow_enabled = true
+
+[node name="BetterCross" parent="SubViewport" unique_id=1684919162 instance=ExtResource("1_b8xo4")]
+transform = Transform3D(-0.49827993, 0.5109389, -0.7004703, 0.52846444, 0.81946576, 0.22181351, 0.6873445, -0.25964838, -0.67833644, 4.1533213, 0, -14.04076)
+script = ExtResource("2_vh0tp")
+YRotation = 3.0

@@ -1,0 +1,7 @@
+[gd_resource type="Resource" format=3 uid="uid://cme2bayybbaq8"]
+
+[ext_resource type="Script" uid="uid://10qdqh83cd2p" path="res://Resources/Shards/ShardData.cs" id="1_gsoc6"]
+
+[resource]
+script = ExtResource("1_gsoc6")
+Polygon = PackedVector2Array(-6.399658, -89.19957, 40.800323, 6.8004227, 52.738037, 1.7694168, 75.97003, 93.729416, -30.399658, -5.1995773)

@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://blqn1v2wead1r"]
+
+[ext_resource type="Script" uid="uid://bprui4q5mfmnp" path="res://Projectiles/TranscendantBullets.cs" id="1_ed1l5"]
+[ext_resource type="Texture2D" uid="uid://dkcjr5ep0js2i" path="res://assets/Sheets/b003.png" id="1_ysioc"]
+[ext_resource type="Script" uid="uid://deb4vsu7xgmm" path="res://Resources/DamageData/DamageData.cs" id="2_7y1uc"]
+
+[sub_resource type="Resource" id="Resource_7y1uc"]
+resource_local_to_scene = true
+script = ExtResource("2_7y1uc")
+BaseDamage = 1
+IFrames = 0.0
+CanBeDodged = false
+Almighty = true
+metadata/_custom_type_script = "uid://deb4vsu7xgmm"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ed1l5"]
+atlas = ExtResource("1_ysioc")
+region = Rect2(0, 0, 22, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7y1uc"]
+atlas = ExtResource("1_ysioc")
+region = Rect2(22, 0, 22, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_msxar"]
+atlas = ExtResource("1_ysioc")
+region = Rect2(44, 0, 22, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pekc0"]
+atlas = ExtResource("1_ysioc")
+region = Rect2(66, 0, 22, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0y3q1"]
+atlas = ExtResource("1_ysioc")
+region = Rect2(88, 0, 22, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tkneu"]
+atlas = ExtResource("1_ysioc")
+region = Rect2(110, 0, 22, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ncfys"]
+atlas = ExtResource("1_ysioc")
+region = Rect2(132, 0, 22, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5kpn"]
+atlas = ExtResource("1_ysioc")
+region = Rect2(154, 0, 22, 22)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aq3c3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ed1l5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7y1uc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_msxar")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pekc0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0y3q1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tkneu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ncfys")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b5kpn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aq3c3"]
+radius = 8.0
+
+[node name="TranscendantBullets" type="Area2D" unique_id=1527925804 node_paths=PackedStringArray("body")]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_ed1l5")
+Damage = SubResource("Resource_7y1uc")
+TimeLeft = 20.0
+body = NodePath("AnimatedSprite2D")
+TimeResistant = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1454068458]
+sprite_frames = SubResource("SpriteFrames_aq3c3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1109490279]
+shape = SubResource("CircleShape2D_aq3c3")
+
+[connection signal="body_entered" from="." to="." method="BodyCollision"]
+[connection signal="body_exited" from="." to="." method="BodyExit"]

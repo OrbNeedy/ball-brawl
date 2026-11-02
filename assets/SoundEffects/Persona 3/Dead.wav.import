@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://i6qot7w41gh2"
+path="res://.godot/imported/Dead.wav-7514d3be6f9c9c8ed8254ab6945ec855.sample"
+
+[deps]
+
+source_file="res://assets/SoundEffects/Persona 3/Dead.wav"
+dest_files=["res://.godot/imported/Dead.wav-7514d3be6f9c9c8ed8254ab6945ec855.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

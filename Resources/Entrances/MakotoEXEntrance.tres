@@ -1,0 +1,7 @@
+[gd_resource type="Resource" format=3 uid="uid://bafge81hdk5u4"]
+
+[ext_resource type="Script" uid="uid://dg8dixe3o1nw6" path="res://Resources/Entrances/MakotoEXEntrance.cs" id="1_qa6te"]
+
+[resource]
+script = ExtResource("1_qa6te")
+Priority = 1

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://byhvkuyv230lj"]
+
+[ext_resource type="Texture2D" uid="uid://2yob2opct8sx" path="res://assets/Gunvolt/ElectricityArc.png" id="1_0mdam"]
+[ext_resource type="Script" uid="uid://mu504qop1xjw" path="res://Projectiles/GunvoltElectricity.cs" id="2_xm5bq"]
+[ext_resource type="Texture2D" uid="uid://crwryt2r6diin" path="res://assets/Gunvolt/ElectricityArc2.png" id="3_451ec"]
+[ext_resource type="Texture2D" uid="uid://c4g5ss5q6rtf7" path="res://assets/Gunvolt/ElectricityArc3.png" id="4_kmbyw"]
+[ext_resource type="Texture2D" uid="uid://baprqgtqqvfl8" path="res://assets/Gunvolt/ElectricityArc4.png" id="5_pveml"]
+[ext_resource type="Texture2D" uid="uid://cljqs2l0kffd6" path="res://assets/Gunvolt/ElectricityArc5.png" id="6_uhee1"]
+[ext_resource type="Texture2D" uid="uid://bpkevy2ken4va" path="res://assets/Gunvolt/ElectricityArc6.png" id="7_n0k8f"]
+
+[node name="Electricity" type="Line2D" unique_id=1947855307]
+z_index = 2
+texture_repeat = 2
+width = 48.0
+texture = ExtResource("1_0mdam")
+texture_mode = 1
+joint_mode = 1
+script = ExtResource("2_xm5bq")
+textures = Array[CompressedTexture2D]([ExtResource("1_0mdam"), ExtResource("3_451ec"), ExtResource("4_kmbyw"), ExtResource("5_pveml"), ExtResource("6_uhee1"), ExtResource("7_n0k8f")])
+MaxDamageTimer = 0.25

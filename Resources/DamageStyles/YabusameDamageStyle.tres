@@ -1,0 +1,15 @@
+[gd_resource type="Resource" format=3 uid="uid://cd6dkmubfvxwo"]
+
+[ext_resource type="Script" uid="uid://0v4wej5tvoej" path="res://Resources/DamageStyles/YabusameDamageStyle.cs" id="1_c3xka"]
+[ext_resource type="AudioStream" uid="uid://geggwc0d43u3" path="res://assets/SoundEffects/Lenen/LenenBarrierBreak.wav" id="1_g403v"]
+[ext_resource type="AudioStream" uid="uid://hmdh10pjv1gm" path="res://assets/SoundEffects/Lenen/LenenBarrierRecovered.wav" id="2_8xhba"]
+[ext_resource type="AudioStream" uid="uid://cih0b2pau04t0" path="res://assets/SoundEffects/Lenen/LenenHit.wav" id="3_xeb7w"]
+[ext_resource type="AudioStream" uid="uid://5rm8ou2ii4h1" path="res://assets/SoundEffects/Lenen/LenenDeath.wav" id="4_r2bmr"]
+
+[resource]
+script = ExtResource("1_c3xka")
+BarrierBreak = ExtResource("1_g403v")
+BarrierRecover = ExtResource("2_8xhba")
+DamageFrames = 4
+DamageSound = ExtResource("3_xeb7w")
+DeathSound = ExtResource("4_r2bmr")

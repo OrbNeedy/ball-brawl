@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://1k2ansm3180o"]
+
+[ext_resource type="Texture2D" uid="uid://dpvnujecc75ae" path="res://assets/Weapons/RoadSignWeapon.png" id="1_qntso"]
+[ext_resource type="Script" uid="uid://bqu0pg303153y" path="res://Weapons/Weapon.cs" id="1_xvetr"]
+[ext_resource type="Script" uid="uid://deb4vsu7xgmm" path="res://Resources/DamageData/DamageData.cs" id="2_vj8ao"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xvetr"]
+friction = 0.0
+
+[sub_resource type="Resource" id="Resource_1yck1"]
+script = ExtResource("2_vj8ao")
+BaseDamage = 3
+metadata/_custom_type_script = "uid://deb4vsu7xgmm"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xvetr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_qntso")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="RoadSign" type="RigidBody2D" unique_id=1847600600]
+collision_layer = 8
+collision_mask = 10
+mass = 0.001
+physics_material_override = SubResource("PhysicsMaterial_xvetr")
+gravity_scale = 0.0
+center_of_mass_mode = 1
+center_of_mass = Vector2(0, 48)
+contact_monitor = true
+max_contacts_reported = 2
+script = ExtResource("1_xvetr")
+Damage = SubResource("Resource_1yck1")
+ClashType = 1
+InitialLayer = 8
+InitialMask = 10
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=865131143]
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_xvetr")
+offset = Vector2(3, 0)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1347297248]
+position = Vector2(-1.7696075, 67.206894)
+polygon = PackedVector2Array(13.769608, -146.2069, 22.769608, -136.2069, 23.769608, -123.206894, 18.769608, -114.206894, 4.7696075, -107.206894, 4.7696075, 16.793106, -1.2303925, 16.793106, -1.2303925, -107.206894, -15.230392, -114.206894, -20.230392, -123.206894, -19.230392, -136.2069, -10.230392, -146.2069, 1.7696075, -149.2069)
+
+[connection signal="body_entered" from="." to="." method="OnBodyEntered"]

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" format=3 uid="uid://de7anp8sn4skr"]
+
+[ext_resource type="Script" uid="uid://g1q8flp0lkiv" path="res://Resources/PersonaStats/PersonaData.cs" id="1_krapg"]
+[ext_resource type="PackedScene" uid="uid://bb1pu6uxvf6n7" path="res://Projectiles/Stands/Messiah.tscn" id="1_pbpdb"]
+
+[resource]
+script = ExtResource("1_krapg")
+Persona = ExtResource("1_pbpdb")
+Power = 5
+ContactDamage = 3
+SpeedGainModification = 0.6
+MaxSpeedGainModification = 40.0
+MaxTimeStopResistanceModification = 4.0

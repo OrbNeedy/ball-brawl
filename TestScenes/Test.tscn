@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://doylmfdcctn8i"]
+
+[ext_resource type="AudioStream" uid="uid://5rm8ou2ii4h1" path="res://assets/SoundEffects/Lenen/LenenDeath.wav" id="1_yrhyg"]
+[ext_resource type="Script" uid="uid://iwci7n2yncx6" path="res://TestScenes/TestAudio.cs" id="2_ecjqf"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" unique_id=155472492]
+stream = ExtResource("1_yrhyg")
+autoplay = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=928568042]
+script = ExtResource("2_ecjqf")

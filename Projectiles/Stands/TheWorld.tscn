@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://dkw5gai28ji2c"]
+
+[ext_resource type="Texture2D" uid="uid://dc7xft0o87peb" path="res://assets/CharacterBalls/DIO/TheWorld.png" id="1_m27lc"]
+[ext_resource type="Script" uid="uid://ct56vwcmgh75e" path="res://Projectiles/Stands/TheWorld.cs" id="1_v47gv"]
+[ext_resource type="AudioStream" uid="uid://dpdma2sku3prt" path="res://assets/SoundEffects/Dio/S_SP1_atkG1_01.wav" id="2_gihci"]
+[ext_resource type="AudioStream" uid="uid://de8s5rrvhyayg" path="res://assets/SoundEffects/Dio/S_world_st2.wav" id="3_2aaul"]
+[ext_resource type="Shader" uid="uid://c54f7tywl7bnk" path="res://Resources/Shaders/Grayscale.tres" id="4_tobb1"]
+[ext_resource type="Script" uid="uid://deb4vsu7xgmm" path="res://Resources/DamageData/DamageData.cs" id="5_tobb1"]
+
+[sub_resource type="Resource" id="Resource_tobb1"]
+script = ExtResource("5_tobb1")
+BaseDamage = 4
+metadata/_custom_type_script = "uid://deb4vsu7xgmm"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v47gv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_m27lc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m27lc"]
+radius = 40.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v47gv"]
+radius = 600.0
+
+[node name="TheWorld" type="Area2D" unique_id=1684395350 node_paths=PackedStringArray("body")]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_v47gv")
+HitSound = ExtResource("2_gihci")
+TimeStopSoundEffect = ExtResource("3_2aaul")
+TimeStopShader = ExtResource("4_tobb1")
+Range = 275.0
+HitsLeft = 9999
+Damage = SubResource("Resource_tobb1")
+MaxHitCooldown = 0.65
+TimeLeft = 9999.0
+body = NodePath("AnimatedSprite2D")
+TimeResistant = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1486426564]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_v47gv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1952196079]
+shape = SubResource("CircleShape2D_m27lc")
+
+[node name="Range" type="Area2D" parent="." unique_id=596852872]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range" unique_id=1095826201]
+shape = SubResource("CircleShape2D_v47gv")
+
+[connection signal="body_entered" from="." to="." method="BodyCollision"]
+[connection signal="body_exited" from="." to="." method="BodyExit"]
+[connection signal="body_entered" from="Range" to="." method="OnDetectBall"]
+[connection signal="body_exited" from="Range" to="." method="OnBallExitDetection"]

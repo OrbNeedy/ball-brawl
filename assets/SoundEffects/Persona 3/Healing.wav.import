@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://chdy3dcv8r7pn"
+path="res://.godot/imported/Healing.wav-74f4adcb7a8234bd7f2c1083d2b5e9f0.sample"
+
+[deps]
+
+source_file="res://assets/SoundEffects/Persona 3/Healing.wav"
+dest_files=["res://.godot/imported/Healing.wav-74f4adcb7a8234bd7f2c1083d2b5e9f0.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

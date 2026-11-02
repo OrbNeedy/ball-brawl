@@ -1,0 +1,13 @@
+[gd_resource type="Resource" format=3 uid="uid://bwgyw6jyhtps6"]
+
+[ext_resource type="PackedScene" uid="uid://lj3drasxsnt6" path="res://Projectiles/Stands/Thanatos.tscn" id="1_e5sik"]
+[ext_resource type="Script" uid="uid://g1q8flp0lkiv" path="res://Resources/PersonaStats/PersonaData.cs" id="2_jabue"]
+
+[resource]
+script = ExtResource("2_jabue")
+Persona = ExtResource("1_e5sik")
+Power = 2
+ContactDamage = 1
+WeaponDamageReduction = 2
+SpeedGainModification = 2.0
+MaxSpeedGainModification = 30.0

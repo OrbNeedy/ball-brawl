@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bvmypmj64u8ti"]
+
+[ext_resource type="Shader" uid="uid://3ah0cpdanjjn" path="res://Resources/Shaders/Inverted.tres" id="1_hnt6m"]
+[ext_resource type="Script" uid="uid://wivt1psyoyrq" path="res://UIElements/Backgrounds/MirrorReflections.cs" id="1_micn4"]
+[ext_resource type="PackedScene" uid="uid://d6cw87n06uds" path="res://UIElements/Backgrounds/MirrorShard.tscn" id="2_tsnt7"]
+[ext_resource type="Texture2D" uid="uid://cxnsq2mcakoad" path="res://Resources/BackgroundGradient.tres" id="4_xnv6c"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xnv6c"]
+shader = ExtResource("1_hnt6m")
+
+[node name="MirrorReflections" type="Control" unique_id=156264542]
+material = SubResource("ShaderMaterial_xnv6c")
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_micn4")
+MirrorScene = ExtResource("2_tsnt7")
+MaxMirrorFallCooldown = 2.25
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=187026835]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_xnv6c")

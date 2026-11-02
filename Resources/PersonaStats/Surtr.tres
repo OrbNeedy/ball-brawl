@@ -1,0 +1,12 @@
+[gd_resource type="Resource" format=3 uid="uid://dv0bfibe4wskh"]
+
+[ext_resource type="PackedScene" uid="uid://c5amwxhcihtrq" path="res://Projectiles/Stands/Surtr.tscn" id="1_7h8q6"]
+[ext_resource type="Script" uid="uid://g1q8flp0lkiv" path="res://Resources/PersonaStats/PersonaData.cs" id="1_g4d5i"]
+
+[resource]
+script = ExtResource("1_g4d5i")
+Persona = ExtResource("1_7h8q6")
+Power = 3
+ContactDamage = 2
+ContactDamageReduction = 1
+WeaponDamageReduction = 1

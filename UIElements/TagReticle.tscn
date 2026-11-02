@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://dj6fldy3q8nrp"]
+
+[ext_resource type="Script" uid="uid://dkfjmf4t7o7p1" path="res://UIElements/TagReticle.cs" id="1_ddfkh"]
+[ext_resource type="Texture2D" uid="uid://bik3mkf3wvexg" path="res://assets/Gunvolt/Reticle.png" id="1_n4hpu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eaxwm"]
+atlas = ExtResource("1_n4hpu")
+region = Rect2(0, 0, 70, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dj8wc"]
+atlas = ExtResource("1_n4hpu")
+region = Rect2(70, 0, 70, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_svdnw"]
+atlas = ExtResource("1_n4hpu")
+region = Rect2(140, 0, 70, 70)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ddfkh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eaxwm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dj8wc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_svdnw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n4hpu"]
+atlas = ExtResource("1_n4hpu")
+region = Rect2(210, 0, 70, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8qtip"]
+atlas = ExtResource("1_n4hpu")
+region = Rect2(280, 0, 70, 70)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n4hpu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n4hpu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8qtip")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[node name="TagReticle" type="AnimatedSprite2D" unique_id=894172107]
+visible = false
+sprite_frames = SubResource("SpriteFrames_ddfkh")
+frame = 2
+script = ExtResource("1_ddfkh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1123197306]
+sprite_frames = SubResource("SpriteFrames_n4hpu")
+autoplay = "default"
+frame_progress = 0.77666193

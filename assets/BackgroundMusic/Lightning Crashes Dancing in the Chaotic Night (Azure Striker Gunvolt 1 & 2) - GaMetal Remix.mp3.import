@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bibjt5t4xfldb"
+path="res://.godot/imported/Lightning Crashes Dancing in the Chaotic Night (Azure Striker Gunvolt 1 & 2) - GaMetal Remix.mp3-b66dae2187b7e8279aed5857195e96a5.mp3str"
+
+[deps]
+
+source_file="res://assets/BackgroundMusic/Lightning Crashes Dancing in the Chaotic Night (Azure Striker Gunvolt 1 & 2) - GaMetal Remix.mp3"
+dest_files=["res://.godot/imported/Lightning Crashes Dancing in the Chaotic Night (Azure Striker Gunvolt 1 & 2) - GaMetal Remix.mp3-b66dae2187b7e8279aed5857195e96a5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

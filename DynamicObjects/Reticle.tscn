@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://b7iqthahfbccv"]
+
+[ext_resource type="Script" uid="uid://qy6i33gcm7xo" path="res://DynamicObjects/Reticle.cs" id="1_riqhn"]
+[ext_resource type="Texture2D" uid="uid://bik3mkf3wvexg" path="res://assets/Gunvolt/Reticle.png" id="2_dted4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dted4"]
+atlas = ExtResource("2_dted4")
+region = Rect2(0, 0, 70, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajym4"]
+atlas = ExtResource("2_dted4")
+region = Rect2(70, 0, 70, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cxvnf"]
+atlas = ExtResource("2_dted4")
+region = Rect2(140, 0, 70, 70)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g785v"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dted4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dted4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ajym4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cxvnf")
+}],
+"loop": true,
+"name": &"gunvolt",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mdier"]
+atlas = ExtResource("2_dted4")
+region = Rect2(210, 0, 70, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qd8lt"]
+atlas = ExtResource("2_dted4")
+region = Rect2(280, 0, 70, 70)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_riqhn"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mdier")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qd8lt")
+}],
+"loop": true,
+"name": &"gunvolt",
+"speed": 4.0
+}]
+
+[node name="Reticle" type="AnimatedSprite2D" unique_id=1812006893 node_paths=PackedStringArray("InternalReticle")]
+modulate = Color(1, 0.20784314, 0.43137255, 1)
+z_index = 2
+sprite_frames = SubResource("SpriteFrames_g785v")
+script = ExtResource("1_riqhn")
+InternalReticle = NodePath("AnimatedSprite2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1261901534]
+sprite_frames = SubResource("SpriteFrames_riqhn")

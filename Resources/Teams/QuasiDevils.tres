@@ -1,0 +1,13 @@
+[gd_resource type="Resource" format=3 uid="uid://ce60vuoiq8df4"]
+
+[ext_resource type="Script" uid="uid://bid6x8uroegjt" path="res://Resources/Teams/TeamData.cs" id="1_lvkem"]
+[ext_resource type="PackedScene" uid="uid://cm4bpidiiakbe" path="res://balls/JJBA/DIO.tscn" id="1_motq8"]
+[ext_resource type="PackedScene" uid="uid://boubdq6ms7jv8" path="res://balls/Lenen/Yaorochi.tscn" id="2_3o50j"]
+[ext_resource type="PackedScene" uid="uid://w6f6r72jwtfb" path="res://balls/Touhou/Marisa.tscn" id="3_36dsk"]
+
+[resource]
+script = ExtResource("1_lvkem")
+TeamName = "Quasi Devils"
+TeamColor = Color(1, 0.21960784, 0.3647059, 1)
+SpawnDistance = 128.0
+Balls = Array[PackedScene]([ExtResource("1_motq8"), ExtResource("2_3o50j"), ExtResource("3_36dsk")])

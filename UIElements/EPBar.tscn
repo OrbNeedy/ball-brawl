@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cknhtwqmpkayw"]
+
+[node name="Control" type="ProgressBar" unique_id=909276979]
+modulate = Color(0.39, 1, 0.9796667, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -48.0
+offset_right = -1104.0
+offset_bottom = -632.0
+grow_horizontal = 2
+grow_vertical = 2
+value = 100.0
+show_percentage = false

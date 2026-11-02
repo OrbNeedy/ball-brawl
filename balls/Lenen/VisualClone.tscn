@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://boqifufhquf73"]
+
+[ext_resource type="Texture2D" uid="uid://c13by4t0kya0t" path="res://assets/CharacterBalls/Yabusame/talk_0_10_edited.png" id="1_xuakt"]
+[ext_resource type="Texture2D" uid="uid://beumyvrim7c4g" path="res://assets/CharacterBalls/Yabusame/talk_0_13_edited.png" id="2_f25tc"]
+[ext_resource type="Texture2D" uid="uid://dcu2v2lxp6ant" path="res://assets/CharacterBalls/Yabusame/talk_0_03_edited.png" id="3_gahdk"]
+[ext_resource type="Texture2D" uid="uid://b5kd32h3p3r32" path="res://assets/CharacterBalls/Yabusame/talk_0_04_edited.png" id="4_bmspy"]
+[ext_resource type="Texture2D" uid="uid://duefhvhoe04ep" path="res://assets/CharacterBalls/Yabusame/talk_0_06_edited.png" id="5_6qymn"]
+[ext_resource type="Texture2D" uid="uid://m2aowy7ucpjs" path="res://assets/CharacterBalls/Yabusame/talk_0_07_edited.png" id="6_3p5v2"]
+[ext_resource type="Script" uid="uid://c4pbv00deeses" path="res://balls/Lenen/VisualClone.cs" id="7_f25tc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k2kt4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_xuakt")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_f25tc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gahdk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_bmspy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_6qymn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_3p5v2")
+}],
+"loop": true,
+"name": &"victory",
+"speed": 5.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=118323763]
+sprite_frames = SubResource("SpriteFrames_k2kt4")
+script = ExtResource("7_f25tc")

@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://e1utu5tngj1h"]
+
+[ext_resource type="Texture2D" uid="uid://b4u1kgdarmcmn" path="res://assets/HBB Asset Pack/Misc/Ball_Damaged_1.png" id="1_a015s"]
+[ext_resource type="Texture2D" uid="uid://dtjo5l8c5p20u" path="res://assets/HBB Asset Pack/Misc/Ball.png" id="1_d2f0s"]
+[ext_resource type="PhysicsMaterial" uid="uid://cpy03a25nm6av" path="res://Resources/HBBMaterial.tres" id="1_jdjpy"]
+[ext_resource type="Texture2D" uid="uid://d1v516xayye4u" path="res://assets/HBB Asset Pack/Misc/Ball_Damaged_2.png" id="2_a7vka"]
+[ext_resource type="Script" uid="uid://dalgejsw3c5ds" path="res://balls/HBB/Louis.cs" id="2_jdjpy"]
+[ext_resource type="Texture2D" uid="uid://duucpol1oarho" path="res://assets/HBB Asset Pack/Misc/Ball_Damaged_3.png" id="3_gtlvd"]
+[ext_resource type="Texture2D" uid="uid://ddxdcq0rudcf7" path="res://assets/HBB Asset Pack/Misc/Ball_Damaged_4.png" id="4_g1oem"]
+[ext_resource type="Script" uid="uid://bvwti3t8udfyp" path="res://balls/AvoidSpriteRotation.cs" id="7_tkww3"]
+[ext_resource type="Texture2D" uid="uid://cimtt63eu2e2w" path="res://assets/Misc/Victory.png" id="9_as8ss"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a015s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_g1oem")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_d2f0s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_a015s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_a7vka")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gtlvd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_d2f0s")
+}],
+"loop": true,
+"name": &"victory",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a7vka"]
+radius = 39.0
+
+[node name="Ball" type="RigidBody2D" unique_id=1100135382 node_paths=PackedStringArray("Body", "Crown")]
+collision_layer = 2
+collision_mask = 11
+physics_material_override = ExtResource("1_jdjpy")
+contact_monitor = true
+max_contacts_reported = 2
+script = ExtResource("2_jdjpy")
+Body = NodePath("AnimatedSprite2D")
+Crown = NodePath("Victory")
+SpeedGain = 1.0
+MaxSpeedGain = 160.0
+Color = Color(0.80756104, 0.094002135, 0, 1)
+BallName = "Louis"
+DamagedType = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1019190572]
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_a015s")
+script = ExtResource("7_tkww3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=353916677]
+shape = SubResource("CircleShape2D_a7vka")
+
+[node name="Victory" type="Sprite2D" parent="." unique_id=1236759080]
+visible = false
+position = Vector2(0, -37.999992)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("9_as8ss")
+
+[connection signal="body_entered" from="." to="." method="OnBodyEntered"]

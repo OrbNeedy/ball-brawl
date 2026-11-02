@@ -1,0 +1,11 @@
+[gd_resource type="Resource" format=3 uid="uid://cwtdhss2fic22"]
+
+[ext_resource type="Script" uid="uid://bd85pgwol0cq7" path="res://Resources/DamageStyles/TouhouDamageStyle.cs" id="1_mnep5"]
+[ext_resource type="AudioStream" uid="uid://csmsbavvn03ql" path="res://assets/SoundEffects/Dio/S_PL_retire_01.wav" id="1_uspdv"]
+[ext_resource type="AudioStream" uid="uid://cjld16em2slmr" path="res://assets/SoundEffects/Touhou/TouhouBossDamage.wav" id="1_ykwas"]
+
+[resource]
+script = ExtResource("1_mnep5")
+DamageFrames = 2
+DamageSound = ExtResource("1_ykwas")
+DeathSound = ExtResource("1_uspdv")

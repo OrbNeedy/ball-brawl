@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://c1wfvq3geljeh"]
+
+[ext_resource type="Texture2D" uid="uid://dppkhd1tvomee" path="res://assets/Weapons/SevenProngedSword.png" id="1_1llkh"]
+[ext_resource type="Script" uid="uid://ctdrf0yvjlru2" path="res://Projectiles/Stands/SusanoO.cs" id="1_46ls8"]
+[ext_resource type="Texture2D" uid="uid://cltquiv0jlilf" path="res://assets/Persona/PST_002.TMX_1_edited.png" id="2_46ls8"]
+[ext_resource type="AudioStream" uid="uid://dcourkrbipnan" path="res://assets/SoundEffects/Persona 3/Cut.wav" id="2_iei3c"]
+[ext_resource type="Script" uid="uid://deb4vsu7xgmm" path="res://Resources/DamageData/DamageData.cs" id="3_nq474"]
+
+[sub_resource type="Resource" id="Resource_glxyl"]
+script = ExtResource("3_nq474")
+BaseDamage = 3
+IFrames = 0.0
+Almighty = true
+metadata/_custom_type_script = "uid://deb4vsu7xgmm"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r5jrp"]
+size = Vector2(36, 156)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2hrmr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_46ls8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r5jrp"]
+radius = 40.0
+
+[node name="Susan-o" type="Area2D" unique_id=484760923 node_paths=PackedStringArray("Sword", "body")]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_46ls8")
+Sword = NodePath("SwordArea")
+HitSound = ExtResource("2_iei3c")
+StandOut = true
+Range = 500.0
+HitsLeft = 9999
+Damage = SubResource("Resource_glxyl")
+MaxHitCooldown = 0.4
+TimeLeft = 9999.0
+body = NodePath("AnimatedSprite2D")
+
+[node name="SwordArea" type="Area2D" parent="." unique_id=1996893013]
+collision_layer = 4
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="SwordArea" unique_id=1145920960]
+position = Vector2(1.9371491e-06, -77.00001)
+rotation = 1.0471976
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_1llkh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SwordArea" unique_id=1894409935]
+position = Vector2(0, -77)
+shape = SubResource("RectangleShape2D_r5jrp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=623908961]
+scale = Vector2(1.3, 1.3)
+sprite_frames = SubResource("SpriteFrames_2hrmr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1146038949]
+shape = SubResource("CircleShape2D_r5jrp")
+
+[connection signal="body_entered" from="." to="." method="BodyCollision"]
+[connection signal="body_exited" from="." to="." method="BodyExit"]
+[connection signal="body_entered" from="SwordArea" to="." method="BodyCollision"]
+[connection signal="body_exited" from="SwordArea" to="." method="BodyExit"]

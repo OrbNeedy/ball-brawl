@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://c0xk0rwoxoxl5"]
+
+[ext_resource type="Script" uid="uid://c4721fuhma6nd" path="res://UIElements/Lifebar.cs" id="1_i4tnp"]
+[ext_resource type="Texture2D" uid="uid://djh4d8cgbhpok" path="res://assets/UI/LifeBar.png" id="1_p6a8b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7anh3"]
+atlas = ExtResource("1_p6a8b")
+region = Rect2(0, 24, 140, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ut8w"]
+atlas = ExtResource("1_p6a8b")
+region = Rect2(0, 48, 140, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p6a8b"]
+atlas = ExtResource("1_p6a8b")
+region = Rect2(0, 0, 140, 24)
+
+[sub_resource type="LabelSettings" id="LabelSettings_i4tnp"]
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
+[node name="TexturedProgressBar" type="TextureProgressBar" unique_id=738457373 node_paths=PackedStringArray("NameLabel", "LifeLabel")]
+texture_filter = 1
+offset_left = -70.0
+offset_top = -8.0
+offset_right = 70.0
+offset_bottom = 16.0
+value = 100.0
+texture_under = SubResource("AtlasTexture_7anh3")
+texture_over = SubResource("AtlasTexture_0ut8w")
+texture_progress = SubResource("AtlasTexture_p6a8b")
+script = ExtResource("1_i4tnp")
+NameLabel = NodePath("Label")
+LifeLabel = NodePath("Label2")
+
+[node name="Label" type="Label" parent="." unique_id=876527455]
+layout_mode = 0
+offset_left = 24.0
+offset_top = -24.0
+offset_right = 120.0
+offset_bottom = -1.0
+text = "Name"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="." unique_id=720336654]
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 24.0
+text = "100"
+label_settings = SubResource("LabelSettings_i4tnp")
+horizontal_alignment = 1
+vertical_alignment = 1

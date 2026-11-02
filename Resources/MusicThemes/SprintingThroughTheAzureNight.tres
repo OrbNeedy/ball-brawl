@@ -1,0 +1,11 @@
+[gd_resource type="Resource" format=3 uid="uid://b20k1qv75ptqp"]
+
+[ext_resource type="Script" uid="uid://dvbj6o5xkcyb0" path="res://Resources/MusicThemes/MusicTheme.cs" id="1_abbob"]
+[ext_resource type="AudioStream" uid="uid://hny34rk73q5b" path="res://assets/BackgroundMusic/Sprinting through the Azure Night [Gunvolt Theme] - Azure Striker Gunvolt 1, 2 & 3 │Remix.mp3" id="1_j4hsp"]
+
+[resource]
+script = ExtResource("1_abbob")
+Theme = ExtResource("1_j4hsp")
+SongName = "Sprinting Through the Azure Night"
+AuthorName = "DouglasSkatiing"
+Volume = 0.4

@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://cyxxtddm6l8e7"]
+
+[ext_resource type="Script" uid="uid://j4p173hfam0t" path="res://UIElements/Backgrounds/Space.cs" id="1_acsv1"]
+[ext_resource type="Texture2D" uid="uid://bk56mp8qxu0pc" path="res://assets/Misc/FarStars.png" id="1_qhxqd"]
+[ext_resource type="Texture2D" uid="uid://d3g2mm1qpr6bf" path="res://assets/Misc/CloseStars.png" id="2_t67xx"]
+
+[node name="SpaceBackground" type="Control" unique_id=387578324 node_paths=PackedStringArray("FarStars", "CloseStars")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_acsv1")
+FarStars = NodePath("Far")
+CloseStars = NodePath("Close")
+MinChangeRotation = -1.0
+MaxChangeRotation = 1.0
+MinChangeSpeed = -200.0
+MaxChangeSpeed = 200.0
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=101368885]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.1, 0.1, 0.1, 1)
+
+[node name="Far" type="Parallax2D" parent="." unique_id=1324264998]
+scroll_scale = Vector2(1.8, 1.8)
+repeat_size = Vector2(2304, 1296)
+
+[node name="TextureRect" type="TextureRect" parent="Far" unique_id=551647918]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_qhxqd")
+
+[node name="Close" type="Parallax2D" parent="." unique_id=1687005323]
+scroll_scale = Vector2(0.8, 0.8)
+repeat_size = Vector2(2304, 1296)
+
+[node name="TextureRect" type="TextureRect" parent="Close" unique_id=615872168]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_t67xx")

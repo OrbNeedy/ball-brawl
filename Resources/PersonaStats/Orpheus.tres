@@ -1,0 +1,13 @@
+[gd_resource type="Resource" format=3 uid="uid://dkojtlkguig3w"]
+
+[ext_resource type="Script" uid="uid://g1q8flp0lkiv" path="res://Resources/PersonaStats/PersonaData.cs" id="1_b6yni"]
+[ext_resource type="PackedScene" uid="uid://ddmgg2jlwl3q8" path="res://Projectiles/Stands/Orpheus.tscn" id="1_xc50j"]
+
+[resource]
+script = ExtResource("1_b6yni")
+Persona = ExtResource("1_xc50j")
+Power = 3
+ContactDamage = 1
+ProjectileDamageReduction = 1
+SpeedGainModification = 0.8
+MaxSpeedGainModification = 20.0

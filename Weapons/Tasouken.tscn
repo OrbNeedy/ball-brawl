@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://clw76k4llekd2"]
+
+[ext_resource type="Texture2D" uid="uid://duf1yafx646it" path="res://assets/Weapons/Le02Tasouken.png" id="1_2cwuh"]
+[ext_resource type="Script" uid="uid://dprsy2iq5eu4k" path="res://Weapons/Tasouken.cs" id="1_40n43"]
+[ext_resource type="PackedScene" uid="uid://b6lipfqax0kgp" path="res://Projectiles/Cut.tscn" id="2_bcuna"]
+[ext_resource type="Script" uid="uid://deb4vsu7xgmm" path="res://Resources/DamageData/DamageData.cs" id="3_gx16l"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_40n43"]
+friction = 0.0
+
+[sub_resource type="Resource" id="Resource_gx16l"]
+script = ExtResource("3_gx16l")
+BaseDamage = 5
+metadata/_custom_type_script = "uid://deb4vsu7xgmm"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_40n43"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2cwuh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bcuna"]
+size = Vector2(6, 108.5)
+
+[node name="Tasouken" type="RigidBody2D" unique_id=425615914]
+collision_layer = 8
+collision_mask = 10
+mass = 0.001
+physics_material_override = SubResource("PhysicsMaterial_40n43")
+gravity_scale = 0.0
+center_of_mass_mode = 1
+center_of_mass = Vector2(0, 20)
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_40n43")
+cut = ExtResource("2_bcuna")
+Damage = SubResource("Resource_gx16l")
+ClashType = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1550632652]
+rotation = -2.5743606
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_40n43")
+offset = Vector2(15, 0)
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1798316867]
+position = Vector2(0, -1.75)
+shape = SubResource("RectangleShape2D_bcuna")
+
+[connection signal="body_entered" from="." to="." method="OnBodyEntered"]

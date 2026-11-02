@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://1fb0fb8kcxft"]
+
+[ext_resource type="Script" uid="uid://g5bl5dfhkpad" path="res://Scripts/TempSoundEffect.cs" id="1_wj76q"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" unique_id=2033061796]
+autoplay = true
+max_polyphony = 8
+script = ExtResource("1_wj76q")

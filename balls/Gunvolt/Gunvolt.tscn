@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://dnpwqdqwqgwp5"]
+
+[ext_resource type="Texture2D" uid="uid://cqq5qn64qdrt" path="res://assets/CharacterBalls/Gunvolt/Volt1_edited.png" id="1_1oyt3"]
+[ext_resource type="PhysicsMaterial" uid="uid://cpy03a25nm6av" path="res://Resources/HBBMaterial.tres" id="1_57jx4"]
+[ext_resource type="Script" uid="uid://cs47o55my8c02" path="res://balls/Gunvolt/Gunvolt.cs" id="1_jb5sa"]
+[ext_resource type="Texture2D" uid="uid://csk1kfhc75dff" path="res://assets/CharacterBalls/Gunvolt/Volt3_edited.png" id="1_y2y2x"]
+[ext_resource type="PackedScene" uid="uid://c73ya7bves027" path="res://Projectiles/Flashfield.tscn" id="2_ahwom"]
+[ext_resource type="Texture2D" uid="uid://cqi4hkfv0foyj" path="res://assets/CharacterBalls/Gunvolt/Volt2_edited.png" id="3_jb5sa"]
+[ext_resource type="Resource" uid="uid://dmswyhr0wye6v" path="res://Resources/DamageStyles/GVDamageStyle.tres" id="3_n0w8b"]
+[ext_resource type="AudioStream" uid="uid://2loy645g1j47" path="res://assets/SoundEffects/Gunvolt/Dart.wav" id="3_r1nhh"]
+[ext_resource type="Resource" uid="uid://b20k1qv75ptqp" path="res://Resources/MusicThemes/SprintingThroughTheAzureNight.tres" id="4_5gyqj"]
+[ext_resource type="PackedScene" uid="uid://u4lq3x0eeo4f" path="res://Projectiles/Dart.tscn" id="4_egack"]
+[ext_resource type="AudioStream" uid="uid://cc6c4fbsgiuuk" path="res://assets/SoundEffects/Gunvolt/DartHits.wav" id="4_jkhhv"]
+[ext_resource type="PackedScene" uid="uid://byhvkuyv230lj" path="res://Projectiles/GunvoltElectricity.tscn" id="5_1uqok"]
+[ext_resource type="Texture2D" uid="uid://cimtt63eu2e2w" path="res://assets/Misc/Victory.png" id="6_hf7of"]
+[ext_resource type="Script" uid="uid://deb4vsu7xgmm" path="res://Resources/DamageData/DamageData.cs" id="8_kv2bp"]
+[ext_resource type="Texture2D" uid="uid://dcnjohp2sq5ht" path="res://assets/Gunvolt/DartLeader.png" id="10_wd4i5"]
+[ext_resource type="PackedScene" uid="uid://b7iqthahfbccv" path="res://DynamicObjects/Reticle.tscn" id="13_lw3hd"]
+
+[sub_resource type="Resource" id="Resource_8aikd"]
+script = ExtResource("8_kv2bp")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xsjv5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_y2y2x")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_1oyt3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jb5sa")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_1oyt3")
+}],
+"loop": true,
+"name": &"victory",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1oyt3"]
+radius = 30.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wd4i5"]
+radius = 800.0
+
+[node name="Gunvolt" type="RigidBody2D" unique_id=1955523439 node_paths=PackedStringArray("Gun", "Body", "Crown", "Reticle")]
+collision_layer = 2
+collision_mask = 11
+physics_material_override = ExtResource("1_57jx4")
+gravity_scale = 1.5
+contact_monitor = true
+max_contacts_reported = 2
+script = ExtResource("1_jb5sa")
+DartShoot = ExtResource("3_r1nhh")
+BallTag = ExtResource("4_jkhhv")
+FlashfieldScene = ExtResource("2_ahwom")
+DartScene = ExtResource("4_egack")
+GVLineScene = ExtResource("5_1uqok")
+Gun = NodePath("DartLeader")
+MaxDartCooldown = 6.0
+Body = NodePath("AnimatedSprite2D")
+Crown = NodePath("Victory")
+Reticle = NodePath("Reticle")
+SpeedGain = 0.6
+MaxSpeedGain = 40.0
+Power = 4
+Color = Color(0, 1, 0.9333334, 1)
+BallName = "Gunvolt"
+DamageEffectsType = ExtResource("3_n0w8b")
+BackgroundTheme = ExtResource("4_5gyqj")
+DamagedType = 1
+ContactDamage = SubResource("Resource_8aikd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1925597084]
+scale = Vector2(0.85, 0.85)
+sprite_frames = SubResource("SpriteFrames_xsjv5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1778032672]
+shape = SubResource("CircleShape2D_1oyt3")
+
+[node name="Victory" type="Sprite2D" parent="." unique_id=1062395629]
+visible = false
+position = Vector2(-24, -24.000002)
+rotation = -0.7853982
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("6_hf7of")
+
+[node name="DartLeader" type="Sprite2D" parent="." unique_id=986920423]
+texture = ExtResource("10_wd4i5")
+offset = Vector2(38, 0)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=196238673]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=923043488]
+shape = SubResource("CircleShape2D_wd4i5")
+
+[node name="Reticle" parent="." unique_id=1812006893 instance=ExtResource("13_lw3hd")]
+
+[connection signal="body_entered" from="." to="." method="OnBodyEntered"]
+[connection signal="body_entered" from="Area2D" to="." method="AddDetectedBall"]
+[connection signal="body_exited" from="Area2D" to="." method="RemoveDetectedBall"]

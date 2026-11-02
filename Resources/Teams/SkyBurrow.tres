@@ -1,0 +1,11 @@
+[gd_resource type="Resource" format=3 uid="uid://bhiwnpr0qgco1"]
+
+[ext_resource type="PackedScene" uid="uid://boubdq6ms7jv8" path="res://balls/Lenen/Yaorochi.tscn" id="1_jvx58"]
+[ext_resource type="Script" uid="uid://bid6x8uroegjt" path="res://Resources/Teams/TeamData.cs" id="1_wwahq"]
+
+[resource]
+script = ExtResource("1_wwahq")
+TeamName = "Sky Burrow"
+TeamColor = Color(0.91434526, 0.21482974, 0.7711534, 1)
+SpawnDistance = 40.0
+Balls = Array[PackedScene]([ExtResource("1_jvx58"), ExtResource("1_jvx58"), ExtResource("1_jvx58")])

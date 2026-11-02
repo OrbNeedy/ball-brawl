@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://u4lq3x0eeo4f"]
+
+[ext_resource type="Script" uid="uid://c8ewgp85pnfkd" path="res://Projectiles/Dart.cs" id="1_ntgle"]
+[ext_resource type="Texture2D" uid="uid://bhmrqb51urr4n" path="res://assets/Gunvolt/Bolt.png" id="1_wqtsu"]
+[ext_resource type="Script" uid="uid://deb4vsu7xgmm" path="res://Resources/DamageData/DamageData.cs" id="2_2k4g8"]
+
+[sub_resource type="Resource" id="Resource_xwygl"]
+script = ExtResource("2_2k4g8")
+IFrames = 0.0
+metadata/_custom_type_script = "uid://deb4vsu7xgmm"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ntgle"]
+atlas = ExtResource("1_wqtsu")
+region = Rect2(0, 0, 36, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2k4g8"]
+atlas = ExtResource("1_wqtsu")
+region = Rect2(36, 0, 36, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xwygl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ntgle")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2k4g8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 14.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wqtsu"]
+size = Vector2(28, 6)
+
+[node name="Dart" type="Area2D" unique_id=704394478 node_paths=PackedStringArray("body")]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_ntgle")
+Damage = SubResource("Resource_xwygl")
+TimeLeft = 8.0
+body = NodePath("AnimatedSprite2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=308071516]
+texture_filter = 1
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_xwygl")
+autoplay = "default"
+frame_progress = 0.27200094
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1295463825]
+position = Vector2(8, -1)
+shape = SubResource("RectangleShape2D_wqtsu")
+
+[connection signal="body_entered" from="." to="." method="BodyCollision"]
+[connection signal="body_exited" from="." to="." method="BodyExit"]

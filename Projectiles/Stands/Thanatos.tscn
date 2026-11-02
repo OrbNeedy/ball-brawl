@@ -1,0 +1,133 @@
+[gd_scene format=3 uid="uid://lj3drasxsnt6"]
+
+[ext_resource type="Script" uid="uid://daharwuxlkueh" path="res://Projectiles/Stands/Thanatos.cs" id="1_bq0kl"]
+[ext_resource type="Texture2D" uid="uid://cmabkfdguxm6e" path="res://assets/Persona/PST_05A.TMX_1_edited.png" id="1_tinbs"]
+[ext_resource type="Script" uid="uid://deb4vsu7xgmm" path="res://Resources/DamageData/DamageData.cs" id="2_11lqf"]
+[ext_resource type="Texture2D" uid="uid://dxyuudgljx7l6" path="res://assets/BulletEffect/Bullet 24x24 Free  Part 1C.png" id="2_pj8lo"]
+[ext_resource type="Script" uid="uid://qp6hjhv6tlrw" path="res://Scripts/FunctioningAnimatedSprite.cs" id="2_xi2ec"]
+[ext_resource type="PackedScene" uid="uid://hgs4i1nmsyug" path="res://Projectiles/BraveBlade.tscn" id="5_11lqf"]
+
+[sub_resource type="Resource" id="Resource_2w57d"]
+script = ExtResource("2_11lqf")
+BaseDamage = 3
+IFrames = 0.0
+metadata/_custom_type_script = "uid://deb4vsu7xgmm"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11lqf"]
+atlas = ExtResource("2_pj8lo")
+region = Rect2(384, 288, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2w57d"]
+atlas = ExtResource("2_pj8lo")
+region = Rect2(408, 288, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ko075"]
+atlas = ExtResource("2_pj8lo")
+region = Rect2(432, 288, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8q2t6"]
+atlas = ExtResource("2_pj8lo")
+region = Rect2(456, 288, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rb7bs"]
+atlas = ExtResource("2_pj8lo")
+region = Rect2(480, 288, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_omlmj"]
+atlas = ExtResource("2_pj8lo")
+region = Rect2(504, 288, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qr7j6"]
+atlas = ExtResource("2_pj8lo")
+region = Rect2(528, 288, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u8qln"]
+atlas = ExtResource("2_pj8lo")
+region = Rect2(552, 288, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xi2ec"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_11lqf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2w57d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ko075")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8q2t6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rb7bs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_omlmj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qr7j6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u8qln")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bq0kl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_tinbs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tinbs"]
+radius = 32.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_11lqf"]
+radius = 208.0
+
+[node name="Thanatos" type="Area2D" unique_id=1648670102 node_paths=PackedStringArray("body")]
+collision_layer = 4
+collision_mask = 10
+script = ExtResource("1_bq0kl")
+SlashScene = ExtResource("5_11lqf")
+BraveBladeUse = 1
+HitsLeft = 9999
+Damage = SubResource("Resource_2w57d")
+MaxHitCooldown = 0.6
+TimeLeft = 9999.0
+body = NodePath("AnimatedSprite2D")
+
+[node name="Aura" type="AnimatedSprite2D" parent="." unique_id=131331937]
+modulate = Color(0.5019608, 0.5019608, 0.5019608, 0.30588236)
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_xi2ec")
+autoplay = "default"
+frame_progress = 0.2554066
+script = ExtResource("2_xi2ec")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1887184262]
+sprite_frames = SubResource("SpriteFrames_bq0kl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1308475141]
+shape = SubResource("CircleShape2D_tinbs")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=131963834]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=171481880]
+shape = SubResource("CircleShape2D_11lqf")
+
+[connection signal="body_entered" from="." to="." method="BodyCollision"]
+[connection signal="body_exited" from="." to="." method="BodyExit"]
+[connection signal="body_entered" from="Area2D" to="." method="DetectBall"]
+[connection signal="body_exited" from="Area2D" to="." method="DetectExit"]

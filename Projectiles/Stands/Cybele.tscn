@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://dl1ekf31xqhei"]
+
+[ext_resource type="Script" uid="uid://y8ltmu4h76sm" path="res://Projectiles/Stands/Cybele.cs" id="1_gmtdo"]
+[ext_resource type="Texture2D" uid="uid://dfjqxaocl5her" path="res://assets/Persona/PST_015.TMX_1_edited(1).png" id="1_ux7ir"]
+[ext_resource type="PackedScene" uid="uid://hfb48imjggqb" path="res://Particles/Healing.tscn" id="2_rydq7"]
+[ext_resource type="AudioStream" uid="uid://chdy3dcv8r7pn" path="res://assets/SoundEffects/Persona 3/Healing.wav" id="2_yt0lx"]
+[ext_resource type="Script" uid="uid://deb4vsu7xgmm" path="res://Resources/DamageData/DamageData.cs" id="4_olcmw"]
+
+[sub_resource type="Resource" id="Resource_ienvj"]
+script = ExtResource("4_olcmw")
+BaseDamage = 2
+IFrames = 0.0
+metadata/_custom_type_script = "uid://deb4vsu7xgmm"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gmtdo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ux7ir")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ux7ir"]
+radius = 30.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gmtdo"]
+radius = 128.0
+
+[node name="Cybele" type="Area2D" unique_id=1302079420 node_paths=PackedStringArray("body")]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_gmtdo")
+HealingSound = ExtResource("2_yt0lx")
+healingParticles = ExtResource("2_rydq7")
+HealSelfCooldown = 2.0
+HitsLeft = 9999
+Damage = SubResource("Resource_ienvj")
+MaxHitCooldown = 0.4
+TimeLeft = 9999.0
+body = NodePath("AnimatedSprite2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=379317527]
+scale = Vector2(1.2, 1.2)
+sprite_frames = SubResource("SpriteFrames_gmtdo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=402149456]
+shape = SubResource("CircleShape2D_ux7ir")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=646221900]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1756402018]
+shape = SubResource("CircleShape2D_gmtdo")
+
+[connection signal="body_entered" from="." to="." method="BodyCollision"]
+[connection signal="body_exited" from="." to="." method="BodyExit"]
+[connection signal="body_entered" from="Area2D" to="." method="OnDetectBall"]
+[connection signal="body_exited" from="Area2D" to="." method="OnBallExitDetection"]

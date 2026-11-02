@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://bii4nkiirau0e"]
+
+[ext_resource type="Script" uid="uid://ca6q5undb4f5w" path="res://Particles/SelfDeletingParticles.cs" id="1_1oju3"]
+[ext_resource type="Texture2D" uid="uid://5brbyoolc5lw" path="res://assets/Sheets/Particles.png" id="1_romt8"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_iv7ku"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_imdhl"]
+atlas = ExtResource("1_romt8")
+region = Rect2(0, 0, 7, 7)
+
+[sub_resource type="Gradient" id="Gradient_romt8"]
+offsets = PackedFloat32Array(0.82019705, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_iv7ku"]
+colors = PackedColorArray(1, 1, 0.9, 1, 0.96, 0.9312, 0.09600002, 1)
+
+[node name="Holy" type="CPUParticles2D" unique_id=877251015]
+material = SubResource("CanvasItemMaterial_iv7ku")
+amount = 32
+texture = SubResource("AtlasTexture_imdhl")
+lifetime = 3.5
+emission_shape = 3
+emission_rect_extents = Vector2(96, 2)
+direction = Vector2(0, -1)
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 20.0
+angle_min = -720.0
+angle_max = 720.0
+color_ramp = SubResource("Gradient_romt8")
+color_initial_ramp = SubResource("Gradient_iv7ku")
+script = ExtResource("1_1oju3")
+TimeLeft = 10.0
+
+[connection signal="finished" from="." to="." method="ParticleFinished"]

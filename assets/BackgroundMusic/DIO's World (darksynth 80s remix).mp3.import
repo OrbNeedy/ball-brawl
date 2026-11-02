@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://8wjwfqmwdohp"
+path="res://.godot/imported/DIO's World (darksynth 80s remix).mp3-48c84b0819f1e1053004d150d27c7c3a.mp3str"
+
+[deps]
+
+source_file="res://assets/BackgroundMusic/DIO's World (darksynth 80s remix).mp3"
+dest_files=["res://.godot/imported/DIO's World (darksynth 80s remix).mp3-48c84b0819f1e1053004d150d27c7c3a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

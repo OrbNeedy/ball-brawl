@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://dpmwayc01ajda"]
+
+[ext_resource type="Script" uid="uid://vtf40qyasoqn" path="res://balls/Touhou/Sakuya.cs" id="1_jxkbq"]
+[ext_resource type="PhysicsMaterial" uid="uid://cpy03a25nm6av" path="res://Resources/HBBMaterial.tres" id="1_tfhex"]
+[ext_resource type="Shader" uid="uid://3ah0cpdanjjn" path="res://Resources/Shaders/Inverted.tres" id="3_5wgyw"]
+[ext_resource type="PackedScene" uid="uid://dvotd6s5ur7os" path="res://Projectiles/Knife.tscn" id="3_ghhay"]
+[ext_resource type="Script" uid="uid://bvwti3t8udfyp" path="res://balls/AvoidSpriteRotation.cs" id="3_ositd"]
+[ext_resource type="Texture2D" uid="uid://c8f2rn12ea4l0" path="res://assets/CharacterBalls/Sakuya/Sakuya.png" id="4_ghhay"]
+[ext_resource type="AudioStream" uid="uid://vw4ilwx5v8uo" path="res://assets/SoundEffects/Touhou/SakuyaTimeStop.wav" id="4_l1n04"]
+[ext_resource type="Resource" uid="uid://m8rcreqm38v3" path="res://Resources/DamageStyles/TouhouDamageStyle.tres" id="4_n61g3"]
+[ext_resource type="Texture2D" uid="uid://ceq1bntfnxd4q" path="res://assets/CharacterBalls/Sakuya/Sakuya4.png" id="4_ttlj5"]
+[ext_resource type="AudioStream" uid="uid://g5rb6dndufsj" path="res://assets/SoundEffects/Touhou/SakuyaTeleport.wav" id="5_w36qq"]
+[ext_resource type="Texture2D" uid="uid://crlerctfmpmtg" path="res://assets/CharacterBalls/Sakuya/Sakuya2.png" id="6_vytdh"]
+[ext_resource type="Texture2D" uid="uid://b6t6ke731r1er" path="res://assets/CharacterBalls/Sakuya/Sakuya3.png" id="7_n61g3"]
+[ext_resource type="Resource" uid="uid://x5bwjpv5n5cf" path="res://Resources/MusicThemes/TheMaidAndThePocketWatchOfBlood.tres" id="7_w36qq"]
+[ext_resource type="Texture2D" uid="uid://cimtt63eu2e2w" path="res://assets/Misc/Victory.png" id="9_vytdh"]
+[ext_resource type="Script" uid="uid://deb4vsu7xgmm" path="res://Resources/DamageData/DamageData.cs" id="9_y8c0y"]
+[ext_resource type="PackedScene" uid="uid://b7iqthahfbccv" path="res://DynamicObjects/Reticle.tscn" id="15_667c5"]
+
+[sub_resource type="Resource" id="Resource_2bbw5"]
+script = ExtResource("9_y8c0y")
+metadata/_custom_type_script = "uid://deb4vsu7xgmm"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jxkbq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ttlj5")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ghhay")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_vytdh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_n61g3")
+}],
+"loop": true,
+"name": &"victory",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tb8xq"]
+radius = 24.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ghhay"]
+radius = 296.0
+
+[node name="Sakuya" type="RigidBody2D" unique_id=432794834 node_paths=PackedStringArray("Body", "Crown", "Reticle")]
+collision_layer = 2
+collision_mask = 11
+physics_material_override = ExtResource("1_tfhex")
+gravity_scale = 0.0
+contact_monitor = true
+max_contacts_reported = 2
+script = ExtResource("1_jxkbq")
+TimeStopShader = ExtResource("3_5wgyw")
+KnifeScene = ExtResource("3_ghhay")
+MaxAttack = 4
+MaxAttackCooldown = 0.04
+MaxTimeStopDuration = 2.5
+TimeStopSoundEffect = ExtResource("4_l1n04")
+DodgeSoundEffect = ExtResource("5_w36qq")
+Body = NodePath("AnimatedSprite2D")
+Crown = NodePath("Victory")
+Reticle = NodePath("Reticle")
+SpeedGain = 0.25
+MaxSpeedGain = 10.0
+Power = 1
+Color = Color(0.32941177, 0.5568628, 0.92156863, 1)
+BallName = "Sakuya"
+DamageEffectsType = ExtResource("4_n61g3")
+BackgroundTheme = ExtResource("7_w36qq")
+ContactDamage = SubResource("Resource_2bbw5")
+MaxTimeResistance = 2.5
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1502820492]
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_jxkbq")
+script = ExtResource("3_ositd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1190942884]
+shape = SubResource("CircleShape2D_tb8xq")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=540360198]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=293978039]
+shape = SubResource("CircleShape2D_ghhay")
+
+[node name="Victory" type="Sprite2D" parent="." unique_id=1054757198]
+visible = false
+position = Vector2(0, -24)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("9_vytdh")
+
+[node name="Reticle" parent="." unique_id=1812006893 instance=ExtResource("15_667c5")]
+
+[connection signal="body_entered" from="." to="." method="OnBodyEntered"]
+[connection signal="body_entered" from="Area2D" to="." method="AddDetectedBall"]
+[connection signal="body_exited" from="Area2D" to="." method="RemoveDetectedBall"]

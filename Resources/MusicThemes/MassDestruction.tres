@@ -1,0 +1,12 @@
+[gd_resource type="Resource" format=3 uid="uid://cxnxn7rg8hs6g"]
+
+[ext_resource type="AudioStream" uid="uid://b0h8ug7o3vysa" path="res://assets/BackgroundMusic/Mass Destruction - Persona Live Band.mp3" id="1_yv7d2"]
+[ext_resource type="Script" uid="uid://dvbj6o5xkcyb0" path="res://Resources/MusicThemes/MusicTheme.cs" id="2_mowbv"]
+
+[resource]
+script = ExtResource("2_mowbv")
+Theme = ExtResource("1_yv7d2")
+SongName = "Mass Destruction"
+AuthorName = "Tetsuya Kobayashi"
+StartingTime = 0.6
+Volume = 0.3

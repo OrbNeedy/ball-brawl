@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://dupwpbbws7v2t"]
+
+[ext_resource type="Script" uid="uid://buhghq4nsaktx" path="res://Weapons/Sword.cs" id="1_2jg7d"]
+[ext_resource type="Texture2D" uid="uid://cu3sdx780fowx" path="res://assets/HBB Asset Pack/Weapons/AlSword.png" id="1_huonb"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2jg7d"]
+friction = 0.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ngcja"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_huonb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_huonb"]
+size = Vector2(12.802748, 75.40766)
+
+[node name="Sword" type="RigidBody2D" unique_id=428085339]
+collision_layer = 8
+collision_mask = 10
+mass = 0.001
+physics_material_override = SubResource("PhysicsMaterial_2jg7d")
+gravity_scale = 0.0
+center_of_mass_mode = 1
+center_of_mass = Vector2(-18, 22)
+script = ExtResource("1_2jg7d")
+MaxSpeedDamage = 6
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=349347909]
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_ngcja")
+offset = Vector2(-5, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1331831878]
+position = Vector2(1.7360488, -1.3019283)
+rotation = 0.6981317
+scale = Vector2(0.99999964, 0.99999964)
+shape = SubResource("RectangleShape2D_huonb")
+
+[connection signal="body_entered" from="." to="." method="OnBodyEntered"]
