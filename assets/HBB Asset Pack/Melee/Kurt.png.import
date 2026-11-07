@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://mebxsuo1d40y"
-path="res://.godot/imported/Kurt.png-990d7571760c97e309ff4a1e3f96e9bb.ctex"
+path="res://.godot/imported/Kurt.png-6597e6c902d751d4d55f2c7db22ffad8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/HBB Asset Pack/Melee/Kurt.png"
-dest_files=["res://.godot/imported/Kurt.png-990d7571760c97e309ff4a1e3f96e9bb.ctex"]
+source_file="res://Assets/HBB Asset Pack/Melee/Kurt.png"
+dest_files=["res://.godot/imported/Kurt.png-6597e6c902d751d4d55f2c7db22ffad8.ctex"]
 
 [params]
 

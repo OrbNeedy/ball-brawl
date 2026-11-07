@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dptju3wr0ptct"
-path="res://.godot/imported/Evoker Shot Sound Effect - Persona 3.wav-1a285d5e2ecd7fe279e1998d475b2996.sample"
+path="res://.godot/imported/Evoker Shot Sound Effect - Persona 3.wav-6783b4d5cd44a783a8f8cd4b40fc7f9e.sample"
 
 [deps]
 
-source_file="res://assets/SoundEffects/Persona 3/Evoker Shot Sound Effect - Persona 3.wav"
-dest_files=["res://.godot/imported/Evoker Shot Sound Effect - Persona 3.wav-1a285d5e2ecd7fe279e1998d475b2996.sample"]
+source_file="res://Assets/SoundEffects/Persona 3/Evoker Shot Sound Effect - Persona 3.wav"
+dest_files=["res://.godot/imported/Evoker Shot Sound Effect - Persona 3.wav-6783b4d5cd44a783a8f8cd4b40fc7f9e.sample"]
 
 [params]
 

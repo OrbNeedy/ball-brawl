@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://geggwc0d43u3"
-path="res://.godot/imported/LenenBarrierBreak.wav-6a46e12adff7d0338cd6c05160c9c399.sample"
+path="res://.godot/imported/LenenBarrierBreak.wav-82c02aaab8cb8a6c27abc29399c12145.sample"
 
 [deps]
 
-source_file="res://assets/SoundEffects/Lenen/LenenBarrierBreak.wav"
-dest_files=["res://.godot/imported/LenenBarrierBreak.wav-6a46e12adff7d0338cd6c05160c9c399.sample"]
+source_file="res://Assets/SoundEffects/Lenen/LenenBarrierBreak.wav"
+dest_files=["res://.godot/imported/LenenBarrierBreak.wav-82c02aaab8cb8a6c27abc29399c12145.sample"]
 
 [params]
 

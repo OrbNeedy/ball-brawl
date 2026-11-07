@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://csk1kfhc75dff"
-path="res://.godot/imported/Volt3_edited.png-75ffafe89a675dac67f82d19118eb308.ctex"
+path="res://.godot/imported/Volt3_edited.png-6f07bbb5c3e6939475309900b0e9c6ed.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/CharacterBalls/Gunvolt/Volt3_edited.png"
-dest_files=["res://.godot/imported/Volt3_edited.png-75ffafe89a675dac67f82d19118eb308.ctex"]
+source_file="res://Assets/CharacterBalls/Gunvolt/Volt3_edited.png"
+dest_files=["res://.godot/imported/Volt3_edited.png-6f07bbb5c3e6939475309900b0e9c6ed.ctex"]
 
 [params]
 

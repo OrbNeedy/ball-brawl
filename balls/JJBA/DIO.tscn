@@ -1,21 +1,21 @@
 [gd_scene format=3 uid="uid://cm4bpidiiakbe"]
 
-[ext_resource type="Texture2D" uid="uid://bx51svhplhsha" path="res://assets/CharacterBalls/DIO/Skullpunch_edited.png" id="1_glk5w"]
+[ext_resource type="Texture2D" uid="uid://bx51svhplhsha" path="res://Assets/CharacterBalls/DIO/Skullpunch_edited.png" id="1_glk5w"]
 [ext_resource type="Script" uid="uid://coomifosobo1d" path="res://balls/JJBA/Dio.cs" id="1_m7tma"]
 [ext_resource type="PhysicsMaterial" uid="uid://cpy03a25nm6av" path="res://Resources/HBBMaterial.tres" id="1_pd0u1"]
-[ext_resource type="Texture2D" uid="uid://da1jx2eu7j6wx" path="res://assets/CharacterBalls/DIO/DioBurandoDesune_edited.png" id="2_4sgin"]
-[ext_resource type="Texture2D" uid="uid://b05spmk63fjct" path="res://assets/CharacterBalls/DIO/FirstInjury_edited.png" id="3_m7tma"]
-[ext_resource type="Texture2D" uid="uid://cygctnn6datck" path="res://assets/CharacterBalls/DIO/Dio_neck_stardust_crusaders_color_v16_025_edited(1).png" id="4_4sgin"]
-[ext_resource type="AudioStream" uid="uid://bth1bckjcafnd" path="res://assets/SoundEffects/Dio/S_PL_styleOn_01.wav" id="4_kiq33"]
-[ext_resource type="AudioStream" uid="uid://dp04tjlhtyj27" path="res://assets/SoundEffects/Dio/S_PL_styleOff_02.wav" id="5_dtfay"]
+[ext_resource type="Texture2D" uid="uid://da1jx2eu7j6wx" path="res://Assets/CharacterBalls/DIO/DioBurandoDesune_edited.png" id="2_4sgin"]
+[ext_resource type="Texture2D" uid="uid://b05spmk63fjct" path="res://Assets/CharacterBalls/DIO/FirstInjury_edited.png" id="3_m7tma"]
+[ext_resource type="Texture2D" uid="uid://cygctnn6datck" path="res://Assets/CharacterBalls/DIO/Dio_neck_stardust_crusaders_color_v16_025_edited(1).png" id="4_4sgin"]
+[ext_resource type="AudioStream" uid="uid://bth1bckjcafnd" path="res://Assets/SoundEffects/Dio/S_PL_styleOn_01.wav" id="4_kiq33"]
+[ext_resource type="AudioStream" uid="uid://dp04tjlhtyj27" path="res://Assets/SoundEffects/Dio/S_PL_styleOff_02.wav" id="5_dtfay"]
 [ext_resource type="PackedScene" uid="uid://dkw5gai28ji2c" path="res://Projectiles/Stands/TheWorld.tscn" id="6_0ddqj"]
 [ext_resource type="PackedScene" uid="uid://1k2ansm3180o" path="res://Weapons/RoadSign.tscn" id="6_2d51f"]
-[ext_resource type="Texture2D" uid="uid://cimtt63eu2e2w" path="res://assets/Misc/Victory.png" id="6_06pin"]
+[ext_resource type="Texture2D" uid="uid://cimtt63eu2e2w" path="res://Assets/Misc/Victory.png" id="6_06pin"]
 [ext_resource type="Resource" uid="uid://cwtdhss2fic22" path="res://Resources/DamageStyles/JJBADamageStyle.tres" id="6_x38pb"]
 [ext_resource type="Script" uid="uid://deb4vsu7xgmm" path="res://Resources/DamageData/DamageData.cs" id="9_kiq33"]
 [ext_resource type="Resource" uid="uid://c2mcaau0jf3b2" path="res://Resources/MusicThemes/DIOsWorld.tres" id="9_lw1y0"]
 [ext_resource type="Script" uid="uid://bvwti3t8udfyp" path="res://balls/AvoidSpriteRotation.cs" id="13_lw1y0"]
-[ext_resource type="Texture2D" uid="uid://dc7xft0o87peb" path="res://assets/CharacterBalls/DIO/TheWorld.png" id="16_kiq33"]
+[ext_resource type="Texture2D" uid="uid://dc7xft0o87peb" path="res://Assets/CharacterBalls/DIO/TheWorld.png" id="16_kiq33"]
 [ext_resource type="PackedScene" uid="uid://b7iqthahfbccv" path="res://DynamicObjects/Reticle.tscn" id="17_dtfay"]
 
 [sub_resource type="Resource" id="Resource_kiq33"]
@@ -60,7 +60,6 @@ radius = 30.0
 collision_layer = 2
 collision_mask = 11
 physics_material_override = ExtResource("1_pd0u1")
-gravity_scale = 0.0
 contact_monitor = true
 max_contacts_reported = 2
 script = ExtResource("1_m7tma")

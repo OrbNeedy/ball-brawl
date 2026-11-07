@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://o6w8e4b5i8ny"
-path="res://.godot/imported/Revive.wav-599dfb0f7c7faa01346fe7a6692d45d9.sample"
+path="res://.godot/imported/Revive.wav-ebb9306c3ef606c3f015ebfe6b4e2c71.sample"
 
 [deps]
 
-source_file="res://assets/SoundEffects/Persona 3/Revive.wav"
-dest_files=["res://.godot/imported/Revive.wav-599dfb0f7c7faa01346fe7a6692d45d9.sample"]
+source_file="res://Assets/SoundEffects/Persona 3/Revive.wav"
+dest_files=["res://.godot/imported/Revive.wav-ebb9306c3ef606c3f015ebfe6b4e2c71.sample"]
 
 [params]
 

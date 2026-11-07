@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dupwpbbws7v2t"]
 
 [ext_resource type="Script" uid="uid://buhghq4nsaktx" path="res://Weapons/Sword.cs" id="1_2jg7d"]
-[ext_resource type="Texture2D" uid="uid://cu3sdx780fowx" path="res://assets/HBB Asset Pack/Weapons/AlSword.png" id="1_huonb"]
+[ext_resource type="Texture2D" uid="uid://cu3sdx780fowx" path="res://Assets/HBB Asset Pack/Weapons/AlSword.png" id="1_huonb"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2jg7d"]
 friction = 0.0

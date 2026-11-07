@@ -5,15 +5,15 @@
 [ext_resource type="Shader" uid="uid://3ah0cpdanjjn" path="res://Resources/Shaders/Inverted.tres" id="3_5wgyw"]
 [ext_resource type="PackedScene" uid="uid://dvotd6s5ur7os" path="res://Projectiles/Knife.tscn" id="3_ghhay"]
 [ext_resource type="Script" uid="uid://bvwti3t8udfyp" path="res://balls/AvoidSpriteRotation.cs" id="3_ositd"]
-[ext_resource type="Texture2D" uid="uid://c8f2rn12ea4l0" path="res://assets/CharacterBalls/Sakuya/Sakuya.png" id="4_ghhay"]
-[ext_resource type="AudioStream" uid="uid://vw4ilwx5v8uo" path="res://assets/SoundEffects/Touhou/SakuyaTimeStop.wav" id="4_l1n04"]
+[ext_resource type="Texture2D" uid="uid://c8f2rn12ea4l0" path="res://Assets/CharacterBalls/Sakuya/Sakuya.png" id="4_ghhay"]
+[ext_resource type="AudioStream" uid="uid://vw4ilwx5v8uo" path="res://Assets/SoundEffects/Touhou/SakuyaTimeStop.wav" id="4_l1n04"]
 [ext_resource type="Resource" uid="uid://m8rcreqm38v3" path="res://Resources/DamageStyles/TouhouDamageStyle.tres" id="4_n61g3"]
-[ext_resource type="Texture2D" uid="uid://ceq1bntfnxd4q" path="res://assets/CharacterBalls/Sakuya/Sakuya4.png" id="4_ttlj5"]
-[ext_resource type="AudioStream" uid="uid://g5rb6dndufsj" path="res://assets/SoundEffects/Touhou/SakuyaTeleport.wav" id="5_w36qq"]
-[ext_resource type="Texture2D" uid="uid://crlerctfmpmtg" path="res://assets/CharacterBalls/Sakuya/Sakuya2.png" id="6_vytdh"]
-[ext_resource type="Texture2D" uid="uid://b6t6ke731r1er" path="res://assets/CharacterBalls/Sakuya/Sakuya3.png" id="7_n61g3"]
+[ext_resource type="Texture2D" uid="uid://ceq1bntfnxd4q" path="res://Assets/CharacterBalls/Sakuya/Sakuya4.png" id="4_ttlj5"]
+[ext_resource type="AudioStream" uid="uid://g5rb6dndufsj" path="res://Assets/SoundEffects/Touhou/SakuyaTeleport.wav" id="5_w36qq"]
+[ext_resource type="Texture2D" uid="uid://crlerctfmpmtg" path="res://Assets/CharacterBalls/Sakuya/Sakuya2.png" id="6_vytdh"]
+[ext_resource type="Texture2D" uid="uid://b6t6ke731r1er" path="res://Assets/CharacterBalls/Sakuya/Sakuya3.png" id="7_n61g3"]
 [ext_resource type="Resource" uid="uid://x5bwjpv5n5cf" path="res://Resources/MusicThemes/TheMaidAndThePocketWatchOfBlood.tres" id="7_w36qq"]
-[ext_resource type="Texture2D" uid="uid://cimtt63eu2e2w" path="res://assets/Misc/Victory.png" id="9_vytdh"]
+[ext_resource type="Texture2D" uid="uid://cimtt63eu2e2w" path="res://Assets/Misc/Victory.png" id="9_vytdh"]
 [ext_resource type="Script" uid="uid://deb4vsu7xgmm" path="res://Resources/DamageData/DamageData.cs" id="9_y8c0y"]
 [ext_resource type="PackedScene" uid="uid://b7iqthahfbccv" path="res://DynamicObjects/Reticle.tscn" id="15_667c5"]
 
@@ -77,6 +77,7 @@ Crown = NodePath("Victory")
 Reticle = NodePath("Reticle")
 SpeedGain = 0.25
 MaxSpeedGain = 10.0
+DefaultGravityScale = 0.0
 Power = 1
 Color = Color(0.32941177, 0.5568628, 0.92156863, 1)
 BallName = "Sakuya"

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bpux7mt86nye2"
-path="res://.godot/imported/Lincoln.png-3363210c07a7f69486941f889d079c93.ctex"
+path="res://.godot/imported/Lincoln.png-a2d57904adf20a74d19a49c7add0c928.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/HBB Asset Pack/Melee/Lincoln.png"
-dest_files=["res://.godot/imported/Lincoln.png-3363210c07a7f69486941f889d079c93.ctex"]
+source_file="res://Assets/HBB Asset Pack/Melee/Lincoln.png"
+dest_files=["res://.godot/imported/Lincoln.png-a2d57904adf20a74d19a49c7add0c928.ctex"]
 
 [params]
 

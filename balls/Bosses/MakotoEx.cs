@@ -109,64 +109,74 @@ public partial class MakotoEx : Ball
         CurrentPersona = persona;
     }
 
-    public override DamageData GetContactDamage(Ball ball)
+    public override DamageModification ModifyContactDamage(Ball ball, DamageData data)
     {
-        DamageData finalDamage = (DamageData)base.GetContactDamage(ball).Duplicate();
+        DamageModification modifier = new();
         PersonaData persona = CurrentPersonaData;
         if (persona != null)
         {
-            finalDamage.BaseDamage += persona.ContactDamage;
+            modifier.CompoundModification(
+                new(-persona.ContactDamageReduction, -persona.ContactDamageMultiplicativeReduction)
+            );
         }
 
-        return finalDamage;
+        return modifier;
     }
 
-    public override int ModifyContactDamage(DamageData data)
+    public override DamageModification ModifyProjectileDamage(Projectile projectile, DamageData data)
     {
-        int finalDamage = base.ModifyContactDamage(data);
+        DamageModification modifier = new();
         PersonaData persona = CurrentPersonaData;
         if (persona != null)
         {
-            finalDamage -= persona.ContactDamageReduction;
+            modifier.CompoundModification(
+                new(-persona.ProjectileDamageReduction, -persona.ProjectileDamageMultiplicativeReduction)
+            );
         }
 
-        return int.Clamp(finalDamage, 0, 9999);
+        return modifier;
     }
 
-    public override int ModifyWeaponDamage(DamageData data, Weapon weapon)
+    public override DamageModification ModifyWeaponDamage(Weapon weapon, DamageData data)
     {
-        int finalDamage = base.ModifyWeaponDamage(data, weapon);
+        DamageModification modifier = new();
         PersonaData persona = CurrentPersonaData;
         if (persona != null)
         {
-            finalDamage -= persona.WeaponDamageReduction;
+            modifier.CompoundModification(
+                new(-persona.WeaponDamageReduction, -persona.WeaponDamageMultiplicativeReduction)
+            );
         }
 
-        return int.Clamp(finalDamage, 0, 9999);
+        return modifier;
     }
 
-    public override int ModifyProjectileDamage(DamageData data)
+    public override DamageModification ModifyAllDamage(DamageData data)
     {
-        int finalDamage = base.ModifyProjectileDamage(data);
+        DamageModification modifier = new();
         PersonaData persona = CurrentPersonaData;
         if (persona != null)
         {
-            finalDamage -= persona.ProjectileDamageReduction;
+            modifier.CompoundModification(
+                new(-persona.DamageReduction, -persona.DamageMultiplicativeReduction)
+            );
         }
 
-        return int.Clamp(finalDamage, 0, 9999);
+        return modifier;
     }
 
-    public override int ModifyAllDamage(DamageData data)
+    public override DamageModification ModifyDealtContactDamage(Ball ball)
     {
-        int finalDamage = base.ModifyAllDamage(data);
+        DamageModification modifier = new();
         PersonaData persona = CurrentPersonaData;
         if (persona != null)
         {
-            finalDamage -= persona.DamageReduction;
+            modifier.CompoundModification(
+                new(persona.ContactDamage, -persona.ContactDamageMultiplicative)
+            );
         }
 
-        return int.Clamp(finalDamage, 0, 9999);
+        return modifier;
     }
 
     public override double GetMaxTimeResistance()

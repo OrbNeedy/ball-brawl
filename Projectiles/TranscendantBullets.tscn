@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://blqn1v2wead1r"]
 
 [ext_resource type="Script" uid="uid://bprui4q5mfmnp" path="res://Projectiles/TranscendantBullets.cs" id="1_ed1l5"]
-[ext_resource type="Texture2D" uid="uid://dkcjr5ep0js2i" path="res://assets/Sheets/b003.png" id="1_ysioc"]
+[ext_resource type="Texture2D" uid="uid://dkcjr5ep0js2i" path="res://Assets/Sheets/b003.png" id="1_ysioc"]
 [ext_resource type="Script" uid="uid://deb4vsu7xgmm" path="res://Resources/DamageData/DamageData.cs" id="2_7y1uc"]
 
 [sub_resource type="Resource" id="Resource_7y1uc"]

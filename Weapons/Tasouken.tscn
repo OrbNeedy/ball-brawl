@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://clw76k4llekd2"]
 
-[ext_resource type="Texture2D" uid="uid://duf1yafx646it" path="res://assets/Weapons/Le02Tasouken.png" id="1_2cwuh"]
+[ext_resource type="Texture2D" uid="uid://duf1yafx646it" path="res://Assets/Weapons/Le02Tasouken.png" id="1_2cwuh"]
 [ext_resource type="Script" uid="uid://dprsy2iq5eu4k" path="res://Weapons/Tasouken.cs" id="1_40n43"]
 [ext_resource type="PackedScene" uid="uid://b6lipfqax0kgp" path="res://Projectiles/Cut.tscn" id="2_bcuna"]
 [ext_resource type="Script" uid="uid://deb4vsu7xgmm" path="res://Resources/DamageData/DamageData.cs" id="3_gx16l"]

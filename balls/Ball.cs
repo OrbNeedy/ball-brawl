@@ -18,7 +18,37 @@ public enum PowerType
     Fire, 
     Electricity, 
     Healing, 
-    Magic
+    Magic, 
+    Sound, 
+    Gravity
+}
+
+public struct DamageModification
+{
+    public int Additive = 0;
+    public float Multiplicative = 1;
+
+    public DamageModification(int additive = 0, float multiplicative = 0)
+    {
+        Additive = additive;
+        Multiplicative = multiplicative;
+    }
+
+    public void CompoundModification(DamageModification modification)
+    {
+        Additive += modification.Additive;
+        Multiplicative += modification.Multiplicative;
+    }
+
+    public int ApplyToDamage(DamageData data)
+    {
+        return ApplyToDamage(data.BaseDamage);
+    }
+
+    public int ApplyToDamage(int damage)
+    {
+        return (int)((damage + Additive) * (1f + Multiplicative));
+    }
 }
 
 public partial class Ball : RigidBody2D
@@ -51,6 +81,9 @@ public partial class Ball : RigidBody2D
     public float MaxSpeedGain = 0;
     [Export]
     public string TeamName = "";
+    [Export]
+    public float DefaultGravityScale = 1;
+    public float ExtraGravityScale = 0;
 
     // Identifiers
     [Export]
@@ -105,11 +138,8 @@ public partial class Ball : RigidBody2D
     /// Damage queued to be dealt to the ball after time resumes, does not queue if the ball is resistant
     /// </summary>
     public int DamageAppliedDuringTimeStop = 0;
-    [Export]
-    public StatusEffect[] InitialStatusEffects = new StatusEffect[0];
-    public Dictionary<StatusEffectCategory, StatusEffect> StatusEffects = new();
-    public Dictionary<StatusEffectCategory, SelfDeletingParticles> StatusParticles = new();
-
+    //[Export]
+    public Dictionary<String, StatusEffect> StatusEffects = new();
     float acceleration = 0;
     public List<Ball> DetectedBalls = new();
 
@@ -128,10 +158,6 @@ public partial class Ball : RigidBody2D
         BasicCharacterballInit();
 
         LinearVelocity = new Vector2(300, 0).Rotated(Main.rng.RandfRange(0, (float)Math.Tau));
-        foreach (StatusEffect effect in InitialStatusEffects)
-        {
-            AddStatus(effect);
-        }
 
         OnReady();
     }
@@ -169,6 +195,9 @@ public partial class Ball : RigidBody2D
     public override void _PhysicsProcess(double delta)
     {
         Rotation = 0;
+        GravityScale = DefaultGravityScale + ExtraGravityScale;
+        ExtraGravityScale = 0;
+        
         if (life <= 0)
         {
             Freeze = true;
@@ -289,19 +318,6 @@ public partial class Ball : RigidBody2D
             return;
         }
 
-        foreach (StatusEffectCategory category in StatusEffects.Keys)
-        {
-            if (StatusEffects[category].TimeLeft > 0)
-            {
-                StatusEffects[category].Update(delta, this);
-            }
-
-            if (StatusParticles.ContainsKey(category) && StatusParticles[category] != null)
-            {
-                StatusParticles[category].TimeLeft = StatusEffects[category].TimeLeft;
-            }
-        }
-
         OldFreeze = Freeze;
 
         PreProcess(delta);
@@ -309,13 +325,7 @@ public partial class Ball : RigidBody2D
         {
             if (DamageAppliedDuringTimeStop > 0)
             {
-                DamageBall(new DamageData() 
-                { 
-                    BaseDamage = DamageAppliedDuringTimeStop, 
-                    IFrames = 0.5, 
-                    Almighty = true, 
-                    CanBeDodged = false
-                });
+                DamageBallDirect(DamageAppliedDuringTimeStop);
                 DamageAppliedDuringTimeStop = 0;
             }
 
@@ -369,84 +379,60 @@ public partial class Ball : RigidBody2D
 
     public void AddStatus(StatusEffect effect)
     {
-        if (StatusEffects.ContainsKey(effect.Category) && StatusEffects[effect.Category].TimeLeft > 0)
+        if (StatusEffects.ContainsKey(effect.Category))
         {
-            if (effect.EffectPriority >= StatusEffects[effect.Category].EffectPriority)
+            String category = effect.Category;
+            if (effect.EffectPriority > StatusEffects[category].EffectPriority)
             {
-                StatusEffects[effect.Category] = effect;
-            }
-            StatusEffects[effect.Category].Stacks++;
-            StatusEffects[effect.Category].OnReInflict(this);
-            
-            if (StatusParticles.ContainsKey(effect.Category))
+                StatusEffects[category].Replaced(this);
+                effect.Replace(this, StatusEffects[category]);
+
+                StatusEffects[category] = effect;
+                effect.StatusOver += RemoveStatus;
+            } else
             {
-                if (effect.Particles != null)
-                {
-                    SelfDeletingParticles instance = effect.Particles.Instantiate<SelfDeletingParticles>();
-                    instance.TimeLeft = effect.MaxTimeLeft;
-                    
-                    AddParticles(effect.Category, instance);
-                } else
-                {
-                    if (StatusParticles[effect.Category] != null && IsInstanceValid(StatusParticles[effect.Category]))
-                    {
-                        StatusParticles[effect.Category].TimeLeft = 0;
-                        StatusParticles[effect.Category] = null;
-                    }
-                }
+                StatusEffects[category].Reinflict(this, effect);
             }
-
-            return;
-        }
-
-        if (effect.Particles != null)
+        } else
         {
-            SelfDeletingParticles instance = effect.Particles.Instantiate<SelfDeletingParticles>();
-            instance.TimeLeft = effect.MaxTimeLeft;
-            
-            AddChild(instance);
-            AddParticles(effect.Category, instance);
-        }
-        
-        effect.OnInflict(this);
-        effect.Tick = effect.MaxTick;
-        StatusEffects.Add(effect.Category, effect);
-    }
-
-    public void AddParticles(StatusEffectCategory category, SelfDeletingParticles particle)
-    {
-        if (StatusParticles.ContainsKey(category))
-        {
-            if (StatusParticles[category] != null && IsInstanceValid(StatusParticles[category]))
-            {
-                StatusParticles[category].TimeLeft = 0;
-                StatusParticles[category] = null;
-            }
-            StatusParticles[category] = particle;
-        }else
-        {
-            StatusParticles.Add(category, particle);
+            effect.Inflict(this);
+            StatusEffects[effect.Category] = effect;
+            effect.StatusOver += RemoveStatus;
         }
     }
 
-    public virtual int ModifyAllDamage(DamageData data)
+    public void RemoveStatus(StatusEffect effect)
     {
-        return data.BaseDamage;
+        if (StatusEffects.ContainsKey(effect.Category))
+        {
+            StatusEffects.Remove(effect.Category);
+        }
     }
 
-    public virtual int ModifyContactDamage(DamageData data)
+    public virtual DamageModification ModifyAllDamage(DamageData data)
     {
-        return data.BaseDamage;
+        return new();
     }
 
-    public virtual int ModifyProjectileDamage(DamageData data)
+    /// <summary>
+    /// Modifies taken contact damage
+    /// </summary>
+    /// <param name="ball"></param>
+    /// <param name="data"></param>
+    /// <returns></returns>
+    public virtual DamageModification ModifyContactDamage(Ball ball, DamageData data)
     {
-        return data.BaseDamage;
+        return new();
     }
 
-    public virtual int ModifyWeaponDamage(DamageData data, Weapon weapon)
+    public virtual DamageModification ModifyProjectileDamage(Projectile projectile, DamageData data)
     {
-        return data.BaseDamage;
+        return new();
+    }
+
+    public virtual DamageModification ModifyWeaponDamage(Weapon weapon, DamageData data)
+    {
+        return new();
     }
 
     public void OnBodyEntered(Node body)
@@ -487,13 +473,17 @@ public partial class Ball : RigidBody2D
             {
                 LinearVelocity += weapon.LinearVelocity * 0.5f;
 
-                int baseDamage = weapon.GetWeaponDamage(this);
-                int finalDamage = ModifyWeaponDamage(weapon.Damage, weapon);
-                if (weapon.Damage.Almighty && finalDamage < baseDamage)
+                DamageModification modifier = weapon.GetWeaponDamageModifications(this);
+                modifier.CompoundModification(ModifyWeaponDamage(weapon, weapon.Damage));
+
+                foreach (StatusEffect effect in StatusEffects.Values)
                 {
-                    finalDamage = baseDamage;
+                    if (AffectedByTimeStop && effect.ResistsTime) continue;
+
+                    modifier.CompoundModification(effect.WeaponDamageModification(this, weapon));
                 }
-                DamageBall(weapon.Damage);
+
+                DamageBall(weapon.Damage, modifier);
 
                 if (DamagedType == DamageTakenType.HBB)
                 {
@@ -508,7 +498,7 @@ public partial class Ball : RigidBody2D
         return true;
     }
 
-    public void ProjectileCollision(Projectile projectile, DamageData data)
+    public void ProjectileCollision(Projectile projectile, DamageData data, DamageModification modifier)
     {
         // No stun or speed change for projectiles, but no iframes
         //GD.Print("Bullet can be dodged: ");
@@ -516,13 +506,16 @@ public partial class Ball : RigidBody2D
         {
             return;
         }
-        
-        int finalDamage = ModifyProjectileDamage(data);
-        if (data.Almighty && finalDamage < data.BaseDamage)
+        modifier.CompoundModification(ModifyProjectileDamage(projectile, data));
+
+        foreach (StatusEffect effect in StatusEffects.Values)
         {
-            finalDamage = data.BaseDamage;
+            if (AffectedByTimeStop && !effect.ResistsTime) continue;
+
+            modifier.CompoundModification(effect.ProjectileDamageModification(this, projectile));
         }
-        DamageBall(data);
+
+        DamageBall(data, modifier);
     }
 
     public virtual bool PreProjectileCollision(Projectile projectile, DamageData data)
@@ -540,9 +533,28 @@ public partial class Ball : RigidBody2D
         return true;
     }
 
-    public virtual DamageData GetContactDamage(Ball ball)
+    public virtual DamageModification ModifyDealtContactDamage(Ball ball)
     {
-        return ContactDamage;
+        return new();
+    }
+
+    public DamageModification GetContactDamageModifier(Ball ball = null)
+    {
+        DamageModification modifier = ModifyDealtContactDamage(ball);
+
+        foreach (StatusEffect effect in StatusEffects.Values)
+        {
+            if (AffectedByTimeStop && !effect.ResistsTime) continue;
+
+            modifier.CompoundModification(effect.DealtDamageModification(this, ball));
+        }
+
+        return modifier;
+    }
+
+    public int GetContactDamage(Ball ball)
+    {
+        return GetContactDamageModifier(ball).ApplyToDamage(ContactDamage);
     }
 
     public void BallCollision(Ball enemy)
@@ -552,7 +564,8 @@ public partial class Ball : RigidBody2D
         SyncBallCollision(enemy, enemy.LinearVelocity.Length(), LinearVelocity.Length());
         
         // Only really needed when both balls have melee capabilities, to sync them up
-        if (GetContactDamage(enemy).BaseDamage > 0 && enemy.GetContactDamage(this).BaseDamage > 0)
+        int enemyDamage = enemy.GetContactDamage(this);
+        if (GetContactDamage(enemy) > 0 && enemy.GetContactDamage(this) > 0)
         {
             // BallName + " attempting sync (BallCollision) with " + enemy.BallName + " with damages " 
             /*GD.Print($"{BallName} ({GetContactDamage(this)} damage) attempting sync (BallCollision2) " + 
@@ -567,29 +580,37 @@ public partial class Ball : RigidBody2D
         bool slower = myVelocity <= velocity;
         bool equal = myVelocity == velocity;
         bool stun = false;
-        DamageData finalDamage = enemy.GetContactDamage(this);
+        DamageModification modifier = enemy.GetContactDamageModifier(this);
+        int initialDamage = enemy.GetContactDamage(this);
         //GD.Print($"{enemy.BallName}'s final damage is {finalDamage.BaseDamage}");
         
-        if (finalDamage.BaseDamage > 0 && !enemy.AffectedByTimeStop)
+        if (initialDamage > 0 && !enemy.AffectedByTimeStop)
         {
-            if (slower || GetContactDamage(enemy).BaseDamage <= 0 || AffectedByTimeStop)
+            if (slower || GetContactDamage(enemy) <= 0 || AffectedByTimeStop)
             {
                 // GD.Print($"{enemy.BallName} was faster");
                 if (!PreBallCollision(enemy) && enemy.ContactDamage.CanBeDodged) return;
                 // Slower ball gets damaged, but doesn't lose speed
-                int damage = ModifyContactDamage(finalDamage);
-                if (enemy.ContactDamage.Almighty && damage < finalDamage.BaseDamage)
-                {
-                    damage = finalDamage.BaseDamage;
-                }
 
+                modifier.CompoundModification(ModifyContactDamage(enemy, enemy.ContactDamage));
+
+                foreach (StatusEffect effect in StatusEffects.Values)
+                {
+                    if (AffectedByTimeStop && !effect.ResistsTime) continue;
+
+                    modifier.CompoundModification(effect.ContactDamageModification(this, enemy));
+                }
+                
                 if (equal)
                 {
-                    // Clash means damage gets halfed
-                    damage /= 2;
+                    // Clash means damage modifiers get halfed and another modifier is added to reduce it further
+                    modifier.Additive /= 2;
+                    modifier.Multiplicative *= 0.5f;
+                    modifier.CompoundModification(new(0, -0.5f));
                 }
 
-                DamageBall(damage, enemy.ContactDamage.IFrames);
+                DamageBall(enemy.ContactDamage, modifier);
+                //enemy.LinearVelocity *= -1;
                 stun = true;
             } else
             {
@@ -618,13 +639,13 @@ public partial class Ball : RigidBody2D
         acceleration = 0;
     }
 
-    public void DealUnspecifiedDamage(DamageData data)
+    public void DealUnspecifiedDamage(DamageData data, DamageModification modifier)
     {
         if (!PreDealUnspecifiedDamage(data) && data.CanBeDodged)
         {
             return;
         }
-        DamageBall(data);
+        DamageBall(data, modifier);
     }
 
     public virtual bool PreDealUnspecifiedDamage(DamageData data)
@@ -632,9 +653,10 @@ public partial class Ball : RigidBody2D
         return true;
     }
 
-    public void DamageBall(DamageData data)
+    public void DamageBall(DamageData data, DamageModification modification)
     {
-        int finalDamage = ModifyAllDamage(data);
+        modification.CompoundModification(ModifyAllDamage(data));
+        int finalDamage = modification.ApplyToDamage(data);
         if (data.Almighty && finalDamage < data.BaseDamage)
         {
             finalDamage = data.BaseDamage;
@@ -642,27 +664,41 @@ public partial class Ball : RigidBody2D
         CalculateNewLife(finalDamage, data.IFrames);
     }
 
-    public void DamageBall(int finalDamage, double finalIFrames)
+    public void DamageBallDirect(int damage, double iFrames = 0.2)
     {
-        CalculateNewLife(finalDamage, finalIFrames);
+        CalculateNewLife(damage, iFrames);
     }
 
     public void CalculateNewLife(int damage, double IFrames)
     {
+        // Do not do anything if the ball is already dead
+        if (life <= 0) return;
+
+        int finalDamage = damage;
+
+        foreach (StatusEffect effect in StatusEffects.Values)
+        {
+            if (AffectedByTimeStop && !effect.ResistsTime) continue;
+
+            finalDamage = effect.FinalDamageModification(this).ApplyToDamage(finalDamage);
+        }
+
+        if (finalDamage < 0) finalDamage = 0;
+
         if (AffectedByTimeStop)
         {
-            DamageAppliedDuringTimeStop += damage;
+            DamageAppliedDuringTimeStop += finalDamage;
             // GD.Print("Queueing damage for " + damage);
             return;
         }
 
-        PreDamaged(damage);
+        PreDamaged(finalDamage);
 
         oldLife = life;
-        life -= damage;
+        life -= finalDamage;
         iFrames += IFrames;
 
-        DamageEffectsType.TakeDamage(this, damage);
+        DamageEffectsType.TakeDamage(this, finalDamage);
 
         if (life <= 0)
         {
@@ -675,9 +711,9 @@ public partial class Ball : RigidBody2D
                 ProcessMode = ProcessModeEnum.Always;
             }
         }
-        EmitSignal(SignalName.DamageTaken, (float)life / (float)MaxLife, damage, this);
+        EmitSignal(SignalName.DamageTaken, (float)life / (float)MaxLife, finalDamage, this);
 
-        OnDamaged(damage);
+        OnDamaged(finalDamage);
     }
 
     /// <summary>

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dmt17whyysl7i"
-path="res://.godot/imported/Prevasion2.wav-ac722658e3e7980f8cdf2f5cfeabb448.sample"
+path="res://.godot/imported/Prevasion2.wav-c42bf292f10a75900cace1020646958e.sample"
 
 [deps]
 
-source_file="res://assets/SoundEffects/Gunvolt/Prevasion2.wav"
-dest_files=["res://.godot/imported/Prevasion2.wav-ac722658e3e7980f8cdf2f5cfeabb448.sample"]
+source_file="res://Assets/SoundEffects/Gunvolt/Prevasion2.wav"
+dest_files=["res://.godot/imported/Prevasion2.wav-c42bf292f10a75900cace1020646958e.sample"]
 
 [params]
 

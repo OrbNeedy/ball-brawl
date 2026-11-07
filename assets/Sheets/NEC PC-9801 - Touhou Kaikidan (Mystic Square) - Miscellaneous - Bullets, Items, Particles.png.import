@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://das3ykvoo8hvh"
-path="res://.godot/imported/NEC PC-9801 - Touhou Kaikidan (Mystic Square) - Miscellaneous - Bullets, Items, Particles.png-a8b40707a7388754ff0e2c22524ea178.ctex"
+path="res://.godot/imported/NEC PC-9801 - Touhou Kaikidan (Mystic Square) - Miscellaneous - Bullets, Items, Particles.png-133f4ffcbf64f6232bfc8c773ee62773.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sheets/NEC PC-9801 - Touhou Kaikidan (Mystic Square) - Miscellaneous - Bullets, Items, Particles.png"
-dest_files=["res://.godot/imported/NEC PC-9801 - Touhou Kaikidan (Mystic Square) - Miscellaneous - Bullets, Items, Particles.png-a8b40707a7388754ff0e2c22524ea178.ctex"]
+source_file="res://Assets/Sheets/NEC PC-9801 - Touhou Kaikidan (Mystic Square) - Miscellaneous - Bullets, Items, Particles.png"
+dest_files=["res://.godot/imported/NEC PC-9801 - Touhou Kaikidan (Mystic Square) - Miscellaneous - Bullets, Items, Particles.png-133f4ffcbf64f6232bfc8c773ee62773.ctex"]
 
 [params]
 

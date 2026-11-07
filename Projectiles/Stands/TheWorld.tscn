@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://dkw5gai28ji2c"]
 
-[ext_resource type="Texture2D" uid="uid://dc7xft0o87peb" path="res://assets/CharacterBalls/DIO/TheWorld.png" id="1_m27lc"]
+[ext_resource type="Texture2D" uid="uid://dc7xft0o87peb" path="res://Assets/CharacterBalls/DIO/TheWorld.png" id="1_m27lc"]
 [ext_resource type="Script" uid="uid://ct56vwcmgh75e" path="res://Projectiles/Stands/TheWorld.cs" id="1_v47gv"]
-[ext_resource type="AudioStream" uid="uid://dpdma2sku3prt" path="res://assets/SoundEffects/Dio/S_SP1_atkG1_01.wav" id="2_gihci"]
-[ext_resource type="AudioStream" uid="uid://de8s5rrvhyayg" path="res://assets/SoundEffects/Dio/S_world_st2.wav" id="3_2aaul"]
+[ext_resource type="AudioStream" uid="uid://dpdma2sku3prt" path="res://Assets/SoundEffects/Dio/S_SP1_atkG1_01.wav" id="2_gihci"]
+[ext_resource type="AudioStream" uid="uid://de8s5rrvhyayg" path="res://Assets/SoundEffects/Dio/S_world_st2.wav" id="3_2aaul"]
 [ext_resource type="Shader" uid="uid://c54f7tywl7bnk" path="res://Resources/Shaders/Grayscale.tres" id="4_tobb1"]
 [ext_resource type="Script" uid="uid://deb4vsu7xgmm" path="res://Resources/DamageData/DamageData.cs" id="5_tobb1"]
 
@@ -36,10 +36,10 @@ script = ExtResource("1_v47gv")
 HitSound = ExtResource("2_gihci")
 TimeStopSoundEffect = ExtResource("3_2aaul")
 TimeStopShader = ExtResource("4_tobb1")
-Range = 275.0
+Range = 250.0
 HitsLeft = 9999
 Damage = SubResource("Resource_tobb1")
-MaxHitCooldown = 0.65
+MaxHitCooldown = 0.5
 TimeLeft = 9999.0
 body = NodePath("AnimatedSprite2D")
 TimeResistant = true

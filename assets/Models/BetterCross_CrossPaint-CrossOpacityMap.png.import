@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://2nl3ujyeao4k"
-path.s3tc="res://.godot/imported/BetterCross_CrossPaint-CrossOpacityMap.png-b68cea8507f588ec11244773effbde6b.s3tc.ctex"
+path.s3tc="res://.godot/imported/BetterCross_CrossPaint-CrossOpacityMap.png-272ceecf37aa58b7c9f968b68889f56e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/Models/BetterCross_CrossPaint-CrossOpacityMap.png"
-dest_files=["res://.godot/imported/BetterCross_CrossPaint-CrossOpacityMap.png-b68cea8507f588ec11244773effbde6b.s3tc.ctex"]
+source_file="res://Assets/Models/BetterCross_CrossPaint-CrossOpacityMap.png"
+dest_files=["res://.godot/imported/BetterCross_CrossPaint-CrossOpacityMap.png-272ceecf37aa58b7c9f968b68889f56e.s3tc.ctex"]
 
 [params]
 

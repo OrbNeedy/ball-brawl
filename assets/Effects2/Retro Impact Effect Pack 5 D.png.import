@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b75v3eow05186"
-path="res://.godot/imported/Retro Impact Effect Pack 5 D.png-8ac40002cd43ab2b04d7bce77ec5aa2f.ctex"
+path="res://.godot/imported/Retro Impact Effect Pack 5 D.png-7ae07cd149903ba711e19a39e84090d3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Effects2/Retro Impact Effect Pack 5 D.png"
-dest_files=["res://.godot/imported/Retro Impact Effect Pack 5 D.png-8ac40002cd43ab2b04d7bce77ec5aa2f.ctex"]
+source_file="res://Assets/Effects2/Retro Impact Effect Pack 5 D.png"
+dest_files=["res://.godot/imported/Retro Impact Effect Pack 5 D.png-7ae07cd149903ba711e19a39e84090d3.ctex"]
 
 [params]
 

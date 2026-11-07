@@ -54,7 +54,7 @@ public partial class Surtr : Stand
     {
         Ragnarok ragnarok = RagnarokScene.Instantiate<Ragnarok>();
         ragnarok.Position = position;
-        ragnarok.TeamName = TeamName;
+        ragnarok.OwnerSetup(StandOwner);
 
         EmitSignal(SignalName.SpawnProjectile, ragnarok);
     }

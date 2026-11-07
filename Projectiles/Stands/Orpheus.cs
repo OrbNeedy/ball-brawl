@@ -29,7 +29,8 @@ public partial class Orpheus : Stand
             Agi agi = AgiScene.Instantiate<Agi>();
             agi.Position = Position;
             agi.Velocity = vel;
-            agi.TeamName = TeamName;
+            agi.OwnerSetup(StandOwner);
+            agi.Modifier = Modifier;
 
             EmitSignal(SignalName.SpawnProjectile, agi);
 

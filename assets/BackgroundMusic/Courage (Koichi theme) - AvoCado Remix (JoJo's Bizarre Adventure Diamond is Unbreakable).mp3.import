@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://by5g5utphv382"
+path="res://.godot/imported/Courage (Koichi theme) - AvoCado Remix (JoJo's Bizarre Adventure Diamond is Unbreakable).mp3-34657758f8436aaa86104cd10b9a1dc6.mp3str"
+
+[deps]
+
+source_file="res://Assets/BackgroundMusic/Courage (Koichi theme) - AvoCado Remix (JoJo's Bizarre Adventure Diamond is Unbreakable).mp3"
+dest_files=["res://.godot/imported/Courage (Koichi theme) - AvoCado Remix (JoJo's Bizarre Adventure Diamond is Unbreakable).mp3-34657758f8436aaa86104cd10b9a1dc6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

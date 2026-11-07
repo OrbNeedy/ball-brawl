@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://c3qcrrgbguo"
-path="res://.godot/imported/Dead.wav-5a65ab99f9943cce47868882fcd0f686.sample"
+path="res://.godot/imported/Dead.wav-d4b63cf4147f9813886731de23c15f41.sample"
 
 [deps]
 
-source_file="res://assets/SoundEffects/Gunvolt/Dead.wav"
-dest_files=["res://.godot/imported/Dead.wav-5a65ab99f9943cce47868882fcd0f686.sample"]
+source_file="res://Assets/SoundEffects/Gunvolt/Dead.wav"
+dest_files=["res://.godot/imported/Dead.wav-d4b63cf4147f9813886731de23c15f41.sample"]
 
 [params]
 

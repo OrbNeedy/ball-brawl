@@ -16,7 +16,7 @@ public partial class Tasouken : Weapon
 
     public override void OnReady()
     {
-        RandomCutCooldown = MaxRandomCutCooldown / 2f;
+        RandomCutCooldown = MaxRandomCutCooldown;
     }
 
     public override void OnPhysicsProcess(double delta)
@@ -38,7 +38,13 @@ public partial class Tasouken : Weapon
             for (int i = 0; i < RandomCutCount; i++)
             {
                 Cut newCut = cut.Instantiate<Cut>();
-                newCut.TeamName = TeamName;
+                if (Holder != null && IsInstanceValid(Holder))
+                {
+                    newCut.OwnerSetup(Holder);
+                } else
+                {
+                    newCut.TeamName = TeamName;
+                }
                 newCut.Rotate(Main.rng.RandfRange(0, (float)Math.Tau));
                 newCut.Position = Holder.Position + new Vector2(200, 0).Rotated(Main.rng.RandfRange(0, (float)Math.Tau));
                 newCut.TimeLeft = 1.8;
@@ -60,7 +66,13 @@ public partial class Tasouken : Weapon
         if (CutCooldown <= 0)
         {
             Cut newCut = cut.Instantiate<Cut>();
-            newCut.TeamName = TeamName;
+            if (Holder != null && IsInstanceValid(Holder))
+            {
+                newCut.OwnerSetup(Holder);
+            } else
+            {
+                newCut.TeamName = TeamName;
+            }
             newCut.Rotate(Main.rng.RandfRange(0, (float)Math.Tau));
             newCut.Position = ball.Position;
             newCut.Damage.BaseDamage = 3;

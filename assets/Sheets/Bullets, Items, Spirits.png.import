@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dw8smcb08ppiy"
-path="res://.godot/imported/Bullets, Items, Spirits.png-6bfd61ea801fd0a13394376db37fff5b.ctex"
+path="res://.godot/imported/Bullets, Items, Spirits.png-79b5c69ed5fca17876551d3dfd3a6944.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sheets/Bullets, Items, Spirits.png"
-dest_files=["res://.godot/imported/Bullets, Items, Spirits.png-6bfd61ea801fd0a13394376db37fff5b.ctex"]
+source_file="res://Assets/Sheets/Bullets, Items, Spirits.png"
+dest_files=["res://.godot/imported/Bullets, Items, Spirits.png-79b5c69ed5fca17876551d3dfd3a6944.ctex"]
 
 [params]
 

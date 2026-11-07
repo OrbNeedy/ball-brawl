@@ -8,9 +8,10 @@ public partial class Sword : Weapon
     [Export]
     public float SpeedDamageIncrease = 100f;
 
-    public override int GetWeaponDamage(Ball ball)
+    public override DamageModification GetWeaponDamageModifications(Ball ball)
     {
         int bonus = int.Clamp((int)(LinearVelocity.Length() / SpeedDamageIncrease), 0, MaxSpeedDamage);
-        return base.GetWeaponDamage(ball) + bonus;
+
+        return new(bonus);
     }
 }

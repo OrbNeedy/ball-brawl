@@ -169,7 +169,7 @@ public partial class Sakuya : Ball
         knife.Damage.BaseDamage = damage;
         
         knife.Color = Main.rng.RandiRange(0, 6);
-        knife.TeamName = TeamName;
+        knife.OwnerSetup(this);
 
         EmitSignal(SignalName.SpawnProjectile, knife);
     }
@@ -184,21 +184,19 @@ public partial class Sakuya : Ball
         }
     }
 
-    public override DamageData GetContactDamage(Ball ball)
+    public override DamageModification ModifyDealtContactDamage(Ball ball)
     {
         if (TimeStopped)
         {
-            DamageData newData = (DamageData)base.GetContactDamage(ball).Duplicate();
-            newData.BaseDamage += 2;
-            return newData;
+            return new(2);
         }
 
-        return base.GetContactDamage(ball);
+        return base.ModifyDealtContactDamage(ball);
     }
 
     public override bool PreBallCollision(Ball enemy)
     {
-        if (DodgeCooldown <= 0 && enemy.GetContactDamage(this).BaseDamage > 0 && !TimeStopped)
+        if (DodgeCooldown <= 0 && enemy.GetContactDamage(this) > 0 && !TimeStopped)
         {
             Vector2 newPosition = enemy.LinearVelocity.Normalized() * 360;
             DodgePosition = enemy.Position + newPosition;

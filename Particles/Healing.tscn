@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://hfb48imjggqb"]
 
-[ext_resource type="Texture2D" uid="uid://5brbyoolc5lw" path="res://assets/Sheets/Particles.png" id="1_4avjx"]
+[ext_resource type="Texture2D" uid="uid://5brbyoolc5lw" path="res://Assets/Sheets/Particles.png" id="1_4avjx"]
 [ext_resource type="Script" uid="uid://ca6q5undb4f5w" path="res://Particles/SelfDeletingParticles.cs" id="2_pjlw7"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_yolw3"]

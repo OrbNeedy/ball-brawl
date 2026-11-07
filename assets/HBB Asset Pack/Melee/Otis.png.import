@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://br5pwwfygiqx5"
-path="res://.godot/imported/Otis.png-7aef966c6bb4607334447e3d01cd9a2f.ctex"
+path="res://.godot/imported/Otis.png-bd333890d6761137e37ed7d2bb75eb13.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/HBB Asset Pack/Melee/Otis.png"
-dest_files=["res://.godot/imported/Otis.png-7aef966c6bb4607334447e3d01cd9a2f.ctex"]
+source_file="res://Assets/HBB Asset Pack/Melee/Otis.png"
+dest_files=["res://.godot/imported/Otis.png-bd333890d6761137e37ed7d2bb75eb13.ctex"]
 
 [params]
 

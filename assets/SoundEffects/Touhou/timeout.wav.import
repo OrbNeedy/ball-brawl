@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dyobbccaxv0nb"
-path="res://.godot/imported/timeout.wav-06480b031d492be769107bac974d175a.sample"
+path="res://.godot/imported/timeout.wav-267924a7c03df6f301017ce1748fa854.sample"
 
 [deps]
 
-source_file="res://assets/SoundEffects/Touhou/timeout.wav"
-dest_files=["res://.godot/imported/timeout.wav-06480b031d492be769107bac974d175a.sample"]
+source_file="res://Assets/SoundEffects/Touhou/timeout.wav"
+dest_files=["res://.godot/imported/timeout.wav-267924a7c03df6f301017ce1748fa854.sample"]
 
 [params]
 

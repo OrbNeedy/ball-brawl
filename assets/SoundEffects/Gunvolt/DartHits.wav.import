@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cc6c4fbsgiuuk"
-path="res://.godot/imported/DartHits.wav-c0aeef94fbe17f930ee2b52801b7facc.sample"
+path="res://.godot/imported/DartHits.wav-8aea3b633ecc1643b1c39d0c126b65fe.sample"
 
 [deps]
 
-source_file="res://assets/SoundEffects/Gunvolt/DartHits.wav"
-dest_files=["res://.godot/imported/DartHits.wav-c0aeef94fbe17f930ee2b52801b7facc.sample"]
+source_file="res://Assets/SoundEffects/Gunvolt/DartHits.wav"
+dest_files=["res://.godot/imported/DartHits.wav-8aea3b633ecc1643b1c39d0c126b65fe.sample"]
 
 [params]
 

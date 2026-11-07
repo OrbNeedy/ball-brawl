@@ -7,6 +7,8 @@ public partial class OreryBall : AnimatableBody2D
     public PackedScene ProjectileScene;
     [Export]
     public PackedScene StarScene;
+    [Export]
+    public DamageData BaseDamage;
 
     public bool TimeIsStopped { get => GlobalTimeState.Instance.TimeStopDuration > 0; }
 
@@ -99,6 +101,7 @@ public partial class OreryBall : AnimatableBody2D
                 for (int i = 0; i < amount; i++)
                 {
                     CircularProjectile proj = ProjectileScene.Instantiate<CircularProjectile>();
+                    proj.OwnerSetup(BallOwner);
                     proj.TeamName = BallOwner.TeamName;
                     proj.Position = BallOwner.Position + Position;
                     proj.Damage.BaseDamage = 2;
@@ -113,7 +116,7 @@ public partial class OreryBall : AnimatableBody2D
                 if (ContinuousCooldown <= 0)
                 {
                     MarisaStar star = StarScene.Instantiate<MarisaStar>();
-                    star.TeamName = BallOwner.TeamName;
+                    star.OwnerSetup(BallOwner);
                     float angle = (float)Math.PI / 8f;
                     star.Velocity = new Vector2(0, -300).Rotated(Main.rng.RandfRange(-angle, angle));
                     star.Position = BallOwner.Position + Position;
@@ -147,9 +150,9 @@ public partial class OreryBall : AnimatableBody2D
 
         if (body is Ball ball)
         {
-            InitialLife -= ball.GetContactDamage(BallOwner).BaseDamage;
+            InitialLife -= ball.GetContactDamage(BallOwner);
             
-            if (!TimeIsStopped) ball.DealUnspecifiedDamage(new DamageData() { BaseDamage = 2 });
+            if (!TimeIsStopped) ball.DealUnspecifiedDamage(BaseDamage, new());
         }
 
         if (body is Weapon weapon)

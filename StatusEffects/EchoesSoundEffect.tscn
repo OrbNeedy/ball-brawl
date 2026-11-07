@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://bgftgkikk1nk1"]
+
+[ext_resource type="Script" uid="uid://b5ajqiu80hthh" path="res://StatusEffects/EchoesSoundEffect.cs" id="1_brtal"]
+[ext_resource type="Texture2D" uid="uid://b4sd71se3nkg0" path="res://Assets/Katakana/Weaken.png" id="1_sjf2i"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sjf2i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_sjf2i")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="EchoesSoundEffect" type="Node2D" unique_id=1176267925 node_paths=PackedStringArray("Sound")]
+script = ExtResource("1_brtal")
+Sound = NodePath("SubViewportContainer/SubViewport/Katakana")
+MaxTimeLeft = 6.0
+TimeLeft = 6.0
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1676990514]
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 128.0
+offset_bottom = 128.0
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=436735893]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(256, 256)
+render_target_update_mode = 4
+
+[node name="Katakana" type="AnimatedSprite2D" parent="SubViewportContainer/SubViewport" unique_id=825114485]
+modulate = Color(0.28918967, 0.44297108, 0.735357, 0.50200003)
+position = Vector2(128, 128)
+scale = Vector2(0.2, 0.2)
+skew = 0.5358161
+sprite_frames = SubResource("SpriteFrames_sjf2i")

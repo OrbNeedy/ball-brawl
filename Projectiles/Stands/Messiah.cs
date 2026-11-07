@@ -93,7 +93,7 @@ public partial class Messiah : Stand
     {
         Vector2 size = GetViewportRect().Size;
         Megidolaon megidolaon = MegidolaonScene.Instantiate<Megidolaon>();
-        megidolaon.TeamName = TeamName;
+        megidolaon.OwnerSetup(StandOwner);
         megidolaon.Position = size / 2f;
 
         EmitSignal(SignalName.SpawnProjectile, megidolaon);
@@ -112,7 +112,7 @@ public partial class Messiah : Stand
         }
 
         GodHand godHand = GodHandScene.Instantiate<GodHand>();
-        godHand.TeamName = TeamName;
+        godHand.OwnerSetup(StandOwner);
         godHand.Position = position;
         godHand.Velocity = velocity;
 

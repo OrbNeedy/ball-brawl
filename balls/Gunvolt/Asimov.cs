@@ -37,6 +37,7 @@ public partial class Asimov : Ball
     public double StartupTimer = 0;
     public Vector2 TargetVelocity = Vector2.Zero;
     public Ball ClosestBall = null;
+    public Vector2 LastDirection;
 
     public override void OnReady()
     {
@@ -95,6 +96,7 @@ public partial class Asimov : Ball
             if (StartupTimer < MaxStartupTimer)
             {
                 ClosestBall = GetClosestBall();
+                LastDirection = Position.DirectionTo(ClosestBall.Position);
             }
         } else
         {
@@ -104,7 +106,7 @@ public partial class Asimov : Ball
                 flashfield.Damage.BaseDamage = 2;
                 flashfield.MaxHitCooldown = 0.08;
                 flashfield.TimeLeft = 0.6;
-                flashfield.TeamName = TeamName;
+                flashfield.OwnerSetup(this);
                 flashfield.owner = this;
                 flashfield.ProcessMode = ProcessModeEnum.Pausable;
                 AddChild(flashfield);
@@ -113,7 +115,7 @@ public partial class Asimov : Ball
                 Vector2 velocity = new Vector2(850, 0).Rotated(Main.rng.RandfRange(0, (float)Math.Tau));
                 if (ClosestBall != null && IsInstanceValid(ClosestBall))
                 {
-                    velocity = Position.DirectionTo(ClosestBall.Position) * 850;
+                    velocity = LastDirection * 850;
                 }
                 TargetVelocity = velocity;
                 LinearVelocity = TargetVelocity;
@@ -138,11 +140,11 @@ public partial class Asimov : Ball
         }
     }
 
-    public override int ModifyAllDamage(DamageData data)
+    public override DamageModification ModifyAllDamage(DamageData data)
     {
         if (DashCooldown <= 0 && StartupTimer <= MaxStartupTimer && data.BaseDamage > 0)
         {
-            return int.Clamp(data.BaseDamage - 3, 1, 9999);
+            return new(-1);
         }
         
         return base.ModifyAllDamage(data);

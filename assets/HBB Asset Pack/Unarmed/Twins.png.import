@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ygcds0rwaw4d"
-path="res://.godot/imported/Twins.png-195015bb0c907ae86d9e882bef648e61.ctex"
+path="res://.godot/imported/Twins.png-d79ea23b1ae3d29005c432b146f995c8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/HBB Asset Pack/Unarmed/Twins.png"
-dest_files=["res://.godot/imported/Twins.png-195015bb0c907ae86d9e882bef648e61.ctex"]
+source_file="res://Assets/HBB Asset Pack/Unarmed/Twins.png"
+dest_files=["res://.godot/imported/Twins.png-d79ea23b1ae3d29005c432b146f995c8.ctex"]
 
 [params]
 

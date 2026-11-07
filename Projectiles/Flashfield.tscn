@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://c73ya7bves027"]
 
 [ext_resource type="Script" uid="uid://1ihrmvod2rd6" path="res://Projectiles/Flashfield.cs" id="1_2xxul"]
-[ext_resource type="Texture2D" uid="uid://bhmri14cfjqms" path="res://assets/Gunvolt/Flashfield0.png" id="1_3bfc6"]
-[ext_resource type="Texture2D" uid="uid://c1c6g7bnb1dtu" path="res://assets/Gunvolt/Flashfield1.png" id="1_r5e4p"]
-[ext_resource type="AudioStream" uid="uid://na30untxossb" path="res://assets/SoundEffects/Gunvolt/FlashfieldActive.wav" id="2_ayx06"]
-[ext_resource type="AudioStream" uid="uid://bvnij62jiafpq" path="res://assets/SoundEffects/Gunvolt/FlashfieldEnd.wav" id="3_2len5"]
-[ext_resource type="Texture2D" uid="uid://3jq0nnbv1f47" path="res://assets/Gunvolt/Flashfield2.png" id="3_iesm4"]
+[ext_resource type="Texture2D" uid="uid://bhmri14cfjqms" path="res://Assets/Gunvolt/Flashfield0.png" id="1_3bfc6"]
+[ext_resource type="Texture2D" uid="uid://c1c6g7bnb1dtu" path="res://Assets/Gunvolt/Flashfield1.png" id="1_r5e4p"]
+[ext_resource type="AudioStream" uid="uid://na30untxossb" path="res://Assets/SoundEffects/Gunvolt/FlashfieldActive.wav" id="2_ayx06"]
+[ext_resource type="AudioStream" uid="uid://bvnij62jiafpq" path="res://Assets/SoundEffects/Gunvolt/FlashfieldEnd.wav" id="3_2len5"]
+[ext_resource type="Texture2D" uid="uid://3jq0nnbv1f47" path="res://Assets/Gunvolt/Flashfield2.png" id="3_iesm4"]
 [ext_resource type="Script" uid="uid://deb4vsu7xgmm" path="res://Resources/DamageData/DamageData.cs" id="4_g742l"]
-[ext_resource type="AudioStream" uid="uid://c4neat53r0n1u" path="res://assets/SoundEffects/Gunvolt/FlashfieldUse.wav" id="5_gnx13"]
+[ext_resource type="AudioStream" uid="uid://c4neat53r0n1u" path="res://Assets/SoundEffects/Gunvolt/FlashfieldUse.wav" id="5_gnx13"]
 
 [sub_resource type="Resource" id="Resource_ult8f"]
 script = ExtResource("4_g742l")

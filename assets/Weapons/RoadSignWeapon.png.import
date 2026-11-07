@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dpvnujecc75ae"
-path="res://.godot/imported/RoadSignWeapon.png-baa898f2d844623b326c4635040f40ba.ctex"
+path="res://.godot/imported/RoadSignWeapon.png-1a5efe7d0068768afdc33005828be8ed.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Weapons/RoadSignWeapon.png"
-dest_files=["res://.godot/imported/RoadSignWeapon.png-baa898f2d844623b326c4635040f40ba.ctex"]
+source_file="res://Assets/Weapons/RoadSignWeapon.png"
+dest_files=["res://.godot/imported/RoadSignWeapon.png-1a5efe7d0068768afdc33005828be8ed.ctex"]
 
 [params]
 

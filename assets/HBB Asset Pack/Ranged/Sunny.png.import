@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://x5vrurb8dit"
-path="res://.godot/imported/Sunny.png-5447afb6e9cf9926b843c2f85fdcff43.ctex"
+path="res://.godot/imported/Sunny.png-07d3f71eae86d3d148d19965b8269f22.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/HBB Asset Pack/Ranged/Sunny.png"
-dest_files=["res://.godot/imported/Sunny.png-5447afb6e9cf9926b843c2f85fdcff43.ctex"]
+source_file="res://Assets/HBB Asset Pack/Ranged/Sunny.png"
+dest_files=["res://.godot/imported/Sunny.png-07d3f71eae86d3d148d19965b8269f22.ctex"]
 
 [params]
 

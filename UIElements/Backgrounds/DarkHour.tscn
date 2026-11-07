@@ -2,10 +2,10 @@
 
 [ext_resource type="Shader" uid="uid://di8b2ikx1usu5" path="res://Resources/Shaders/IncreaseBrightness.tres" id="1_ddfra"]
 [ext_resource type="Script" uid="uid://db7tpvfn8ipod" path="res://UIElements/Backgrounds/DarkHour.cs" id="1_wvoum"]
-[ext_resource type="Texture2D" uid="uid://c0y1pa1hhtm8g" path="res://assets/Persona/Full-Moon-Hikes-4253739798.png" id="1_yc1rv"]
-[ext_resource type="Texture2D" uid="uid://do4cbfopomkbu" path="res://assets/Misc/Clouds3.png" id="4_abdxl"]
-[ext_resource type="Texture2D" uid="uid://cc8qv48x78ntr" path="res://assets/Misc/Clouds2.png" id="4_dxbxc"]
-[ext_resource type="Texture2D" uid="uid://br0qra1p3ltuc" path="res://assets/Misc/Clouds 1.png" id="5_ja58o"]
+[ext_resource type="Texture2D" uid="uid://c0y1pa1hhtm8g" path="res://Assets/Persona/Full-Moon-Hikes-4253739798.png" id="1_yc1rv"]
+[ext_resource type="Texture2D" uid="uid://do4cbfopomkbu" path="res://Assets/Misc/Clouds3.png" id="4_abdxl"]
+[ext_resource type="Texture2D" uid="uid://cc8qv48x78ntr" path="res://Assets/Misc/Clouds2.png" id="4_dxbxc"]
+[ext_resource type="Texture2D" uid="uid://br0qra1p3ltuc" path="res://Assets/Misc/Clouds 1.png" id="5_ja58o"]
 
 [sub_resource type="Gradient" id="Gradient_h1hn8"]
 colors = PackedColorArray(0.040799998, 0.04912, 0.06, 1, 0.057, 0.1, 0.05915, 1)

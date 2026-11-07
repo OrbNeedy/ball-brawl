@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://cul1g02h4njwr"]
 
 [ext_resource type="Script" uid="uid://c8ewpovncbm1a" path="res://Projectiles/Laser.cs" id="1_foy5f"]
-[ext_resource type="Texture2D" uid="uid://cme38dk0uylen" path="res://assets/Sheets/LaserBorder.png" id="1_runki"]
+[ext_resource type="Texture2D" uid="uid://cme38dk0uylen" path="res://Assets/Sheets/LaserBorder.png" id="1_runki"]
 [ext_resource type="Script" uid="uid://deb4vsu7xgmm" path="res://Resources/DamageData/DamageData.cs" id="2_nwnkc"]
-[ext_resource type="Texture2D" uid="uid://bm4ehkeliwqgr" path="res://assets/Sheets/Laser.png" id="2_runki"]
+[ext_resource type="Texture2D" uid="uid://bm4ehkeliwqgr" path="res://Assets/Sheets/Laser.png" id="2_runki"]
 
 [sub_resource type="Resource" id="Resource_816el"]
 script = ExtResource("2_nwnkc")

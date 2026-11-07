@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bm0pb8unvak21"
-path="res://.godot/imported/Echoes3_edited.png-be80a7df0a193419af794116f4812e10.ctex"
+path="res://.godot/imported/Echoes3_edited.png-fc0f5f4fcf98e6e1ea0140c617f28a04.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/CharacterBalls/Koichi/Echoes3_edited.png"
-dest_files=["res://.godot/imported/Echoes3_edited.png-be80a7df0a193419af794116f4812e10.ctex"]
+source_file="res://Assets/CharacterBalls/Koichi/Echoes3_edited.png"
+dest_files=["res://.godot/imported/Echoes3_edited.png-fc0f5f4fcf98e6e1ea0140c617f28a04.ctex"]
 
 [params]
 

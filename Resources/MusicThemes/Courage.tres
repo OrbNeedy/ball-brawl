@@ -1,0 +1,11 @@
+[gd_resource type="Resource" format=3 uid="uid://c7lplg754ushc"]
+
+[ext_resource type="AudioStream" uid="uid://by5g5utphv382" path="res://Assets/BackgroundMusic/Courage (Koichi theme) - AvoCado Remix (JoJo's Bizarre Adventure Diamond is Unbreakable).mp3" id="1_vemsw"]
+[ext_resource type="Script" uid="uid://dvbj6o5xkcyb0" path="res://Resources/MusicThemes/MusicTheme.cs" id="2_481cn"]
+
+[resource]
+script = ExtResource("2_481cn")
+Theme = ExtResource("1_vemsw")
+SongName = "Courage"
+AuthorName = "AvoCado Tunes"
+Volume = 0.45

@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://s8syeodnjgde"]
 
-[ext_resource type="Texture2D" uid="uid://b5yv5jlm0xxx7" path="res://assets/CharacterBalls/Gengetsu/Gen1_edited.png" id="1_4q1mk"]
+[ext_resource type="Texture2D" uid="uid://b5yv5jlm0xxx7" path="res://Assets/CharacterBalls/Gengetsu/Gen1_edited.png" id="1_4q1mk"]
 [ext_resource type="PhysicsMaterial" uid="uid://cpy03a25nm6av" path="res://Resources/HBBMaterial.tres" id="1_7lo5s"]
-[ext_resource type="Texture2D" uid="uid://cg0bqu1glxy4i" path="res://assets/CharacterBalls/Gengetsu/Gen3_edited.png" id="1_i2r6d"]
+[ext_resource type="Texture2D" uid="uid://cg0bqu1glxy4i" path="res://Assets/CharacterBalls/Gengetsu/Gen3_edited.png" id="1_i2r6d"]
 [ext_resource type="Script" uid="uid://c7573h7ri7v4h" path="res://balls/Touhou/Gengetsu.cs" id="2_5idgh"]
-[ext_resource type="Texture2D" uid="uid://b4fv5umv6kbrw" path="res://assets/CharacterBalls/Gengetsu/Gen2_edited.png" id="2_5koor"]
+[ext_resource type="Texture2D" uid="uid://b4fv5umv6kbrw" path="res://Assets/CharacterBalls/Gengetsu/Gen2_edited.png" id="2_5koor"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xnlfa"]
 animations = [{

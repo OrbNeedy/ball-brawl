@@ -95,7 +95,7 @@ public partial class Main : Node2D
         
         float rotationalAmount = (float)Math.Tau / (float)teamCount;
 
-        bool outline = TeamsInvolved.Count > 1 || teamCount > 3;
+        bool outline = TeamsInvolved.Count > 1 || teamCount >= 3;
 
         Vector2 totalSize = (WorldSize.Position - WorldPosition.Position);
         Vector2 center = (totalSize * 0.5f);

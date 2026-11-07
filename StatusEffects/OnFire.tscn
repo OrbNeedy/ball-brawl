@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://brsfir28wthuk"]
+
+[ext_resource type="Script" uid="uid://mhvv0wvuxr0t" path="res://StatusEffects/OnFire.cs" id="1_lfafc"]
+[ext_resource type="PackedScene" uid="uid://nkdtu11h1ll5" path="res://Particles/Fire.tscn" id="2_xtk0n"]
+
+[node name="OnFire" type="Node2D" unique_id=1532157737 node_paths=PackedStringArray("Particles")]
+script = ExtResource("1_lfafc")
+Particles = NodePath("CPUParticles2D")
+
+[node name="CPUParticles2D" parent="." unique_id=143585192 instance=ExtResource("2_xtk0n")]
+TimeLeft = 3.0
+
+[connection signal="StatusOver" from="." to="." method="OnStatusOver"]
+[connection signal="finished" from="CPUParticles2D" to="." method="OnParticlesOver"]

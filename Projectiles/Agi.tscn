@@ -1,20 +1,20 @@
 [gd_scene format=3 uid="uid://dwfx7piywqk4w"]
 
 [ext_resource type="Script" uid="uid://duf2vae4jurpu" path="res://Projectiles/Agi.cs" id="1_3pur7"]
-[ext_resource type="Texture2D" uid="uid://brvx2c3sgiw4q" path="res://assets/BoltEffects/1_0.png" id="1_jeyyd"]
-[ext_resource type="Texture2D" uid="uid://bg2tr3kx3o46" path="res://assets/BoltEffects/1_1.png" id="2_3pur7"]
-[ext_resource type="PackedScene" uid="uid://nkdtu11h1ll5" path="res://Particles/Fire.tscn" id="2_07155"]
-[ext_resource type="Texture2D" uid="uid://70huh7rb5vbe" path="res://assets/BoltEffects/1_2.png" id="3_07155"]
+[ext_resource type="Texture2D" uid="uid://brvx2c3sgiw4q" path="res://Assets/BoltEffects/1_0.png" id="1_jeyyd"]
+[ext_resource type="Texture2D" uid="uid://bg2tr3kx3o46" path="res://Assets/BoltEffects/1_1.png" id="2_3pur7"]
+[ext_resource type="PackedScene" uid="uid://brsfir28wthuk" path="res://StatusEffects/OnFire.tscn" id="2_nt0dy"]
+[ext_resource type="Texture2D" uid="uid://70huh7rb5vbe" path="res://Assets/BoltEffects/1_2.png" id="3_07155"]
 [ext_resource type="Script" uid="uid://deb4vsu7xgmm" path="res://Resources/DamageData/DamageData.cs" id="3_nt0dy"]
-[ext_resource type="Texture2D" uid="uid://cdurqvyhg7e84" path="res://assets/BoltEffects/1_5.png" id="4_nt0dy"]
-[ext_resource type="Texture2D" uid="uid://mbd1ghkjjkll" path="res://assets/BoltEffects/1_3.png" id="5_0osnu"]
-[ext_resource type="Texture2D" uid="uid://cardi3qm8lms1" path="res://assets/BoltEffects/1_4.png" id="6_ktirx"]
-[ext_resource type="Texture2D" uid="uid://cy5o7k3ker58i" path="res://assets/BoltEffects/1_6.png" id="7_fyq4r"]
-[ext_resource type="Texture2D" uid="uid://bhsw1va4nf455" path="res://assets/BoltEffects/1_7.png" id="8_ntvur"]
-[ext_resource type="Texture2D" uid="uid://p0f41hpnut6k" path="res://assets/BoltEffects/1_8.png" id="9_5ajog"]
-[ext_resource type="Texture2D" uid="uid://d2k5m6no4jk17" path="res://assets/BoltEffects/1_9.png" id="10_52qc7"]
-[ext_resource type="Texture2D" uid="uid://dbequ1ky4x1bu" path="res://assets/BoltEffects/1_10.png" id="11_2ybub"]
-[ext_resource type="Texture2D" uid="uid://bcsiqi2wniog4" path="res://assets/BoltEffects/1_11.png" id="12_k7w7o"]
+[ext_resource type="Texture2D" uid="uid://cdurqvyhg7e84" path="res://Assets/BoltEffects/1_5.png" id="4_nt0dy"]
+[ext_resource type="Texture2D" uid="uid://mbd1ghkjjkll" path="res://Assets/BoltEffects/1_3.png" id="5_0osnu"]
+[ext_resource type="Texture2D" uid="uid://cardi3qm8lms1" path="res://Assets/BoltEffects/1_4.png" id="6_ktirx"]
+[ext_resource type="Texture2D" uid="uid://cy5o7k3ker58i" path="res://Assets/BoltEffects/1_6.png" id="7_fyq4r"]
+[ext_resource type="Texture2D" uid="uid://bhsw1va4nf455" path="res://Assets/BoltEffects/1_7.png" id="8_ntvur"]
+[ext_resource type="Texture2D" uid="uid://p0f41hpnut6k" path="res://Assets/BoltEffects/1_8.png" id="9_5ajog"]
+[ext_resource type="Texture2D" uid="uid://d2k5m6no4jk17" path="res://Assets/BoltEffects/1_9.png" id="10_52qc7"]
+[ext_resource type="Texture2D" uid="uid://dbequ1ky4x1bu" path="res://Assets/BoltEffects/1_10.png" id="11_2ybub"]
+[ext_resource type="Texture2D" uid="uid://bcsiqi2wniog4" path="res://Assets/BoltEffects/1_11.png" id="12_k7w7o"]
 
 [sub_resource type="Resource" id="Resource_0osnu"]
 script = ExtResource("3_nt0dy")
@@ -67,22 +67,24 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jeyyd"]
-radius = 4.0
+radius = 16.0
 
 [node name="Agi" type="Area2D" unique_id=1758313686 node_paths=PackedStringArray("body")]
 collision_layer = 4
 collision_mask = 10
 script = ExtResource("1_3pur7")
-FireParticles = ExtResource("2_07155")
+OnFireDebuff = ExtResource("2_nt0dy")
 Damage = SubResource("Resource_0osnu")
 MaxHitCooldown = 0.0
 body = NodePath("AnimatedSprite2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1076336328]
-position = Vector2(-4, 0)
+texture_filter = 1
+scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_1sfad")
 autoplay = "default"
 frame_progress = 0.35350412
+offset = Vector2(-4, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2116822659]
 shape = SubResource("CircleShape2D_jeyyd")

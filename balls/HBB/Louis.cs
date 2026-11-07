@@ -7,11 +7,10 @@ public partial class Louis : Ball
     public int MaxSpeedDamage = 6;
     [Export]
     public float SpeedDamageIncrease = 80f;
-    
 
-    public override DamageData GetContactDamage(Ball ball)
+    public override DamageModification ModifyDealtContactDamage(Ball ball)
     {
         int bonus = int.Clamp((int)(LinearVelocity.Length() / SpeedDamageIncrease), 0, MaxSpeedDamage);
-        return base.GetContactDamage(ball);
+        return new(bonus);
     }
 }

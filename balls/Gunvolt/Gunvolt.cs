@@ -69,7 +69,7 @@ public partial class Gunvolt : Ball
             flashfield.owner = this;
             CurrentFlashfield = 2;
             flashfield.TimeLeft = CurrentFlashfield;
-            flashfield.TeamName = TeamName;
+            flashfield.OwnerSetup(this);
             
             // EmitSignal(SignalName.SpawnProjectile, flashfield);
             AddChild(flashfield);

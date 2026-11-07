@@ -5,8 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://ce3nnno1cd3ve" path="res://UIElements/Board.tscn" id="2_h2yge"]
 [ext_resource type="PackedScene" uid="uid://nblvtfu05jgs" path="res://UIElements/HealthUI.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://cyxxtddm6l8e7" path="res://UIElements/Backgrounds/Space.tscn" id="3_kek77"]
-[ext_resource type="PackedScene" uid="uid://dnpwqdqwqgwp5" path="res://balls/Gunvolt/Gunvolt.tscn" id="4_4c57u"]
-[ext_resource type="PackedScene" uid="uid://cm4bpidiiakbe" path="res://balls/JJBA/DIO.tscn" id="5_efxa6"]
+[ext_resource type="PackedScene" uid="uid://ct48drmrhwffg" path="res://balls/JJBA/Koichi.tscn" id="4_4c57u"]
+[ext_resource type="Resource" uid="uid://c7lplg754ushc" path="res://Resources/MusicThemes/Courage.tres" id="4_efxa6"]
+[ext_resource type="PackedScene" uid="uid://boubdq6ms7jv8" path="res://balls/Lenen/Yaorochi.tscn" id="5_4c57u"]
 [ext_resource type="Script" uid="uid://b3s2piwpt1lay" path="res://WorldViewportContainer.cs" id="6_272bh"]
 [ext_resource type="PackedScene" uid="uid://dhmb5cfrj22lg" path="res://UIElements/Information.tscn" id="7_4c57u"]
 [ext_resource type="PackedScene" uid="uid://cbsjpdohpx3p7" path="res://UIElements/VictoryScreen.tscn" id="8_efxa6"]
@@ -33,7 +34,8 @@ InfoUI = NodePath("Interface/Information")
 BallsViewport = NodePath("SubViewportContainer/SubViewport/Balls/BallsViewport")
 ProjectilesViewport = NodePath("SubViewportContainer/SubViewport/Balls/BallsViewport")
 BackgroundContainer = NodePath("SubViewportContainer/SubViewport/Background/BackgroundViewport/Control")
-IndependentBalls = Array[PackedScene]([ExtResource("4_4c57u"), ExtResource("5_efxa6")])
+ThemeOverride = ExtResource("4_efxa6")
+IndependentBalls = Array[PackedScene]([ExtResource("4_4c57u"), ExtResource("5_4c57u")])
 viewport = NodePath("SubViewportContainer")
 
 [node name="Board" parent="." unique_id=1516484126 instance=ExtResource("2_h2yge")]

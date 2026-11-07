@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://c4neat53r0n1u"
-path="res://.godot/imported/FlashfieldUse.wav-2559e5f997f54c2e39e1df0e85d5ca10.sample"
+path="res://.godot/imported/FlashfieldUse.wav-b461e5a0bbaaaec8c58416cdc35d735c.sample"
 
 [deps]
 
-source_file="res://assets/SoundEffects/Gunvolt/FlashfieldUse.wav"
-dest_files=["res://.godot/imported/FlashfieldUse.wav-2559e5f997f54c2e39e1df0e85d5ca10.sample"]
+source_file="res://Assets/SoundEffects/Gunvolt/FlashfieldUse.wav"
+dest_files=["res://.godot/imported/FlashfieldUse.wav-b461e5a0bbaaaec8c58416cdc35d735c.sample"]
 
 [params]
 

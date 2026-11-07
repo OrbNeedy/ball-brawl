@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cncfovc6axmk8"
-path="res://.godot/imported/Gunther.png-c7c16e3a8954cf3a590ff847ed542a8a.ctex"
+path="res://.godot/imported/Gunther.png-963e6e469452538381dcf8ba99bcc141.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/HBB Asset Pack/Ranged/Gunther.png"
-dest_files=["res://.godot/imported/Gunther.png-c7c16e3a8954cf3a590ff847ed542a8a.ctex"]
+source_file="res://Assets/HBB Asset Pack/Ranged/Gunther.png"
+dest_files=["res://.godot/imported/Gunther.png-963e6e469452538381dcf8ba99bcc141.ctex"]
 
 [params]
 

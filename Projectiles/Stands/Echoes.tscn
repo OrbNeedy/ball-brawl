@@ -2,10 +2,19 @@
 
 [ext_resource type="Script" uid="uid://cgenl85f3j3j0" path="res://Projectiles/Stands/Echoes.cs" id="1_m8213"]
 [ext_resource type="Script" uid="uid://deb4vsu7xgmm" path="res://Resources/DamageData/DamageData.cs" id="2_a4wvx"]
-[ext_resource type="Texture2D" uid="uid://bjwa8exaw3m81" path="res://assets/CharacterBalls/Koichi/Eggoes.png" id="2_afnb4"]
-[ext_resource type="Texture2D" uid="uid://cxbdl437vq8wg" path="res://assets/CharacterBalls/Koichi/EchoesAttacksTamami_edited.png" id="3_70b0v"]
-[ext_resource type="Texture2D" uid="uid://vruasf2hflvy" path="res://assets/CharacterBalls/Koichi/ACT2_First_Appearance_edited.png" id="4_qbt58"]
-[ext_resource type="Texture2D" uid="uid://bm0pb8unvak21" path="res://assets/CharacterBalls/Koichi/Echoes3_edited.png" id="5_pgv5w"]
+[ext_resource type="Texture2D" uid="uid://bjwa8exaw3m81" path="res://Assets/CharacterBalls/Koichi/Eggoes.png" id="2_afnb4"]
+[ext_resource type="AudioStream" uid="uid://cd68c7wbnh730" path="res://Assets/SoundEffects/Koichi/Hit.wav" id="2_sf6cy"]
+[ext_resource type="PackedScene" uid="uid://cc7w8i85ap78o" path="res://Projectiles/Sizzle.tscn" id="2_xk3ev"]
+[ext_resource type="Texture2D" uid="uid://cxbdl437vq8wg" path="res://Assets/CharacterBalls/Koichi/EchoesAttacksTamami_edited.png" id="3_70b0v"]
+[ext_resource type="AudioStream" uid="uid://ck2c3qubu8s0r" path="res://Assets/SoundEffects/Koichi/Draw.wav" id="3_736qy"]
+[ext_resource type="PackedScene" uid="uid://bgftgkikk1nk1" path="res://StatusEffects/EchoesSoundEffect.tscn" id="3_gds1c"]
+[ext_resource type="Texture2D" uid="uid://vruasf2hflvy" path="res://Assets/CharacterBalls/Koichi/ACT2_First_Appearance_edited.png" id="4_qbt58"]
+[ext_resource type="AudioStream" uid="uid://blbbxq2ktgiwt" path="res://Assets/SoundEffects/Koichi/ThreeFreeze.wav" id="4_y3ck5"]
+[ext_resource type="AudioStream" uid="uid://fyonhi0c8pso" path="res://Assets/SoundEffects/Koichi/ThreeFreezeEffect.wav" id="5_736qy"]
+[ext_resource type="AudioStream" uid="uid://8fg776dr8l7c" path="res://Assets/SoundEffects/Koichi/Act1.wav" id="5_o647h"]
+[ext_resource type="Texture2D" uid="uid://bm0pb8unvak21" path="res://Assets/CharacterBalls/Koichi/Echoes3_edited.png" id="5_pgv5w"]
+[ext_resource type="AudioStream" uid="uid://cc1ke70agrs2r" path="res://Assets/SoundEffects/Koichi/Act2.wav" id="6_qcukc"]
+[ext_resource type="AudioStream" uid="uid://c1q2yivy8b1h7" path="res://Assets/SoundEffects/Koichi/Act3.wav" id="7_g2jjj"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pgv5w"]
 radius = 34.0
@@ -16,6 +25,7 @@ radius = 30.0
 
 [sub_resource type="Resource" id="Resource_xk3ev"]
 script = ExtResource("2_a4wvx")
+IFrames = 0.6
 metadata/_custom_type_script = "uid://deb4vsu7xgmm"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_70b0v"]
@@ -53,21 +63,55 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a4wvx"]
+size = Vector2(26, 10)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xk3ev"]
+radius = 500.0
+
 [node name="Echoes" type="Area2D" unique_id=386018450 node_paths=PackedStringArray("body")]
 collision_layer = 4
 collision_mask = 10
 script = ExtResource("1_m8213")
+HitSound = ExtResource("2_sf6cy")
+WriteSound = ExtResource("3_736qy")
+ThreeFreezeSound = ExtResource("4_y3ck5")
+ThreeFreezeEffectSound = ExtResource("5_736qy")
+ActChangeSound = Array[AudioStream]([ExtResource("5_o647h"), ExtResource("6_qcukc"), ExtResource("7_g2jjj")])
+SizzleScene = ExtResource("2_xk3ev")
+WeakenScene = ExtResource("3_gds1c")
 ActShapes = Array[Shape2D]([SubResource("CapsuleShape2D_pgv5w"), SubResource("CircleShape2D_pgv5w"), SubResource("CircleShape2D_pgv5w"), SubResource("CircleShape2D_pgv5w")])
+Range = 375.0
+HitsLeft = 9999
 Damage = SubResource("Resource_xk3ev")
+MaxHitCooldown = 0.6
+TimeLeft = 9999.0
 body = NodePath("AnimatedSprite2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=63817496]
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_70b0v")
-animation = &"act3"
+animation = &"act0"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1725820432]
 shape = SubResource("CircleShape2D_pgv5w")
 
+[node name="GroundCollision" type="Area2D" parent="." unique_id=33244103]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GroundCollision" unique_id=1123609986]
+position = Vector2(3, 45)
+shape = SubResource("RectangleShape2D_a4wvx")
+
+[node name="Detection" type="Area2D" parent="." unique_id=999740546]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection" unique_id=83127785]
+shape = SubResource("CircleShape2D_xk3ev")
+
 [connection signal="body_entered" from="." to="." method="BodyCollision"]
 [connection signal="body_exited" from="." to="." method="BodyExit"]
+[connection signal="body_entered" from="GroundCollision" to="." method="OnLowerBorderCollision"]
+[connection signal="body_entered" from="Detection" to="." method="OnDetectBall"]
+[connection signal="body_exited" from="Detection" to="." method="OnBallExitDetection"]

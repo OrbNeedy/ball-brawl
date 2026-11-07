@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cowwymtq30o6q"
-path="res://.godot/imported/Pobee.png-3e0f7714aca7e01c47fa546c64618611.ctex"
+path="res://.godot/imported/Pobee.png-8cb5e1a81ac10c71fa0dcac2b29568a0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/HBB Asset Pack/Unarmed/Pobee.png"
-dest_files=["res://.godot/imported/Pobee.png-3e0f7714aca7e01c47fa546c64618611.ctex"]
+source_file="res://Assets/HBB Asset Pack/Unarmed/Pobee.png"
+dest_files=["res://.godot/imported/Pobee.png-8cb5e1a81ac10c71fa0dcac2b29568a0.ctex"]
 
 [params]
 

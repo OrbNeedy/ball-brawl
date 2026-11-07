@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://ba6es6ogthred"
-path="res://.godot/imported/kira01.wav-c06f8d3f81006f72f176ada3301ffc81.sample"
+path="res://.godot/imported/kira01.wav-e006a4e14767d3d0b88d4a408149a154.sample"
 
 [deps]
 
-source_file="res://assets/SoundEffects/Touhou/kira01.wav"
-dest_files=["res://.godot/imported/kira01.wav-c06f8d3f81006f72f176ada3301ffc81.sample"]
+source_file="res://Assets/SoundEffects/Touhou/kira01.wav"
+dest_files=["res://.godot/imported/kira01.wav-e006a4e14767d3d0b88d4a408149a154.sample"]
 
 [params]
 

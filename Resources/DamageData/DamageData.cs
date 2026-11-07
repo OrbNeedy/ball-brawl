@@ -9,7 +9,7 @@ public partial class DamageData : Resource
     [Export]
     public double IFrames = 0.2;
     [Export]
-    public PowerType Element = PowerType.None;
+    public AttackElement Element = AttackElement.None;
     [Export]
     public bool CanBeDodged = true;
     [Export]

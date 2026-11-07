@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dts1frphh7y3s"
-path="res://.godot/imported/TouhouPlayerDeath.wav-1c2fc418a51dfde3617589eecd6c54d9.sample"
+path="res://.godot/imported/TouhouPlayerDeath.wav-da1473d8c4a33a283ca9170ea93bea2f.sample"
 
 [deps]
 
-source_file="res://assets/SoundEffects/Touhou/TouhouPlayerDeath.wav"
-dest_files=["res://.godot/imported/TouhouPlayerDeath.wav-1c2fc418a51dfde3617589eecd6c54d9.sample"]
+source_file="res://Assets/SoundEffects/Touhou/TouhouPlayerDeath.wav"
+dest_files=["res://.godot/imported/TouhouPlayerDeath.wav-da1473d8c4a33a283ca9170ea93bea2f.sample"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://crwryt2r6diin"
-path="res://.godot/imported/ElectricityArc2.png-0f3f0981c9bcf89b2fb4d00dcf85d4f1.ctex"
+path="res://.godot/imported/ElectricityArc2.png-dae5450574e2a2b32637d1ee141ecff6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Gunvolt/ElectricityArc2.png"
-dest_files=["res://.godot/imported/ElectricityArc2.png-0f3f0981c9bcf89b2fb4d00dcf85d4f1.ctex"]
+source_file="res://Assets/Gunvolt/ElectricityArc2.png"
+dest_files=["res://.godot/imported/ElectricityArc2.png-dae5450574e2a2b32637d1ee141ecff6.ctex"]
 
 [params]
 

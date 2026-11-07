@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cs7cgibg47pcu"
-path="res://.godot/imported/Bullet 24x24 Part 9B Free.png-b4d3a48c8b171eeeb283b3d6566731c9.ctex"
+path="res://.godot/imported/Bullet 24x24 Part 9B Free.png-f90d6a5237747ee62f77945445ccc119.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/BulletEffect/Bullet 24x24 Part 9B Free.png"
-dest_files=["res://.godot/imported/Bullet 24x24 Part 9B Free.png-b4d3a48c8b171eeeb283b3d6566731c9.ctex"]
+source_file="res://Assets/BulletEffect/Bullet 24x24 Part 9B Free.png"
+dest_files=["res://.godot/imported/Bullet 24x24 Part 9B Free.png-f90d6a5237747ee62f77945445ccc119.ctex"]
 
 [params]
 

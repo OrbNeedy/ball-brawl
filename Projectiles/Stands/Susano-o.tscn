@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://c1wfvq3geljeh"]
 
-[ext_resource type="Texture2D" uid="uid://dppkhd1tvomee" path="res://assets/Weapons/SevenProngedSword.png" id="1_1llkh"]
+[ext_resource type="Texture2D" uid="uid://dppkhd1tvomee" path="res://Assets/Weapons/SevenProngedSword.png" id="1_1llkh"]
 [ext_resource type="Script" uid="uid://ctdrf0yvjlru2" path="res://Projectiles/Stands/SusanoO.cs" id="1_46ls8"]
-[ext_resource type="Texture2D" uid="uid://cltquiv0jlilf" path="res://assets/Persona/PST_002.TMX_1_edited.png" id="2_46ls8"]
-[ext_resource type="AudioStream" uid="uid://dcourkrbipnan" path="res://assets/SoundEffects/Persona 3/Cut.wav" id="2_iei3c"]
+[ext_resource type="Texture2D" uid="uid://cltquiv0jlilf" path="res://Assets/Persona/PST_002.TMX_1_edited.png" id="2_46ls8"]
+[ext_resource type="AudioStream" uid="uid://dcourkrbipnan" path="res://Assets/SoundEffects/Persona 3/Cut.wav" id="2_iei3c"]
 [ext_resource type="Script" uid="uid://deb4vsu7xgmm" path="res://Resources/DamageData/DamageData.cs" id="3_nq474"]
 
 [sub_resource type="Resource" id="Resource_glxyl"]

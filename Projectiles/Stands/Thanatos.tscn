@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://lj3drasxsnt6"]
 
 [ext_resource type="Script" uid="uid://daharwuxlkueh" path="res://Projectiles/Stands/Thanatos.cs" id="1_bq0kl"]
-[ext_resource type="Texture2D" uid="uid://cmabkfdguxm6e" path="res://assets/Persona/PST_05A.TMX_1_edited.png" id="1_tinbs"]
+[ext_resource type="Texture2D" uid="uid://cmabkfdguxm6e" path="res://Assets/Persona/PST_05A.TMX_1_edited.png" id="1_tinbs"]
 [ext_resource type="Script" uid="uid://deb4vsu7xgmm" path="res://Resources/DamageData/DamageData.cs" id="2_11lqf"]
-[ext_resource type="Texture2D" uid="uid://dxyuudgljx7l6" path="res://assets/BulletEffect/Bullet 24x24 Free  Part 1C.png" id="2_pj8lo"]
+[ext_resource type="Texture2D" uid="uid://dxyuudgljx7l6" path="res://Assets/BulletEffect/Bullet 24x24 Free  Part 1C.png" id="2_pj8lo"]
 [ext_resource type="Script" uid="uid://qp6hjhv6tlrw" path="res://Scripts/FunctioningAnimatedSprite.cs" id="2_xi2ec"]
 [ext_resource type="PackedScene" uid="uid://hgs4i1nmsyug" path="res://Projectiles/BraveBlade.tscn" id="5_11lqf"]
 

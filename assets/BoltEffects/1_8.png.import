@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://p0f41hpnut6k"
-path="res://.godot/imported/1_8.png-5b3c183e88b1d0177950fc30fe6ce78f.ctex"
+path="res://.godot/imported/1_8.png-84aa715e5893499a5531eddc559c4224.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/BoltEffects/1_8.png"
-dest_files=["res://.godot/imported/1_8.png-5b3c183e88b1d0177950fc30fe6ce78f.ctex"]
+source_file="res://Assets/BoltEffects/1_8.png"
+dest_files=["res://.godot/imported/1_8.png-84aa715e5893499a5531eddc559c4224.ctex"]
 
 [params]
 

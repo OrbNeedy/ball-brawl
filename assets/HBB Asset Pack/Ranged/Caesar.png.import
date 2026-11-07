@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dw26vljf36oad"
-path="res://.godot/imported/Caesar.png-f3af90b22897d751dd190c461f48299d.ctex"
+path="res://.godot/imported/Caesar.png-62157ad5b0d054d79e77390950cb33cd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/HBB Asset Pack/Ranged/Caesar.png"
-dest_files=["res://.godot/imported/Caesar.png-f3af90b22897d751dd190c461f48299d.ctex"]
+source_file="res://Assets/HBB Asset Pack/Ranged/Caesar.png"
+dest_files=["res://.godot/imported/Caesar.png-62157ad5b0d054d79e77390950cb33cd.ctex"]
 
 [params]
 

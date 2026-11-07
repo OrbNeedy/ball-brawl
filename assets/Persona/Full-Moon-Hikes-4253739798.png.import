@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c0y1pa1hhtm8g"
-path="res://.godot/imported/Full-Moon-Hikes-4253739798.png-eb53af19bf6803ca7d3989926dadbc8c.ctex"
+path="res://.godot/imported/Full-Moon-Hikes-4253739798.png-ac5638a0cd535a168ba7961a1b6c46cf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Persona/Full-Moon-Hikes-4253739798.png"
-dest_files=["res://.godot/imported/Full-Moon-Hikes-4253739798.png-eb53af19bf6803ca7d3989926dadbc8c.ctex"]
+source_file="res://Assets/Persona/Full-Moon-Hikes-4253739798.png"
+dest_files=["res://.godot/imported/Full-Moon-Hikes-4253739798.png-ac5638a0cd535a168ba7961a1b6c46cf.ctex"]
 
 [params]
 

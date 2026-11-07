@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://yb64n6s133t4"]
 
 [ext_resource type="Script" uid="uid://c5or4f4j7uava" path="res://Projectiles/Ragnarok.cs" id="1_rbfoe"]
-[ext_resource type="Texture2D" uid="uid://bvlfui2siylbf" path="res://assets/FireEffects/Part 1/03.png" id="2_0nk68"]
+[ext_resource type="Texture2D" uid="uid://bvlfui2siylbf" path="res://Assets/FireEffects/Part 1/03.png" id="2_0nk68"]
 [ext_resource type="PackedScene" uid="uid://nkdtu11h1ll5" path="res://Particles/Fire.tscn" id="2_pkh6b"]
-[ext_resource type="AudioStream" uid="uid://bonj8gue874xp" path="res://assets/SoundEffects/Persona 3/Ragnarok.wav" id="2_umllw"]
+[ext_resource type="AudioStream" uid="uid://bonj8gue874xp" path="res://Assets/SoundEffects/Persona 3/Ragnarok.wav" id="2_umllw"]
 [ext_resource type="Script" uid="uid://deb4vsu7xgmm" path="res://Resources/DamageData/DamageData.cs" id="4_nbhrm"]
 
 [sub_resource type="Resource" id="Resource_nt0nl"]

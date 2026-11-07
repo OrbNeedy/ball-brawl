@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://gjt6x6trnkgw"
-path="res://.godot/imported/Hit.wav-21b0b0840389cfbfdf815a40439b6113.sample"
+path="res://.godot/imported/Hit.wav-84e8b8068a3a613a101d8c41df4fb68f.sample"
 
 [deps]
 
-source_file="res://assets/SoundEffects/Persona 3/Hit.wav"
-dest_files=["res://.godot/imported/Hit.wav-21b0b0840389cfbfdf815a40439b6113.sample"]
+source_file="res://Assets/SoundEffects/Persona 3/Hit.wav"
+dest_files=["res://.godot/imported/Hit.wav-84e8b8068a3a613a101d8c41df4fb68f.sample"]
 
 [params]
 

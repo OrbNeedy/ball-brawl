@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://co0xrpk5ll5fl"
-path="res://.godot/imported/Classic UI SFX - Short - High #17.wav-ea05e696362b694a951ad3e6a896b0f0.sample"
+path="res://.godot/imported/Classic UI SFX - Short - High #17.wav-daf767a4c4a5870d38b0424de330f41c.sample"
 
 [deps]
 
-source_file="res://assets/SoundEffects/Generic/Classic UI SFX - Short - High #17.wav"
-dest_files=["res://.godot/imported/Classic UI SFX - Short - High #17.wav-ea05e696362b694a951ad3e6a896b0f0.sample"]
+source_file="res://Assets/SoundEffects/Generic/Classic UI SFX - Short - High #17.wav"
+dest_files=["res://.godot/imported/Classic UI SFX - Short - High #17.wav-daf767a4c4a5870d38b0424de330f41c.sample"]
 
 [params]
 

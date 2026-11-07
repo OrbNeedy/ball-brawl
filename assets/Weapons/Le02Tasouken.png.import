@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://duf1yafx646it"
-path="res://.godot/imported/Le02Tasouken.png-f1cb02a625c2507d59d2a73f85ac71ad.ctex"
+path="res://.godot/imported/Le02Tasouken.png-7ce23930ed75714406bb6d23b1489c7a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Weapons/Le02Tasouken.png"
-dest_files=["res://.godot/imported/Le02Tasouken.png-f1cb02a625c2507d59d2a73f85ac71ad.ctex"]
+source_file="res://Assets/Weapons/Le02Tasouken.png"
+dest_files=["res://.godot/imported/Le02Tasouken.png-7ce23930ed75714406bb6d23b1489c7a.ctex"]
 
 [params]
 

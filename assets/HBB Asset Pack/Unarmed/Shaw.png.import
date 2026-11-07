@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://q76q1vqwtpq2"
-path="res://.godot/imported/Shaw.png-1d4c26e79010b0bd51327b4ca6cc7443.ctex"
+path="res://.godot/imported/Shaw.png-ba10e51a6571b76907d8008c7d21bf4c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/HBB Asset Pack/Unarmed/Shaw.png"
-dest_files=["res://.godot/imported/Shaw.png-1d4c26e79010b0bd51327b4ca6cc7443.ctex"]
+source_file="res://Assets/HBB Asset Pack/Unarmed/Shaw.png"
+dest_files=["res://.godot/imported/Shaw.png-ba10e51a6571b76907d8008c7d21bf4c.ctex"]
 
 [params]
 

@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://8h6n4r0oiqt3"
-path="res://.godot/imported/BetterCross.glb-12f6d1f81338167950d318f368e56659.scn"
+path="res://.godot/imported/BetterCross.glb-17498a0c72dc7864a077051f60be3339.scn"
 
 [deps]
 
-source_file="res://assets/Models/BetterCross.glb"
-dest_files=["res://.godot/imported/BetterCross.glb-12f6d1f81338167950d318f368e56659.scn"]
+source_file="res://Assets/Models/BetterCross.glb"
+dest_files=["res://.godot/imported/BetterCross.glb-17498a0c72dc7864a077051f60be3339.scn"]
 
 [params]
 

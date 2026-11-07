@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://emkgwsabtlnn"
-path="res://.godot/imported/CircleMors4.png-728c05cffa53525b31949bed5f1518c0.ctex"
+path="res://.godot/imported/CircleMors4.png-be489044ed981737c9e1b149ab013b70.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/CharacterBalls/Marisa/CircleMors4.png"
-dest_files=["res://.godot/imported/CircleMors4.png-728c05cffa53525b31949bed5f1518c0.ctex"]
+source_file="res://Assets/CharacterBalls/Marisa/CircleMors4.png"
+dest_files=["res://.godot/imported/CircleMors4.png-be489044ed981737c9e1b149ab013b70.ctex"]
 
 [params]
 

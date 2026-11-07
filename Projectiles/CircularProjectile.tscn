@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bmikn440jcqx"]
 
 [ext_resource type="Script" uid="uid://8ytq86wbb0fg" path="res://Projectiles/CircularProjectile.cs" id="1_dxl8p"]
-[ext_resource type="Texture2D" uid="uid://das3ykvoo8hvh" path="res://assets/Sheets/NEC PC-9801 - Touhou Kaikidan (Mystic Square) - Miscellaneous - Bullets, Items, Particles.png" id="1_mf7s8"]
+[ext_resource type="Texture2D" uid="uid://das3ykvoo8hvh" path="res://Assets/Sheets/NEC PC-9801 - Touhou Kaikidan (Mystic Square) - Miscellaneous - Bullets, Items, Particles.png" id="1_mf7s8"]
 [ext_resource type="Script" uid="uid://deb4vsu7xgmm" path="res://Resources/DamageData/DamageData.cs" id="2_l2x8b"]
 
 [sub_resource type="Resource" id="Resource_26q2t"]

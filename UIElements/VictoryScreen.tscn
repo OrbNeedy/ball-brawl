@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cbsjpdohpx3p7"]
 
 [ext_resource type="Script" uid="uid://d1w5ny2xa2ch7" path="res://UIElements/VictoryScreen.cs" id="1_im3wi"]
-[ext_resource type="AudioStream" uid="uid://co0xrpk5ll5fl" path="res://assets/SoundEffects/Generic/Classic UI SFX - Short - High #17.wav" id="2_im3wi"]
+[ext_resource type="AudioStream" uid="uid://co0xrpk5ll5fl" path="res://Assets/SoundEffects/Generic/Classic UI SFX - Short - High #17.wav" id="2_im3wi"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2x0py"]
 font_size = 42

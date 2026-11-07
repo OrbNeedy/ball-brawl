@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://df38ews55y4fm"
-path="res://.godot/imported/Mundus.png-291362105ffb809fe53868664f48ac9f.ctex"
+path="res://.godot/imported/Mundus.png-58666c6d44b6b4a26d33670fda861785.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/HBB Asset Pack/Unarmed/Mundus.png"
-dest_files=["res://.godot/imported/Mundus.png-291362105ffb809fe53868664f48ac9f.ctex"]
+source_file="res://Assets/HBB Asset Pack/Unarmed/Mundus.png"
+dest_files=["res://.godot/imported/Mundus.png-58666c6d44b6b4a26d33670fda861785.ctex"]
 
 [params]
 

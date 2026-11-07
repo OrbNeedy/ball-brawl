@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://dl1ekf31xqhei"]
 
 [ext_resource type="Script" uid="uid://y8ltmu4h76sm" path="res://Projectiles/Stands/Cybele.cs" id="1_gmtdo"]
-[ext_resource type="Texture2D" uid="uid://dfjqxaocl5her" path="res://assets/Persona/PST_015.TMX_1_edited(1).png" id="1_ux7ir"]
+[ext_resource type="Texture2D" uid="uid://dfjqxaocl5her" path="res://Assets/Persona/PST_015.TMX_1_edited(1).png" id="1_ux7ir"]
 [ext_resource type="PackedScene" uid="uid://hfb48imjggqb" path="res://Particles/Healing.tscn" id="2_rydq7"]
-[ext_resource type="AudioStream" uid="uid://chdy3dcv8r7pn" path="res://assets/SoundEffects/Persona 3/Healing.wav" id="2_yt0lx"]
+[ext_resource type="AudioStream" uid="uid://chdy3dcv8r7pn" path="res://Assets/SoundEffects/Persona 3/Healing.wav" id="2_yt0lx"]
 [ext_resource type="Script" uid="uid://deb4vsu7xgmm" path="res://Resources/DamageData/DamageData.cs" id="4_olcmw"]
 
 [sub_resource type="Resource" id="Resource_ienvj"]

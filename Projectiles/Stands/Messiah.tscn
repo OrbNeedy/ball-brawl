@@ -1,15 +1,15 @@
 [gd_scene format=3 uid="uid://bb1pu6uxvf6n7"]
 
 [ext_resource type="Script" uid="uid://ce41w0cwx0wa2" path="res://Projectiles/Stands/Messiah.cs" id="1_c84i2"]
-[ext_resource type="Texture2D" uid="uid://ntxoh3mv7mi2" path="res://assets/Persona/PST_08A.TMX_1_edited.png" id="1_j0itn"]
+[ext_resource type="Texture2D" uid="uid://ntxoh3mv7mi2" path="res://Assets/Persona/PST_08A.TMX_1_edited.png" id="1_j0itn"]
 [ext_resource type="PackedScene" uid="uid://vc6ny2a12u7g" path="res://Projectiles/Megidolaon.tscn" id="2_int4m"]
 [ext_resource type="Script" uid="uid://deb4vsu7xgmm" path="res://Resources/DamageData/DamageData.cs" id="3_e5yiy"]
 [ext_resource type="PackedScene" uid="uid://23idi8tgc1ye" path="res://Projectiles/GodHand.tscn" id="3_wxmke"]
 [ext_resource type="PackedScene" uid="uid://hfb48imjggqb" path="res://Particles/Healing.tscn" id="4_mn4c2"]
 [ext_resource type="PackedScene" uid="uid://b03syodksmbkk" path="res://Particles/SPRecover.tscn" id="5_6b5ya"]
-[ext_resource type="Texture2D" uid="uid://btpsvn7m2h6kp" path="res://assets/KenneyParticles/star_06.png" id="5_d5d32"]
-[ext_resource type="AudioStream" uid="uid://cc1sgbtjlw5q1" path="res://assets/SoundEffects/Persona 3/Salvation.wav" id="6_1l3dh"]
-[ext_resource type="AudioStream" uid="uid://o6w8e4b5i8ny" path="res://assets/SoundEffects/Persona 3/Revive.wav" id="7_lk81x"]
+[ext_resource type="Texture2D" uid="uid://btpsvn7m2h6kp" path="res://Assets/KenneyParticles/star_06.png" id="5_d5d32"]
+[ext_resource type="AudioStream" uid="uid://cc1sgbtjlw5q1" path="res://Assets/SoundEffects/Persona 3/Salvation.wav" id="6_1l3dh"]
+[ext_resource type="AudioStream" uid="uid://o6w8e4b5i8ny" path="res://Assets/SoundEffects/Persona 3/Revive.wav" id="7_lk81x"]
 
 [sub_resource type="Resource" id="Resource_wxmke"]
 script = ExtResource("3_e5yiy")

@@ -5,17 +5,17 @@
 [ext_resource type="Script" uid="uid://1pwuh2vra5vh" path="res://balls/Lenen/Yabusame.cs" id="2_05n4r"]
 [ext_resource type="PackedScene" uid="uid://blqn1v2wead1r" path="res://Projectiles/TranscendantBullets.tscn" id="3_abh8x"]
 [ext_resource type="PackedScene" uid="uid://boqifufhquf73" path="res://balls/Lenen/VisualClone.tscn" id="3_bw1re"]
-[ext_resource type="Texture2D" uid="uid://dcu2v2lxp6ant" path="res://assets/CharacterBalls/Yabusame/talk_0_03_edited.png" id="3_tdfd4"]
-[ext_resource type="AudioStream" uid="uid://r6e1cypg611h" path="res://assets/SoundEffects/Lenen/LenenShoot.wav" id="3_ylfuq"]
+[ext_resource type="Texture2D" uid="uid://dcu2v2lxp6ant" path="res://Assets/CharacterBalls/Yabusame/talk_0_03_edited.png" id="3_tdfd4"]
+[ext_resource type="AudioStream" uid="uid://r6e1cypg611h" path="res://Assets/SoundEffects/Lenen/LenenShoot.wav" id="3_ylfuq"]
 [ext_resource type="Resource" uid="uid://cd6dkmubfvxwo" path="res://Resources/DamageStyles/YabusameDamageStyle.tres" id="4_bw1re"]
-[ext_resource type="Texture2D" uid="uid://b5kd32h3p3r32" path="res://assets/CharacterBalls/Yabusame/talk_0_04_edited.png" id="4_khb0p"]
+[ext_resource type="Texture2D" uid="uid://b5kd32h3p3r32" path="res://Assets/CharacterBalls/Yabusame/talk_0_04_edited.png" id="4_khb0p"]
 [ext_resource type="Resource" uid="uid://copqc5mfyeqoq" path="res://Resources/MusicThemes/LayersAbove.tres" id="5_lr6d5"]
-[ext_resource type="Texture2D" uid="uid://duefhvhoe04ep" path="res://assets/CharacterBalls/Yabusame/talk_0_06_edited.png" id="6_qvwmv"]
-[ext_resource type="Texture2D" uid="uid://m2aowy7ucpjs" path="res://assets/CharacterBalls/Yabusame/talk_0_07_edited.png" id="7_8p11i"]
+[ext_resource type="Texture2D" uid="uid://duefhvhoe04ep" path="res://Assets/CharacterBalls/Yabusame/talk_0_06_edited.png" id="6_qvwmv"]
+[ext_resource type="Texture2D" uid="uid://m2aowy7ucpjs" path="res://Assets/CharacterBalls/Yabusame/talk_0_07_edited.png" id="7_8p11i"]
 [ext_resource type="Script" uid="uid://deb4vsu7xgmm" path="res://Resources/DamageData/DamageData.cs" id="8_khb0p"]
-[ext_resource type="Texture2D" uid="uid://c13by4t0kya0t" path="res://assets/CharacterBalls/Yabusame/talk_0_10_edited.png" id="10_k5b1k"]
-[ext_resource type="Texture2D" uid="uid://cimtt63eu2e2w" path="res://assets/Misc/Victory.png" id="13_4r015"]
-[ext_resource type="Texture2D" uid="uid://beumyvrim7c4g" path="res://assets/CharacterBalls/Yabusame/talk_0_13_edited.png" id="13_4syxq"]
+[ext_resource type="Texture2D" uid="uid://c13by4t0kya0t" path="res://Assets/CharacterBalls/Yabusame/talk_0_10_edited.png" id="10_k5b1k"]
+[ext_resource type="Texture2D" uid="uid://cimtt63eu2e2w" path="res://Assets/Misc/Victory.png" id="13_4r015"]
+[ext_resource type="Texture2D" uid="uid://beumyvrim7c4g" path="res://Assets/CharacterBalls/Yabusame/talk_0_13_edited.png" id="13_4syxq"]
 [ext_resource type="PackedScene" uid="uid://b7iqthahfbccv" path="res://DynamicObjects/Reticle.tscn" id="16_tdfd4"]
 
 [sub_resource type="Resource" id="Resource_x1iql"]
@@ -83,8 +83,9 @@ VisualCloneScene = ExtResource("3_bw1re")
 Body = NodePath("AnimatedSprite2D")
 Crown = NodePath("Victory")
 Reticle = NodePath("Reticle")
-SpeedGain = 0.35
-MaxSpeedGain = 100.0
+SpeedGain = 0.4
+MaxSpeedGain = 120.0
+DefaultGravityScale = 0.0
 Color = Color(0.5803922, 0.67058825, 0.5372549, 1)
 BallName = "Yabusame"
 DamageEffectsType = ExtResource("4_bw1re")

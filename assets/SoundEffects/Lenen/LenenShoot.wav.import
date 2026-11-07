@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://r6e1cypg611h"
-path="res://.godot/imported/LenenShoot.wav-b9ea3937cab1a76640982b93e009c299.sample"
+path="res://.godot/imported/LenenShoot.wav-381b23067e90759596138910f42e8969.sample"
 
 [deps]
 
-source_file="res://assets/SoundEffects/Lenen/LenenShoot.wav"
-dest_files=["res://.godot/imported/LenenShoot.wav-b9ea3937cab1a76640982b93e009c299.sample"]
+source_file="res://Assets/SoundEffects/Lenen/LenenShoot.wav"
+dest_files=["res://.godot/imported/LenenShoot.wav-381b23067e90759596138910f42e8969.sample"]
 
 [params]
 

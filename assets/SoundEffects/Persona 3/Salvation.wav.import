@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cc1sgbtjlw5q1"
-path="res://.godot/imported/Salvation.wav-3ef89c3197173f09b1afcc3bfd763744.sample"
+path="res://.godot/imported/Salvation.wav-47675452614bb6e25d0876a5d98e2f52.sample"
 
 [deps]
 
-source_file="res://assets/SoundEffects/Persona 3/Salvation.wav"
-dest_files=["res://.godot/imported/Salvation.wav-3ef89c3197173f09b1afcc3bfd763744.sample"]
+source_file="res://Assets/SoundEffects/Persona 3/Salvation.wav"
+dest_files=["res://.godot/imported/Salvation.wav-47675452614bb6e25d0876a5d98e2f52.sample"]
 
 [params]
 

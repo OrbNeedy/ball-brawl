@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c87nvuv8ql5ce"
-path="res://.godot/imported/Gorty.png-b8ee93669fb9837f21da9ccad5fdedbd.ctex"
+path="res://.godot/imported/Gorty.png-02c32009de81d93953ca814309077192.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/HBB Asset Pack/Unarmed/Gorty.png"
-dest_files=["res://.godot/imported/Gorty.png-b8ee93669fb9837f21da9ccad5fdedbd.ctex"]
+source_file="res://Assets/HBB Asset Pack/Unarmed/Gorty.png"
+dest_files=["res://.godot/imported/Gorty.png-02c32009de81d93953ca814309077192.ctex"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dacbsgbauiqa4"
-path="res://.godot/imported/BigFire.wav-9cba8659fe28ee3a3f7f13499bc05b70.sample"
+path="res://.godot/imported/BigFire.wav-83639d46fa8b48e56f225fa4bdbbb7ad.sample"
 
 [deps]
 
-source_file="res://assets/SoundEffects/Persona 3/BigFire.wav"
-dest_files=["res://.godot/imported/BigFire.wav-9cba8659fe28ee3a3f7f13499bc05b70.sample"]
+source_file="res://Assets/SoundEffects/Persona 3/BigFire.wav"
+dest_files=["res://.godot/imported/BigFire.wav-83639d46fa8b48e56f225fa4bdbbb7ad.sample"]
 
 [params]
 

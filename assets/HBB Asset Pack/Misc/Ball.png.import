@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dtjo5l8c5p20u"
-path="res://.godot/imported/Ball.png-cb206a1d71323d58272efaef1e0efac4.ctex"
+path="res://.godot/imported/Ball.png-940c2fc9104483576f8fadc1af86fbc8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/HBB Asset Pack/Misc/Ball.png"
-dest_files=["res://.godot/imported/Ball.png-cb206a1d71323d58272efaef1e0efac4.ctex"]
+source_file="res://Assets/HBB Asset Pack/Misc/Ball.png"
+dest_files=["res://.godot/imported/Ball.png-940c2fc9104483576f8fadc1af86fbc8.ctex"]
 
 [params]
 

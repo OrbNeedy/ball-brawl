@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bdg7u8mnem5jm"
-path="res://.godot/imported/TouhouBossKilled.wav-e898e15284b03a5cd65d6b7fcd9df216.sample"
+path="res://.godot/imported/TouhouBossKilled.wav-e9ad6cfbedb6a05b20109e44a098895d.sample"
 
 [deps]
 
-source_file="res://assets/SoundEffects/Touhou/TouhouBossKilled.wav"
-dest_files=["res://.godot/imported/TouhouBossKilled.wav-e898e15284b03a5cd65d6b7fcd9df216.sample"]
+source_file="res://Assets/SoundEffects/Touhou/TouhouBossKilled.wav"
+dest_files=["res://.godot/imported/TouhouBossKilled.wav-e9ad6cfbedb6a05b20109e44a098895d.sample"]
 
 [params]
 

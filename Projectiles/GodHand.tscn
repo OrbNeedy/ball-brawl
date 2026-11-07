@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://23idi8tgc1ye"]
 
-[ext_resource type="Texture2D" uid="uid://dnljpohs316wl" path="res://assets/Persona/GodHand.png" id="1_ndsyt"]
+[ext_resource type="Texture2D" uid="uid://dnljpohs316wl" path="res://Assets/Persona/GodHand.png" id="1_ndsyt"]
 [ext_resource type="Script" uid="uid://esnpel84xw6b" path="res://Projectiles/GodHand.cs" id="1_qnuji"]
 [ext_resource type="Script" uid="uid://deb4vsu7xgmm" path="res://Resources/DamageData/DamageData.cs" id="2_2affw"]
 [ext_resource type="PackedScene" uid="uid://bii4nkiirau0e" path="res://Particles/Holy.tscn" id="2_36iyy"]
-[ext_resource type="AudioStream" uid="uid://gjt6x6trnkgw" path="res://assets/SoundEffects/Persona 3/Hit.wav" id="3_db2lm"]
+[ext_resource type="AudioStream" uid="uid://gjt6x6trnkgw" path="res://Assets/SoundEffects/Persona 3/Hit.wav" id="3_db2lm"]
 
 [sub_resource type="Resource" id="Resource_36iyy"]
 script = ExtResource("2_2affw")

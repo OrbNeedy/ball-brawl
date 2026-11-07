@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dc7xft0o87peb"
-path="res://.godot/imported/TheWorld.png-7bafae493c099aaa296c177967555c0c.ctex"
+path="res://.godot/imported/TheWorld.png-805a65ac299f53f46f4ea575b4b5f775.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/CharacterBalls/DIO/TheWorld.png"
-dest_files=["res://.godot/imported/TheWorld.png-7bafae493c099aaa296c177967555c0c.ctex"]
+source_file="res://Assets/CharacterBalls/DIO/TheWorld.png"
+dest_files=["res://.godot/imported/TheWorld.png-805a65ac299f53f46f4ea575b4b5f775.ctex"]
 
 [params]
 

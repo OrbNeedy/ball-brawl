@@ -33,7 +33,7 @@ public partial class Thanatos : Stand
 
                         blade.Position = direction * 32;
                         blade.Velocity = direction;
-                        blade.TeamName = TeamName;
+                        blade.OwnerSetup(StandOwner);
                         AddChild(blade);
                         BraveBladeTime = MaxBraveBladeTime;
                         BraveBladeUse--;

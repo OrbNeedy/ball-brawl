@@ -38,12 +38,12 @@ public partial class Dio : Ball
             ModeChangeTimer = MaxModeChangeTimer;
             if (StandOutMode)
             {
-                GravityScale = 1f;
+                DefaultGravityScale = 1f;
                 RoadSign.Activate();
                 SoundEffectManager.Instance.PlaySound(StandOff, Position, 0.6f, true);
             } else
             {
-                GravityScale = 0.15f;
+                DefaultGravityScale = 0.15f;
                 RoadSign.Deactivate();
                 SoundEffectManager.Instance.PlaySound(StandOut, 0.6f, true);
             }
@@ -55,15 +55,13 @@ public partial class Dio : Ball
         }
     }
 
-    public override DamageData GetContactDamage(Ball ball)
+    public override DamageModification ModifyDealtContactDamage(Ball ball)
     {
         if (StandOutMode)
         {
-            DamageData newData = (DamageData)base.GetContactDamage(ball).Duplicate();
-            newData.BaseDamage += 2;
-            return newData;
+            return new(2);
         }
 
-        return base.GetContactDamage(ball);
+        return base.ModifyDealtContactDamage(ball);
     }
 }

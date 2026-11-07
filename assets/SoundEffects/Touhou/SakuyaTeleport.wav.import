@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://g5rb6dndufsj"
-path="res://.godot/imported/SakuyaTeleport.wav-c2091e685ebc68ea475ad2e607726052.sample"
+path="res://.godot/imported/SakuyaTeleport.wav-b582d60405ad9f21a7b6c84aa9e16d40.sample"
 
 [deps]
 
-source_file="res://assets/SoundEffects/Touhou/SakuyaTeleport.wav"
-dest_files=["res://.godot/imported/SakuyaTeleport.wav-c2091e685ebc68ea475ad2e607726052.sample"]
+source_file="res://Assets/SoundEffects/Touhou/SakuyaTeleport.wav"
+dest_files=["res://.godot/imported/SakuyaTeleport.wav-b582d60405ad9f21a7b6c84aa9e16d40.sample"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dnljpohs316wl"
-path="res://.godot/imported/GodHand.png-6c70256d4a65f17b22610ed58f6fe68d.ctex"
+path="res://.godot/imported/GodHand.png-6436fdd0cf1ca0374f245b89718f4936.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Persona/GodHand.png"
-dest_files=["res://.godot/imported/GodHand.png-6c70256d4a65f17b22610ed58f6fe68d.ctex"]
+source_file="res://Assets/Persona/GodHand.png"
+dest_files=["res://.godot/imported/GodHand.png-6436fdd0cf1ca0374f245b89718f4936.ctex"]
 
 [params]
 

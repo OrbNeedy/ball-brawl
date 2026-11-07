@@ -1,6 +1,6 @@
 [gd_resource type="Theme" format=3 uid="uid://cvbyn7b51laql"]
 
-[ext_resource type="Texture2D" uid="uid://c2hmka3yc3kvu" path="res://assets/UI/VictoryPanel.png" id="1_5de62"]
+[ext_resource type="Texture2D" uid="uid://c2hmka3yc3kvu" path="res://Assets/UI/VictoryPanel.png" id="1_5de62"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7yqmx"]
 content_margin_left = 0.0

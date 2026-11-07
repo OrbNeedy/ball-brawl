@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c7tm7i1sf2m4o"
-path="res://.godot/imported/Huck.png-4ea3559554d49047da2c5b5f4b58a5b4.ctex"
+path="res://.godot/imported/Huck.png-3039a1b49521f7058e379857cd437414.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/HBB Asset Pack/Ranged/Huck.png"
-dest_files=["res://.godot/imported/Huck.png-4ea3559554d49047da2c5b5f4b58a5b4.ctex"]
+source_file="res://Assets/HBB Asset Pack/Ranged/Huck.png"
+dest_files=["res://.godot/imported/Huck.png-3039a1b49521f7058e379857cd437414.ctex"]
 
 [params]
 

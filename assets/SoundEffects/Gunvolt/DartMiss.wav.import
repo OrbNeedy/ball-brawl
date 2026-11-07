@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dbunytafh56x"
-path="res://.godot/imported/DartMiss.wav-2cc2ab164b4c6ab76fd155d5e0609e3d.sample"
+path="res://.godot/imported/DartMiss.wav-6331f0872b5fbff55b5cac5b1f42d101.sample"
 
 [deps]
 
-source_file="res://assets/SoundEffects/Gunvolt/DartMiss.wav"
-dest_files=["res://.godot/imported/DartMiss.wav-2cc2ab164b4c6ab76fd155d5e0609e3d.sample"]
+source_file="res://Assets/SoundEffects/Gunvolt/DartMiss.wav"
+dest_files=["res://.godot/imported/DartMiss.wav-6331f0872b5fbff55b5cac5b1f42d101.sample"]
 
 [params]
 

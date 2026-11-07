@@ -49,7 +49,7 @@ public partial class Marisa : Ball
                 Ball closest = GetClosestBall();
                 Laser laser = LaserScene.Instantiate<Laser>();
                 laser.TimeLeft = 1.2;
-                laser.TeamName = TeamName;
+                laser.OwnerSetup(this);
                 if (closest == null || !IsInstanceValid(closest))
                 {
                     laser.Velocity = new Vector2(1, 0).Rotated(Main.rng.RandfRange(0, (float)Math.Tau));

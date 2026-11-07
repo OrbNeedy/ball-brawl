@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c5amwxhcihtrq"]
 
 [ext_resource type="Script" uid="uid://cfkxwn1drhyjy" path="res://Projectiles/Stands/Surtr.cs" id="1_ag65i"]
-[ext_resource type="Texture2D" uid="uid://c6b568xnts7cs" path="res://assets/Persona/PST_030.TMX_1_edited.png" id="2_an5yi"]
+[ext_resource type="Texture2D" uid="uid://c6b568xnts7cs" path="res://Assets/Persona/PST_030.TMX_1_edited.png" id="2_an5yi"]
 [ext_resource type="PackedScene" uid="uid://yb64n6s133t4" path="res://Projectiles/Ragnarok.tscn" id="2_l8k0b"]
 [ext_resource type="Script" uid="uid://deb4vsu7xgmm" path="res://Resources/DamageData/DamageData.cs" id="3_slpwq"]
 

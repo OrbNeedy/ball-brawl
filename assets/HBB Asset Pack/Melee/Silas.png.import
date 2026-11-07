@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cu0dukgxwk344"
-path="res://.godot/imported/Silas.png-f1fe2760feb48303f1e76326a7181962.ctex"
+path="res://.godot/imported/Silas.png-209446b605cba4c0a5737789e66c3c85.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/HBB Asset Pack/Melee/Silas.png"
-dest_files=["res://.godot/imported/Silas.png-f1fe2760feb48303f1e76326a7181962.ctex"]
+source_file="res://Assets/HBB Asset Pack/Melee/Silas.png"
+dest_files=["res://.godot/imported/Silas.png-209446b605cba4c0a5737789e66c3c85.ctex"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bonj8gue874xp"
-path="res://.godot/imported/Ragnarok.wav-f83d2054dfd0a2016bf50b5102febfd8.sample"
+path="res://.godot/imported/Ragnarok.wav-5de95840adcda1184560524e71606a97.sample"
 
 [deps]
 
-source_file="res://assets/SoundEffects/Persona 3/Ragnarok.wav"
-dest_files=["res://.godot/imported/Ragnarok.wav-f83d2054dfd0a2016bf50b5102febfd8.sample"]
+source_file="res://Assets/SoundEffects/Persona 3/Ragnarok.wav"
+dest_files=["res://.godot/imported/Ragnarok.wav-5de95840adcda1184560524e71606a97.sample"]
 
 [params]
 

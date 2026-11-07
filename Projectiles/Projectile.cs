@@ -6,7 +6,8 @@ public enum AttackElement
 {
     None, 
     Electric, 
-    Fire
+    Fire, 
+    Sound
 }
 
 public partial class Projectile : Area2D
@@ -30,8 +31,7 @@ public partial class Projectile : Area2D
 
     [Export]
     public bool StoppableByFlashfield = false;
-    [Export]
-    public AttackElement Element = AttackElement.None;
+    public DamageModification Modifier = new();
 
     [Export]
     public double TimeLeft = 10;
@@ -55,6 +55,12 @@ public partial class Projectile : Area2D
 
     public virtual void OnReady() 
     {
+    }
+
+    public void OwnerSetup(Ball ball)
+    {
+        TeamName = ball.TeamName;
+        Modifier = ball.GetContactDamageModifier();
     }
 
     public override void _EnterTree()
@@ -94,19 +100,7 @@ public partial class Projectile : Area2D
         {
             foreach (Ball ball in ballsHit)
             {
-                //GD.Print("Process damaged ball " + ball.BallName);
-                if (!ball.PreProjectileCollision(this, Damage) && Damage.CanBeDodged) continue;
-                
-                OnBallHit(ball);
-                ball.ProjectileCollision(this, Damage);
-
-                HitCooldown = MaxHitCooldown;
-                HitsLeft--;
-                if (HitsLeft <= 0)
-                {
-                    //GD.Print("Last hit used");
-                    DeleteProjectile();
-                }
+                DamageBall(ball);
             }
         } else
         {
@@ -167,38 +161,40 @@ public partial class Projectile : Area2D
 
         if (body is Ball ball && !ballsHit.Contains(ball))
         {
-            if (TimeStopped && !TimeResistant && !ball.AffectedByTimeStop) return;
-            //GD.Print("Collision damaged ball " + ball.BallName);
-            //GD.Print("Ball hit");
-            if (!ball.PreProjectileCollision(this, Damage) && Damage.CanBeDodged)
+            //GD.Print($"Projectile hit with additive: {Modifier.Additive} and multiplicative {Modifier.Multiplicative}");
+            //GD.Print($"Final damage: {Modifier.ApplyToDamage(Damage)}");
+            if (DamageBall(ball))
             {
-            } else
-            {
-                OnBallHit(ball);
-                if (ball.iFrames <= 0)
-                {
-                    ball.ProjectileCollision(this, ModifyDamage(ball));
-                }
+                ballsHit.Add(ball);
 
-                HitsLeft--;
-                if (HitsLeft <= 0)
-                {
-                    //GD.Print("Last hit used");
-                    DeleteProjectile();
-                }
+                HitCooldown = MaxHitCooldown;
             }
-
-            ballsHit.Add(ball);
-
-            HitCooldown = MaxHitCooldown;
         }
 
         OnBodyCollision(body);
     }
 
-    public virtual DamageData ModifyDamage(Ball target)
+    public bool DamageBall(Ball ball)
     {
-        return Damage;
+        if (!ball.PreProjectileCollision(this, Damage) && Damage.CanBeDodged) return false;
+
+        if (TimeStopped && !ball.AffectedByTimeStop) return true;
+        
+        OnBallHit(ball);
+        
+        DamageModification modification = ModifyDamage(ball);
+        modification.CompoundModification(Modifier);
+        
+        ball.ProjectileCollision(this, Damage, modification);
+
+        ForceHit();
+
+        return true;
+    }
+
+    public virtual DamageModification ModifyDamage(Ball target)
+    {
+        return new();
     }
 
     public virtual void OnBallHit(Ball ball)

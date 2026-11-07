@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://lkc086vgfq25"]
 
-[ext_resource type="PackedScene" uid="uid://8h6n4r0oiqt3" path="res://assets/Models/BetterCross.glb" id="1_b8xo4"]
-[ext_resource type="Script" uid="uid://bfcyqogccfqq7" path="res://assets/Models/BetterCross.cs" id="2_vh0tp"]
+[ext_resource type="PackedScene" uid="uid://8h6n4r0oiqt3" path="res://Assets/Models/BetterCross.glb" id="1_b8xo4"]
+[ext_resource type="Script" uid="uid://bfcyqogccfqq7" path="res://Assets/Models/BetterCross.cs" id="2_vh0tp"]
 
 [node name="SubViewportContainer" type="SubViewportContainer" unique_id=1003858284]
 offset_right = 1152.0

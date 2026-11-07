@@ -1,17 +1,17 @@
 [gd_scene format=3 uid="uid://boubdq6ms7jv8"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://cpy03a25nm6av" path="res://Resources/HBBMaterial.tres" id="1_n8cl5"]
-[ext_resource type="Texture2D" uid="uid://5njc32kxt0yy" path="res://assets/CharacterBalls/Yaorochi/talk_6_01_edited.png" id="2_mftwd"]
+[ext_resource type="Texture2D" uid="uid://5njc32kxt0yy" path="res://Assets/CharacterBalls/Yaorochi/talk_6_01_edited.png" id="2_mftwd"]
 [ext_resource type="Script" uid="uid://6aywbu5cshnq" path="res://balls/Lenen/Yaorochi.cs" id="2_sdg68"]
-[ext_resource type="Texture2D" uid="uid://b7u7majggmr46" path="res://assets/CharacterBalls/Yaorochi/talk_6_07_edited.png" id="2_xut38"]
-[ext_resource type="Texture2D" uid="uid://dtjo5l8c5p20u" path="res://assets/HBB Asset Pack/Misc/Ball.png" id="3_5qvn0"]
+[ext_resource type="Texture2D" uid="uid://b7u7majggmr46" path="res://Assets/CharacterBalls/Yaorochi/talk_6_07_edited.png" id="2_xut38"]
+[ext_resource type="Texture2D" uid="uid://dtjo5l8c5p20u" path="res://Assets/HBB Asset Pack/Misc/Ball.png" id="3_5qvn0"]
 [ext_resource type="Resource" uid="uid://dnfkmkv3o0euj" path="res://Resources/DamageStyles/LenenDamageStyle.tres" id="3_7xjng"]
-[ext_resource type="Texture2D" uid="uid://cr21jcxiife23" path="res://assets/CharacterBalls/Yaorochi/talk_6_06_edited.png" id="3_s5lye"]
+[ext_resource type="Texture2D" uid="uid://cr21jcxiife23" path="res://Assets/CharacterBalls/Yaorochi/talk_6_06_edited.png" id="3_s5lye"]
 [ext_resource type="Resource" uid="uid://b0twu6wh8gy5v" path="res://Resources/MusicThemes/BelowADeepVanishingCloud.tres" id="4_xn172"]
-[ext_resource type="Texture2D" uid="uid://bae0tbdkrcniu" path="res://assets/CharacterBalls/Yaorochi/talk_6_05_edited.png" id="4_xut38"]
+[ext_resource type="Texture2D" uid="uid://bae0tbdkrcniu" path="res://Assets/CharacterBalls/Yaorochi/talk_6_05_edited.png" id="4_xut38"]
 [ext_resource type="PackedScene" uid="uid://clw76k4llekd2" path="res://Weapons/Tasouken.tscn" id="6_7r065"]
 [ext_resource type="Script" uid="uid://bvwti3t8udfyp" path="res://balls/AvoidSpriteRotation.cs" id="6_sfunt"]
-[ext_resource type="Texture2D" uid="uid://cimtt63eu2e2w" path="res://assets/Misc/Victory.png" id="10_ltda1"]
+[ext_resource type="Texture2D" uid="uid://cimtt63eu2e2w" path="res://Assets/Misc/Victory.png" id="10_ltda1"]
 [ext_resource type="Script" uid="uid://deb4vsu7xgmm" path="res://Resources/DamageData/DamageData.cs" id="12_t60yd"]
 [ext_resource type="PackedScene" uid="uid://b7iqthahfbccv" path="res://DynamicObjects/Reticle.tscn" id="14_08ens"]
 
@@ -73,6 +73,7 @@ Crown = NodePath("Victory")
 Reticle = NodePath("Reticle")
 SpeedGain = 1.0
 MaxSpeedGain = 40.0
+DefaultGravityScale = 0.0
 Power = 2
 Color = Color(0.80000055, 0.23573753, 0.70001006, 1)
 BallName = "Yaorochi"

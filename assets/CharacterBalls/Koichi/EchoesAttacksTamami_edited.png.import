@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cxbdl437vq8wg"
-path="res://.godot/imported/EchoesAttacksTamami_edited.png-747a128e10b4256b36134222770f2a5d.ctex"
+path="res://.godot/imported/EchoesAttacksTamami_edited.png-fbf2354f2ad95c610c899e8c6263d979.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/CharacterBalls/Koichi/EchoesAttacksTamami_edited.png"
-dest_files=["res://.godot/imported/EchoesAttacksTamami_edited.png-747a128e10b4256b36134222770f2a5d.ctex"]
+source_file="res://Assets/CharacterBalls/Koichi/EchoesAttacksTamami_edited.png"
+dest_files=["res://.godot/imported/EchoesAttacksTamami_edited.png-fbf2354f2ad95c610c899e8c6263d979.ctex"]
 
 [params]
 

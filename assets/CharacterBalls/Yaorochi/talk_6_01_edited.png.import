@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://5njc32kxt0yy"
-path="res://.godot/imported/talk_6_01_edited.png-e0494e5ce6334f5c6d3c0928484c8d9e.ctex"
+path="res://.godot/imported/talk_6_01_edited.png-2e94af3b45ff4e366f9ef863da088c01.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/CharacterBalls/Yaorochi/talk_6_01_edited.png"
-dest_files=["res://.godot/imported/talk_6_01_edited.png-e0494e5ce6334f5c6d3c0928484c8d9e.ctex"]
+source_file="res://Assets/CharacterBalls/Yaorochi/talk_6_01_edited.png"
+dest_files=["res://.godot/imported/talk_6_01_edited.png-2e94af3b45ff4e366f9ef863da088c01.ctex"]
 
 [params]
 

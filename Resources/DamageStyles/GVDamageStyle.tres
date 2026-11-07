@@ -1,8 +1,8 @@
 [gd_resource type="Resource" format=3 uid="uid://dmswyhr0wye6v"]
 
-[ext_resource type="AudioStream" uid="uid://c3qcrrgbguo" path="res://assets/SoundEffects/Gunvolt/Dead.wav" id="1_byo5p"]
+[ext_resource type="AudioStream" uid="uid://c3qcrrgbguo" path="res://Assets/SoundEffects/Gunvolt/Dead.wav" id="1_byo5p"]
 [ext_resource type="Script" uid="uid://bd85pgwol0cq7" path="res://Resources/DamageStyles/TouhouDamageStyle.cs" id="1_pmyj8"]
-[ext_resource type="AudioStream" uid="uid://cjld16em2slmr" path="res://assets/SoundEffects/Touhou/TouhouBossDamage.wav" id="1_t7xmb"]
+[ext_resource type="AudioStream" uid="uid://cjld16em2slmr" path="res://Assets/SoundEffects/Touhou/TouhouBossDamage.wav" id="1_t7xmb"]
 
 [resource]
 script = ExtResource("1_pmyj8")

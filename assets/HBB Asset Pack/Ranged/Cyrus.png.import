@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://psm42qnolxmc"
-path="res://.godot/imported/Cyrus.png-77bd5198fbd88d7cde49625a21d11512.ctex"
+path="res://.godot/imported/Cyrus.png-d63d47f3a3709c93915ae8ee87826013.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/HBB Asset Pack/Ranged/Cyrus.png"
-dest_files=["res://.godot/imported/Cyrus.png-77bd5198fbd88d7cde49625a21d11512.ctex"]
+source_file="res://Assets/HBB Asset Pack/Ranged/Cyrus.png"
+dest_files=["res://.godot/imported/Cyrus.png-d63d47f3a3709c93915ae8ee87826013.ctex"]
 
 [params]
 

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://d055c1ruvr8qm"]
+
+[ext_resource type="Script" uid="uid://d1rs0p41ptvgo" path="res://StatusEffects/StatusEffect.cs" id="1_80p75"]
+
+[node name="StatusEffect" type="Node2D" unique_id=1728402244]
+script = ExtResource("1_80p75")

@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://8wjwfqmwdohp"
-path="res://.godot/imported/DIO's World (darksynth 80s remix).mp3-48c84b0819f1e1053004d150d27c7c3a.mp3str"
+path="res://.godot/imported/DIO's World (darksynth 80s remix).mp3-bdd5e07d58a2359b54fc42690913f79e.mp3str"
 
 [deps]
 
-source_file="res://assets/BackgroundMusic/DIO's World (darksynth 80s remix).mp3"
-dest_files=["res://.godot/imported/DIO's World (darksynth 80s remix).mp3-48c84b0819f1e1053004d150d27c7c3a.mp3str"]
+source_file="res://Assets/BackgroundMusic/DIO's World (darksynth 80s remix).mp3"
+dest_files=["res://.godot/imported/DIO's World (darksynth 80s remix).mp3-bdd5e07d58a2359b54fc42690913f79e.mp3str"]
 
 [params]
 

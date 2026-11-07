@@ -4,7 +4,7 @@ using System;
 public partial class Agi : Projectile
 {
     [Export]
-    public PackedScene FireParticles;
+    public PackedScene OnFireDebuff;
 
     public override void OnProcessVisuals(double delta)
     {
@@ -16,11 +16,10 @@ public partial class Agi : Projectile
 
     public override void OnBallHit(Ball ball)
     {
-        OnFire debuff = new OnFire();
-        debuff.Category = StatusEffectCategory.Fire;
+        OnFire debuff = OnFireDebuff.Instantiate<OnFire>();
+        debuff.Category = "Fire";
         debuff.MaxTick = 0.5;
         debuff.MaxTimeLeft = 3;
-        debuff.Particles = FireParticles;
         debuff.EffectPriority = 1;
 
         ball.AddStatus(debuff);

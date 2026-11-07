@@ -1,6 +1,6 @@
 [gd_resource type="Resource" format=3 uid="uid://b5khi6h214np2"]
 
-[ext_resource type="AudioStream" uid="uid://bibjt5t4xfldb" path="res://assets/BackgroundMusic/Lightning Crashes Dancing in the Chaotic Night (Azure Striker Gunvolt 1 & 2) - GaMetal Remix.mp3" id="1_d2kes"]
+[ext_resource type="AudioStream" uid="uid://bibjt5t4xfldb" path="res://Assets/BackgroundMusic/Lightning Crashes Dancing in the Chaotic Night (Azure Striker Gunvolt 1 & 2) - GaMetal Remix.mp3" id="1_d2kes"]
 [ext_resource type="Script" uid="uid://dvbj6o5xkcyb0" path="res://Resources/MusicThemes/MusicTheme.cs" id="1_k655f"]
 
 [resource]

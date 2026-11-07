@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://cc7w8i85ap78o"]
+
+[ext_resource type="Script" uid="uid://bhh7tajj6r80a" path="res://Projectiles/Sizzle.cs" id="1_atptc"]
+[ext_resource type="Texture2D" uid="uid://bvwdcsqxxkk1h" path="res://Assets/Katakana/Sizzle.png" id="1_henk4"]
+[ext_resource type="Script" uid="uid://deb4vsu7xgmm" path="res://Resources/DamageData/DamageData.cs" id="2_yr6pb"]
+
+[sub_resource type="Resource" id="Resource_6l7th"]
+script = ExtResource("2_yr6pb")
+BaseDamage = 1
+IFrames = 0.0
+Element = 2
+metadata/_custom_type_script = "uid://deb4vsu7xgmm"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_atptc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_henk4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_henk4"]
+radius = 16.0
+height = 64.0
+
+[node name="Sizzle" type="Area2D" unique_id=829972740 node_paths=PackedStringArray("body")]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_atptc")
+HitsLeft = 9999
+Damage = SubResource("Resource_6l7th")
+MaxHitCooldown = 0.08
+TimeLeft = 8.0
+body = NodePath("AnimatedSprite2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1295718763]
+modulate = Color(1, 0.06999999, 0.34900016, 0.7490196)
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_atptc")
+offset = Vector2(12, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1965845579]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_henk4")
+
+[connection signal="body_entered" from="." to="." method="BodyCollision"]
+[connection signal="body_exited" from="." to="." method="BodyExit"]

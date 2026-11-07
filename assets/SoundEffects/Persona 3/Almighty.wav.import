@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://b3dhhsymgx3ab"
-path="res://.godot/imported/Almighty.wav-ac8562ebf08e85485dceab594af0657f.sample"
+path="res://.godot/imported/Almighty.wav-2e5ed36c9a2d9eca5f8cd29598da85ad.sample"
 
 [deps]
 
-source_file="res://assets/SoundEffects/Persona 3/Almighty.wav"
-dest_files=["res://.godot/imported/Almighty.wav-ac8562ebf08e85485dceab594af0657f.sample"]
+source_file="res://Assets/SoundEffects/Persona 3/Almighty.wav"
+dest_files=["res://.godot/imported/Almighty.wav-2e5ed36c9a2d9eca5f8cd29598da85ad.sample"]
 
 [params]
 

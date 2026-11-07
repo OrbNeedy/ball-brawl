@@ -24,15 +24,6 @@ public partial class Weapon : RigidBody2D
     public uint InitialLayer = 1;
     [Export]
     public uint InitialMask = 1;
-    
-    [Export]
-    public bool CanBeDodged = true;
-    [Export]
-    public bool StoppableByFlashfield = false;
-    [Export]
-    public bool Almighty = false;
-    [Export]
-    public AttackElement Element = AttackElement.None;
 
     Vector2 OldLinearVelocity = Vector2.Zero;
 
@@ -113,7 +104,7 @@ public partial class Weapon : RigidBody2D
 
             if (ClashType == WeaponClashType.HBB || clashing.ClashType == WeaponClashType.HBB)
             {
-                ApplyTorqueImpulse(clashing.AngularVelocity * 0.8f);
+                ApplyTorqueImpulse(clashing.AngularVelocity);
             }
         }
 
@@ -128,9 +119,20 @@ public partial class Weapon : RigidBody2D
         
     }
 
-    public virtual int GetWeaponDamage(Ball ball)
+    public virtual DamageModification GetWeaponDamageModifications(Ball ball)
     {
-        return Damage.BaseDamage;
+        return new();
+    }
+
+    public int GetWeaponDamage(Ball ball)
+    {
+        if (Holder != null && IsInstanceValid(Holder))
+        {
+            DamageModification modifier = GetWeaponDamageModifications(ball);
+            modifier.CompoundModification(Holder.GetContactDamageModifier(ball));
+            return modifier.ApplyToDamage(Damage);
+        }
+        return GetWeaponDamageModifications(ball).ApplyToDamage(Damage);
     }
 
     public virtual void OnBallHit(Ball ball)

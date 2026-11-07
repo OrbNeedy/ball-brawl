@@ -1,19 +1,19 @@
 [gd_scene format=3 uid="uid://w6f6r72jwtfb"]
 
-[ext_resource type="Texture2D" uid="uid://df4b6ryn8mw3h" path="res://assets/CharacterBalls/Marisa/CircleMors0.png" id="1_h4lmm"]
-[ext_resource type="Texture2D" uid="uid://csr5v6boq1ha2" path="res://assets/CharacterBalls/Marisa/CircleMors3.png" id="1_peoru"]
+[ext_resource type="Texture2D" uid="uid://df4b6ryn8mw3h" path="res://Assets/CharacterBalls/Marisa/CircleMors0.png" id="1_h4lmm"]
+[ext_resource type="Texture2D" uid="uid://csr5v6boq1ha2" path="res://Assets/CharacterBalls/Marisa/CircleMors3.png" id="1_peoru"]
 [ext_resource type="PhysicsMaterial" uid="uid://cpy03a25nm6av" path="res://Resources/HBBMaterial.tres" id="1_rdksx"]
 [ext_resource type="Script" uid="uid://dcnx01tm0mss3" path="res://balls/Touhou/Marisa.cs" id="2_7i4ex"]
-[ext_resource type="Texture2D" uid="uid://cxwslc23sgyyi" path="res://assets/CharacterBalls/Marisa/CircleMors1.png" id="2_gqkwm"]
+[ext_resource type="Texture2D" uid="uid://cxwslc23sgyyi" path="res://Assets/CharacterBalls/Marisa/CircleMors1.png" id="2_gqkwm"]
 [ext_resource type="PackedScene" uid="uid://cul1g02h4njwr" path="res://Projectiles/Laser.tscn" id="3_o1uy0"]
-[ext_resource type="Texture2D" uid="uid://emkgwsabtlnn" path="res://assets/CharacterBalls/Marisa/CircleMors4.png" id="3_ofbuv"]
-[ext_resource type="AudioStream" uid="uid://cjopok4tyde4a" path="res://assets/SoundEffects/Touhou/lazer00.wav" id="4_o1uy0"]
-[ext_resource type="Texture2D" uid="uid://d2qdr3wnj2q2h" path="res://assets/CharacterBalls/Marisa/CircleMors2.png" id="4_rdksx"]
+[ext_resource type="Texture2D" uid="uid://emkgwsabtlnn" path="res://Assets/CharacterBalls/Marisa/CircleMors4.png" id="3_ofbuv"]
+[ext_resource type="AudioStream" uid="uid://cjopok4tyde4a" path="res://Assets/SoundEffects/Touhou/lazer00.wav" id="4_o1uy0"]
+[ext_resource type="Texture2D" uid="uid://d2qdr3wnj2q2h" path="res://Assets/CharacterBalls/Marisa/CircleMors2.png" id="4_rdksx"]
 [ext_resource type="Resource" uid="uid://dkmjhqjd26ef2" path="res://Resources/DamageStyles/Mors.tres" id="4_sge4g"]
 [ext_resource type="Resource" uid="uid://dbemct6yy77hf" path="res://Resources/MusicThemes/LoveColoredMagic.tres" id="5_sge4g"]
 [ext_resource type="Script" uid="uid://bvwti3t8udfyp" path="res://balls/AvoidSpriteRotation.cs" id="6_ofbuv"]
 [ext_resource type="Script" uid="uid://deb4vsu7xgmm" path="res://Resources/DamageData/DamageData.cs" id="7_2qfs1"]
-[ext_resource type="Texture2D" uid="uid://rnr7tn504o13" path="res://assets/Misc/Crown.png" id="9_i73w5"]
+[ext_resource type="Texture2D" uid="uid://rnr7tn504o13" path="res://Assets/Misc/Crown.png" id="9_i73w5"]
 [ext_resource type="PackedScene" uid="uid://dguuqlmilh2xm" path="res://DynamicObjects/OreryOrchestrator.tscn" id="12_sge4g"]
 [ext_resource type="PackedScene" uid="uid://b7iqthahfbccv" path="res://DynamicObjects/Reticle.tscn" id="15_br8x4"]
 
@@ -76,6 +76,7 @@ Crown = NodePath("Crown")
 Reticle = NodePath("Reticle")
 SpeedGain = 0.4
 MaxSpeedGain = 30.0
+DefaultGravityScale = 0.0
 Power = 6
 Color = Color(0.8, 0, 0.2533333, 1)
 BallName = "Marisa"

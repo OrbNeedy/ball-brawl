@@ -1,16 +1,15 @@
 [gd_scene format=3 uid="uid://b6lipfqax0kgp"]
 
-[ext_resource type="Texture2D" uid="uid://rxdp2umg6qvb" path="res://assets/Sheets/b016.png" id="1_g0lni"]
+[ext_resource type="Texture2D" uid="uid://rxdp2umg6qvb" path="res://Assets/Sheets/b016.png" id="1_g0lni"]
 [ext_resource type="Script" uid="uid://qjck6mn2glaa" path="res://Projectiles/Cut.cs" id="1_s3tp6"]
-[ext_resource type="AudioStream" uid="uid://gylfgo2qhl43" path="res://assets/SoundEffects/Lenen/LaserPrepare.wav" id="2_6abx2"]
-[ext_resource type="AudioStream" uid="uid://brtn56fa2aten" path="res://assets/SoundEffects/Lenen/Laser.wav" id="3_1m3pu"]
+[ext_resource type="AudioStream" uid="uid://gylfgo2qhl43" path="res://Assets/SoundEffects/Lenen/LaserPrepare.wav" id="2_6abx2"]
+[ext_resource type="AudioStream" uid="uid://brtn56fa2aten" path="res://Assets/SoundEffects/Lenen/Laser.wav" id="3_1m3pu"]
 [ext_resource type="Script" uid="uid://deb4vsu7xgmm" path="res://Resources/DamageData/DamageData.cs" id="4_1m3pu"]
 
 [sub_resource type="Resource" id="Resource_12wjt"]
 script = ExtResource("4_1m3pu")
 BaseDamage = 3
 IFrames = 0.0
-Almighty = true
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s3tp6"]
 atlas = ExtResource("1_g0lni")

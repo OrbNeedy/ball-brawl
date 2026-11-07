@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cjld16em2slmr"
-path="res://.godot/imported/TouhouBossDamage.wav-698aa1eb2a07dbf588180c3c70d6a3e1.sample"
+path="res://.godot/imported/TouhouBossDamage.wav-0aa172aaceb56c8aead9c0d5b4514e2d.sample"
 
 [deps]
 
-source_file="res://assets/SoundEffects/Touhou/TouhouBossDamage.wav"
-dest_files=["res://.godot/imported/TouhouBossDamage.wav-698aa1eb2a07dbf588180c3c70d6a3e1.sample"]
+source_file="res://Assets/SoundEffects/Touhou/TouhouBossDamage.wav"
+dest_files=["res://.godot/imported/TouhouBossDamage.wav-0aa172aaceb56c8aead9c0d5b4514e2d.sample"]
 
 [params]
 

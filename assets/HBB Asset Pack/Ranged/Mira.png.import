@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b2i61anqt4obj"
-path="res://.godot/imported/Mira.png-1bf8edadc137f172c8ffb88cf9bfa965.ctex"
+path="res://.godot/imported/Mira.png-63bd5af542a36883bab1982e75a71acb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/HBB Asset Pack/Ranged/Mira.png"
-dest_files=["res://.godot/imported/Mira.png-1bf8edadc137f172c8ffb88cf9bfa965.ctex"]
+source_file="res://Assets/HBB Asset Pack/Ranged/Mira.png"
+dest_files=["res://.godot/imported/Mira.png-63bd5af542a36883bab1982e75a71acb.ctex"]
 
 [params]
 

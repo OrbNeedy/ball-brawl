@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cyxxtddm6l8e7"]
 
 [ext_resource type="Script" uid="uid://j4p173hfam0t" path="res://UIElements/Backgrounds/Space.cs" id="1_acsv1"]
-[ext_resource type="Texture2D" uid="uid://bk56mp8qxu0pc" path="res://assets/Misc/FarStars.png" id="1_qhxqd"]
-[ext_resource type="Texture2D" uid="uid://d3g2mm1qpr6bf" path="res://assets/Misc/CloseStars.png" id="2_t67xx"]
+[ext_resource type="Texture2D" uid="uid://bk56mp8qxu0pc" path="res://Assets/Misc/FarStars.png" id="1_qhxqd"]
+[ext_resource type="Texture2D" uid="uid://d3g2mm1qpr6bf" path="res://Assets/Misc/CloseStars.png" id="2_t67xx"]
 
 [node name="SpaceBackground" type="Control" unique_id=387578324 node_paths=PackedStringArray("FarStars", "CloseStars")]
 layout_mode = 3

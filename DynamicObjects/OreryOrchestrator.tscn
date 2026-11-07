@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bci0rq723y6ov" path="res://DynamicObjects/OreryOrchestrator.cs" id="1_ssmkg"]
 [ext_resource type="PackedScene" uid="uid://c76k4lvqgm2j7" path="res://DynamicObjects/OreryBall.tscn" id="2_73ed7"]
-[ext_resource type="AudioStream" uid="uid://jt66ilh7v5wv" path="res://assets/SoundEffects/Touhou/power0.wav" id="3_34i0y"]
+[ext_resource type="AudioStream" uid="uid://jt66ilh7v5wv" path="res://Assets/SoundEffects/Touhou/power0.wav" id="3_34i0y"]
 
 [node name="OreryOrchestrator" type="Node2D" unique_id=1018759816]
 script = ExtResource("1_ssmkg")

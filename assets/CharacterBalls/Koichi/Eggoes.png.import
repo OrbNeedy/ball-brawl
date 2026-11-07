@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bjwa8exaw3m81"
-path="res://.godot/imported/Eggoes.png-fac9730fc49d3d3c17f31ebbcddaadc6.ctex"
+path="res://.godot/imported/Eggoes.png-e0332617aef92ab20cf1977b4f7877e8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/CharacterBalls/Koichi/Eggoes.png"
-dest_files=["res://.godot/imported/Eggoes.png-fac9730fc49d3d3c17f31ebbcddaadc6.ctex"]
+source_file="res://Assets/CharacterBalls/Koichi/Eggoes.png"
+dest_files=["res://.godot/imported/Eggoes.png-e0332617aef92ab20cf1977b4f7877e8.ctex"]
 
 [params]
 

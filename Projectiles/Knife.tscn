@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://dvotd6s5ur7os"]
 
-[ext_resource type="Texture2D" uid="uid://dw8smcb08ppiy" path="res://assets/Sheets/Bullets, Items, Spirits.png" id="1_3creb"]
+[ext_resource type="Texture2D" uid="uid://dw8smcb08ppiy" path="res://Assets/Sheets/Bullets, Items, Spirits.png" id="1_3creb"]
 [ext_resource type="Script" uid="uid://df70n158ixwmo" path="res://Projectiles/Knife.cs" id="1_rxhte"]
 [ext_resource type="Script" uid="uid://deb4vsu7xgmm" path="res://Resources/DamageData/DamageData.cs" id="2_42sk7"]
-[ext_resource type="Texture2D" uid="uid://bpfocjk3xo3l7" path="res://assets/Sheets/b012.png" id="3_q1vhk"]
+[ext_resource type="Texture2D" uid="uid://bpfocjk3xo3l7" path="res://Assets/Sheets/b012.png" id="3_q1vhk"]
 
 [sub_resource type="Resource" id="Resource_usnch"]
 script = ExtResource("2_42sk7")

@@ -126,7 +126,7 @@ public partial class Yabusame : Ball
                 TranscendantBullets bullet = BulletScene.Instantiate<TranscendantBullets>();
                 bullet.Position = Position;
                 bullet.Damage.BaseDamage = 2;
-                bullet.TeamName = TeamName;
+                bullet.OwnerSetup(this);
                 bullet.Velocity = baseVel.Rotated(0.1f * i) * (MinBulletSpeed + (speedChange * k));
                 
                 EmitSignal(SignalName.SpawnProjectile, bullet);
@@ -149,7 +149,7 @@ public partial class Yabusame : Ball
                 TranscendantBullets bullet = BulletScene.Instantiate<TranscendantBullets>();
                 bullet.Position = ContinuousPosition;
                 // bullet.Damage.BaseDamage = 1;
-                bullet.TeamName = TeamName;
+                bullet.OwnerSetup(this);
                 bullet.Velocity = ContinuousDirection.Rotated(rotation * i) * 200;
                 bullet.ContinuousRotation = contRot;
                 bullet.TeleportLimit = 8;
@@ -167,17 +167,11 @@ public partial class Yabusame : Ball
         }
     }
 
-    public override DamageData GetContactDamage(Ball ball)
+    public override DamageModification ModifyDealtContactDamage(Ball ball)
     {
-        //GD.Print("Old speed: " + OldSpeed);
-        //GD.Print("Current speed: " + LinearVelocity.Length());
         int increase = (int)(LinearVelocity.Length() / VelDamageThreshold);
-        DamageData final = (DamageData)base.GetContactDamage(ball).Duplicate();
-        final.BaseDamage += increase;
-        //GD.Print("Increase: " + increase);
-        //GD.Print("Final: " + final.BaseDamage);
 
-        return final;
+        return new(increase);
     }
 
     public override void ModifyForcesTransform(ref Transform2D transformation, PhysicsDirectBodyState2D state)

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://vw4ilwx5v8uo"
-path="res://.godot/imported/SakuyaTimeStop.wav-32b36c08d295621a3355bbe7517080f4.sample"
+path="res://.godot/imported/SakuyaTimeStop.wav-3406d67d36ff62843824fbdfee8c2a93.sample"
 
 [deps]
 
-source_file="res://assets/SoundEffects/Touhou/SakuyaTimeStop.wav"
-dest_files=["res://.godot/imported/SakuyaTimeStop.wav-32b36c08d295621a3355bbe7517080f4.sample"]
+source_file="res://Assets/SoundEffects/Touhou/SakuyaTimeStop.wav"
+dest_files=["res://.godot/imported/SakuyaTimeStop.wav-3406d67d36ff62843824fbdfee8c2a93.sample"]
 
 [params]
 

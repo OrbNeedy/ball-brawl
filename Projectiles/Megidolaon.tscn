@@ -1,15 +1,15 @@
 [gd_scene format=3 uid="uid://vc6ny2a12u7g"]
 
-[ext_resource type="Texture2D" uid="uid://dr7k2suj812eg" path="res://assets/FireEffects/Part 1/14.png" id="1_ctui4"]
+[ext_resource type="Texture2D" uid="uid://dr7k2suj812eg" path="res://Assets/FireEffects/Part 1/14.png" id="1_ctui4"]
 [ext_resource type="Script" uid="uid://bdtvwcpfdgu27" path="res://Projectiles/Megidolaon.cs" id="1_lp6e5"]
 [ext_resource type="PackedScene" uid="uid://dqjaqqkwcsi6b" path="res://Particles/Almighty.tscn" id="2_8yowt"]
 [ext_resource type="Script" uid="uid://deb4vsu7xgmm" path="res://Resources/DamageData/DamageData.cs" id="2_nkixm"]
-[ext_resource type="Texture2D" uid="uid://ci07d0jwadqgv" path="res://assets/FireEffects/Part 1/15.png" id="2_pma76"]
-[ext_resource type="AudioStream" uid="uid://b3dhhsymgx3ab" path="res://assets/SoundEffects/Persona 3/Almighty.wav" id="3_mfnds"]
-[ext_resource type="Texture2D" uid="uid://bipi2bidqw57e" path="res://assets/FireEffects/Part 1/16.png" id="3_ud2jr"]
-[ext_resource type="Texture2D" uid="uid://bvlfui2siylbf" path="res://assets/FireEffects/Part 1/03.png" id="4_p7242"]
+[ext_resource type="Texture2D" uid="uid://ci07d0jwadqgv" path="res://Assets/FireEffects/Part 1/15.png" id="2_pma76"]
+[ext_resource type="AudioStream" uid="uid://b3dhhsymgx3ab" path="res://Assets/SoundEffects/Persona 3/Almighty.wav" id="3_mfnds"]
+[ext_resource type="Texture2D" uid="uid://bipi2bidqw57e" path="res://Assets/FireEffects/Part 1/16.png" id="3_ud2jr"]
+[ext_resource type="Texture2D" uid="uid://bvlfui2siylbf" path="res://Assets/FireEffects/Part 1/03.png" id="4_p7242"]
 [ext_resource type="Script" uid="uid://qp6hjhv6tlrw" path="res://Scripts/FunctioningAnimatedSprite.cs" id="4_vef15"]
-[ext_resource type="Texture2D" uid="uid://csc0t6v08gtkl" path="res://assets/FireEffects/Part 1/26.png" id="5_8a15c"]
+[ext_resource type="Texture2D" uid="uid://csc0t6v08gtkl" path="res://Assets/FireEffects/Part 1/26.png" id="5_8a15c"]
 
 [sub_resource type="Resource" id="Resource_vef15"]
 script = ExtResource("2_nkixm")

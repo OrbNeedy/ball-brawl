@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://cyd1tmyc8prih"
-path="res://.godot/imported/[Len'en Arrange] Layers Above.mp3-5aa3e8ab3626eac7c3677904d413ae07.mp3str"
+path="res://.godot/imported/[Len'en Arrange] Layers Above.mp3-6e7669cd26861deaa1098dc2d2f6603f.mp3str"
 
 [deps]
 
-source_file="res://assets/BackgroundMusic/[Len'en Arrange] Layers Above.mp3"
-dest_files=["res://.godot/imported/[Len'en Arrange] Layers Above.mp3-5aa3e8ab3626eac7c3677904d413ae07.mp3str"]
+source_file="res://Assets/BackgroundMusic/[Len'en Arrange] Layers Above.mp3"
+dest_files=["res://.godot/imported/[Len'en Arrange] Layers Above.mp3-6e7669cd26861deaa1098dc2d2f6603f.mp3str"]
 
 [params]
 

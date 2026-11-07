@@ -16,6 +16,8 @@ public partial class GunvoltElectricity : Line2D
     public bool delay = true;
     public double TimeLeft = 0;
     public double TagTime = 0;
+    [Export]
+    public DamageData Damage;
 
     [Export]
     public double MaxDamageTimer = 0.4;
@@ -142,7 +144,7 @@ public partial class GunvoltElectricity : Line2D
 
         if (DamageTimer <= 0)
         {
-            Target.DamageBall(new DamageData() { BaseDamage = 1, Almighty = true, CanBeDodged = false });
+            Target.DamageBall(Damage, BallOwner.GetContactDamageModifier(Target));
             DamageTimer = MaxDamageTimer;
         }
     }

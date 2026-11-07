@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cgkv55a0vxan7"
-path="res://.godot/imported/scorch_03.png-4470a520c684c4f51e8ee7238e3648ff.ctex"
+path="res://.godot/imported/scorch_03.png-317255e66e895966b81571f0b796e566.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/KenneyParticles/scorch_03.png"
-dest_files=["res://.godot/imported/scorch_03.png-4470a520c684c4f51e8ee7238e3648ff.ctex"]
+source_file="res://Assets/KenneyParticles/scorch_03.png"
+dest_files=["res://.godot/imported/scorch_03.png-317255e66e895966b81571f0b796e566.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ddxdcq0rudcf7"
-path="res://.godot/imported/Ball_Damaged_4.png-05e6041fc363a545978c756dcdc0d166.ctex"
+path="res://.godot/imported/Ball_Damaged_4.png-6faef17034b5be3c77db1ea02c750f42.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/HBB Asset Pack/Misc/Ball_Damaged_4.png"
-dest_files=["res://.godot/imported/Ball_Damaged_4.png-05e6041fc363a545978c756dcdc0d166.ctex"]
+source_file="res://Assets/HBB Asset Pack/Misc/Ball_Damaged_4.png"
+dest_files=["res://.godot/imported/Ball_Damaged_4.png-6faef17034b5be3c77db1ea02c750f42.ctex"]
 
 [params]
 

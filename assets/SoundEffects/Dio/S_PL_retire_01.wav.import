@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://csmsbavvn03ql"
-path="res://.godot/imported/S_PL_retire_01.wav-d96d38778604ed9fc45821824d7fc135.sample"
+path="res://.godot/imported/S_PL_retire_01.wav-2192b4ecbfd55e152c1ddf14b21f11af.sample"
 
 [deps]
 
-source_file="res://assets/SoundEffects/Dio/S_PL_retire_01.wav"
-dest_files=["res://.godot/imported/S_PL_retire_01.wav-d96d38778604ed9fc45821824d7fc135.sample"]
+source_file="res://Assets/SoundEffects/Dio/S_PL_retire_01.wav"
+dest_files=["res://.godot/imported/S_PL_retire_01.wav-2192b4ecbfd55e152c1ddf14b21f11af.sample"]
 
 [params]
 

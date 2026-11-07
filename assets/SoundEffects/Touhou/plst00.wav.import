@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dvogh4goevpar"
-path="res://.godot/imported/plst00.wav-bd8d68073a7f2c23ea94784575138be5.sample"
+path="res://.godot/imported/plst00.wav-7f567a9c77988c2dcf9ae161195fb327.sample"
 
 [deps]
 
-source_file="res://assets/SoundEffects/Touhou/plst00.wav"
-dest_files=["res://.godot/imported/plst00.wav-bd8d68073a7f2c23ea94784575138be5.sample"]
+source_file="res://Assets/SoundEffects/Touhou/plst00.wav"
+dest_files=["res://.godot/imported/plst00.wav-7f567a9c77988c2dcf9ae161195fb327.sample"]
 
 [params]
 

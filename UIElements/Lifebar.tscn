@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c0xk0rwoxoxl5"]
 
 [ext_resource type="Script" uid="uid://c4721fuhma6nd" path="res://UIElements/Lifebar.cs" id="1_i4tnp"]
-[ext_resource type="Texture2D" uid="uid://djh4d8cgbhpok" path="res://assets/UI/LifeBar.png" id="1_p6a8b"]
+[ext_resource type="Texture2D" uid="uid://djh4d8cgbhpok" path="res://Assets/UI/LifeBar.png" id="1_p6a8b"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7anh3"]
 atlas = ExtResource("1_p6a8b")

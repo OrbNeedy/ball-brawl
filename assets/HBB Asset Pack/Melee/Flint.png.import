@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cbh1l8oftoiuv"
-path="res://.godot/imported/Flint.png-616776e203a59fca2d90195a40f36313.ctex"
+path="res://.godot/imported/Flint.png-5f8c7fba0fc40b4e59ca7bf585db7d99.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/HBB Asset Pack/Melee/Flint.png"
-dest_files=["res://.godot/imported/Flint.png-616776e203a59fca2d90195a40f36313.ctex"]
+source_file="res://Assets/HBB Asset Pack/Melee/Flint.png"
+dest_files=["res://.godot/imported/Flint.png-5f8c7fba0fc40b4e59ca7bf585db7d99.ctex"]
 
 [params]
 

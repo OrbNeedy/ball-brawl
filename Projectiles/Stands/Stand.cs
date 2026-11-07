@@ -14,10 +14,13 @@ public partial class Stand : Projectile
     public float Range = 350f;
     [Export]
     public Color OutlineColor = Colors.Transparent;
+    [Export]
+    public float OutlineRadius;
 
     public override void OnReady()
     {
         Modulate = new Color(Modulate.R, Modulate.G, Modulate.B, 0);
+        OutlineRadius = body.SpriteFrames.GetFrameTexture(body.Animation, body.Frame).GetWidth() / 2f;
         OnStandReady();
     }
 
@@ -66,6 +69,8 @@ public partial class Stand : Projectile
             return;
         }
 
+        Modifier = StandOwner.GetContactDamageModifier();
+
         OutlineColor = StandOwner.Color;
         OutlineColor = new Color(OutlineColor.R, OutlineColor.G, OutlineColor.B, Modulate.A);
 
@@ -89,8 +94,7 @@ public partial class Stand : Projectile
 
     public override void _Draw()
     {
-        float radius = body.SpriteFrames.GetFrameTexture(body.Animation, body.Frame).GetWidth() / 2f;
-        DrawCircle(Vector2.Zero + body.Offset, (radius * body.Scale.X) + 4f, OutlineColor, antialiased: true);
+        DrawCircle(Vector2.Zero + body.Offset, (OutlineRadius * body.Scale.X) + 4f, OutlineColor, antialiased: true);
     }
 
     public override bool PreTimeLeft(double delta)

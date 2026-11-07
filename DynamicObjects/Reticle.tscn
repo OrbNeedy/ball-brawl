@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b7iqthahfbccv"]
 
 [ext_resource type="Script" uid="uid://qy6i33gcm7xo" path="res://DynamicObjects/Reticle.cs" id="1_riqhn"]
-[ext_resource type="Texture2D" uid="uid://bik3mkf3wvexg" path="res://assets/Gunvolt/Reticle.png" id="2_dted4"]
+[ext_resource type="Texture2D" uid="uid://bik3mkf3wvexg" path="res://Assets/Gunvolt/Reticle.png" id="2_dted4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dted4"]
 atlas = ExtResource("2_dted4")

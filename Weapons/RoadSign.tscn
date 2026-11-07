@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://1k2ansm3180o"]
 
-[ext_resource type="Texture2D" uid="uid://dpvnujecc75ae" path="res://assets/Weapons/RoadSignWeapon.png" id="1_qntso"]
+[ext_resource type="Texture2D" uid="uid://dpvnujecc75ae" path="res://Assets/Weapons/RoadSignWeapon.png" id="1_qntso"]
 [ext_resource type="Script" uid="uid://bqu0pg303153y" path="res://Weapons/Weapon.cs" id="1_xvetr"]
 [ext_resource type="Script" uid="uid://deb4vsu7xgmm" path="res://Resources/DamageData/DamageData.cs" id="2_vj8ao"]
 

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://nkdtu11h1ll5"]
 
-[ext_resource type="Texture2D" uid="uid://5brbyoolc5lw" path="res://assets/Sheets/Particles.png" id="1_vxt7q"]
+[ext_resource type="Texture2D" uid="uid://5brbyoolc5lw" path="res://Assets/Sheets/Particles.png" id="1_vxt7q"]
 [ext_resource type="Script" uid="uid://ca6q5undb4f5w" path="res://Particles/SelfDeletingParticles.cs" id="2_empve"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7jpsc"]

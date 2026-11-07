@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://e1utu5tngj1h"]
 
-[ext_resource type="Texture2D" uid="uid://b4u1kgdarmcmn" path="res://assets/HBB Asset Pack/Misc/Ball_Damaged_1.png" id="1_a015s"]
-[ext_resource type="Texture2D" uid="uid://dtjo5l8c5p20u" path="res://assets/HBB Asset Pack/Misc/Ball.png" id="1_d2f0s"]
+[ext_resource type="Texture2D" uid="uid://b4u1kgdarmcmn" path="res://Assets/HBB Asset Pack/Misc/Ball_Damaged_1.png" id="1_a015s"]
+[ext_resource type="Texture2D" uid="uid://dtjo5l8c5p20u" path="res://Assets/HBB Asset Pack/Misc/Ball.png" id="1_d2f0s"]
 [ext_resource type="PhysicsMaterial" uid="uid://cpy03a25nm6av" path="res://Resources/HBBMaterial.tres" id="1_jdjpy"]
-[ext_resource type="Texture2D" uid="uid://d1v516xayye4u" path="res://assets/HBB Asset Pack/Misc/Ball_Damaged_2.png" id="2_a7vka"]
+[ext_resource type="Texture2D" uid="uid://d1v516xayye4u" path="res://Assets/HBB Asset Pack/Misc/Ball_Damaged_2.png" id="2_a7vka"]
 [ext_resource type="Script" uid="uid://dalgejsw3c5ds" path="res://balls/HBB/Louis.cs" id="2_jdjpy"]
-[ext_resource type="Texture2D" uid="uid://duucpol1oarho" path="res://assets/HBB Asset Pack/Misc/Ball_Damaged_3.png" id="3_gtlvd"]
-[ext_resource type="Texture2D" uid="uid://ddxdcq0rudcf7" path="res://assets/HBB Asset Pack/Misc/Ball_Damaged_4.png" id="4_g1oem"]
+[ext_resource type="Texture2D" uid="uid://duucpol1oarho" path="res://Assets/HBB Asset Pack/Misc/Ball_Damaged_3.png" id="3_gtlvd"]
+[ext_resource type="Texture2D" uid="uid://ddxdcq0rudcf7" path="res://Assets/HBB Asset Pack/Misc/Ball_Damaged_4.png" id="4_g1oem"]
 [ext_resource type="Script" uid="uid://bvwti3t8udfyp" path="res://balls/AvoidSpriteRotation.cs" id="7_tkww3"]
-[ext_resource type="Texture2D" uid="uid://cimtt63eu2e2w" path="res://assets/Misc/Victory.png" id="9_as8ss"]
+[ext_resource type="Texture2D" uid="uid://cimtt63eu2e2w" path="res://Assets/Misc/Victory.png" id="9_as8ss"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a015s"]
 animations = [{

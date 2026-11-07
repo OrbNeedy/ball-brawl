@@ -1,6 +1,6 @@
 [gd_resource type="Resource" format=3 uid="uid://dbemct6yy77hf"]
 
-[ext_resource type="AudioStream" uid="uid://cggayldxwhpdr" path="res://assets/BackgroundMusic/Stas Gavrik - Touhou Ambient Project ~X~ - 14 Love-Colored Magic (Ambient Ver.).mp3" id="1_sw1q4"]
+[ext_resource type="AudioStream" uid="uid://cggayldxwhpdr" path="res://Assets/BackgroundMusic/Stas Gavrik - Touhou Ambient Project ~X~ - 14 Love-Colored Magic (Ambient Ver.).mp3" id="1_sw1q4"]
 [ext_resource type="Script" uid="uid://dvbj6o5xkcyb0" path="res://Resources/MusicThemes/MusicTheme.cs" id="2_5ex0a"]
 
 [resource]

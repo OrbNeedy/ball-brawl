@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cme38dk0uylen"
-path="res://.godot/imported/LaserBorder.png-521c50b732d449128f074be616156262.ctex"
+path="res://.godot/imported/LaserBorder.png-5efec84d4db0df5bbfdffb0be09268c4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sheets/LaserBorder.png"
-dest_files=["res://.godot/imported/LaserBorder.png-521c50b732d449128f074be616156262.ctex"]
+source_file="res://Assets/Sheets/LaserBorder.png"
+dest_files=["res://.godot/imported/LaserBorder.png-5efec84d4db0df5bbfdffb0be09268c4.ctex"]
 
 [params]
 

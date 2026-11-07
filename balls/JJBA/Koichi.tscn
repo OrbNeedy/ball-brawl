@@ -1,13 +1,32 @@
 [gd_scene format=3 uid="uid://ct48drmrhwffg"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://cpy03a25nm6av" path="res://Resources/HBBMaterial.tres" id="1_nxm8p"]
-[ext_resource type="Texture2D" uid="uid://dedti40bv7n4y" path="res://assets/CharacterBalls/Koichi/Chapter_362_Cover_B(1).png" id="1_tli61"]
-[ext_resource type="Texture2D" uid="uid://c4khcje40un3h" path="res://assets/CharacterBalls/Koichi/Koichi_&_ACT3.png" id="2_0nsxi"]
+[ext_resource type="Texture2D" uid="uid://dedti40bv7n4y" path="res://Assets/CharacterBalls/Koichi/Chapter_362_Cover_B(1).png" id="1_tli61"]
+[ext_resource type="Texture2D" uid="uid://c4khcje40un3h" path="res://Assets/CharacterBalls/Koichi/Koichi_&_ACT3.png" id="2_0nsxi"]
 [ext_resource type="Script" uid="uid://dx3w875jc28mt" path="res://balls/JJBA/Koichi.cs" id="2_uqenf"]
-[ext_resource type="Texture2D" uid="uid://wr2dt6ff4woc" path="res://assets/CharacterBalls/Koichi/Koichissj_edited.png" id="3_nxm8p"]
-[ext_resource type="Texture2D" uid="uid://cme2vbbbhcuk3" path="res://assets/CharacterBalls/Koichi/Koichiphone_edited.png" id="4_w037e"]
-[ext_resource type="Texture2D" uid="uid://cimtt63eu2e2w" path="res://assets/Misc/Victory.png" id="5_0nsxi"]
+[ext_resource type="AudioStream" uid="uid://caf6pcuy0qfwg" path="res://Assets/SoundEffects/Koichi/ActOn.wav" id="3_42om1"]
+[ext_resource type="Texture2D" uid="uid://wr2dt6ff4woc" path="res://Assets/CharacterBalls/Koichi/Koichissj_edited.png" id="3_nxm8p"]
+[ext_resource type="PackedScene" uid="uid://y52i8g7oh1mg" path="res://Projectiles/Stands/Echoes.tscn" id="3_rmxdt"]
+[ext_resource type="AudioStream" uid="uid://cjld16em2slmr" path="res://Assets/SoundEffects/Touhou/TouhouBossDamage.wav" id="3_sjgb7"]
+[ext_resource type="Texture2D" uid="uid://cme2vbbbhcuk3" path="res://Assets/CharacterBalls/Koichi/Koichiphone_edited.png" id="4_w037e"]
+[ext_resource type="Texture2D" uid="uid://cimtt63eu2e2w" path="res://Assets/Misc/Victory.png" id="5_0nsxi"]
+[ext_resource type="AudioStream" uid="uid://cbtkvi1m663j0" path="res://Assets/SoundEffects/Koichi/Dead.wav" id="5_42om1"]
+[ext_resource type="Script" uid="uid://bd85pgwol0cq7" path="res://Resources/DamageStyles/TouhouDamageStyle.cs" id="5_rmxdt"]
+[ext_resource type="Script" uid="uid://deb4vsu7xgmm" path="res://Resources/DamageData/DamageData.cs" id="6_lmglm"]
 [ext_resource type="PackedScene" uid="uid://b7iqthahfbccv" path="res://DynamicObjects/Reticle.tscn" id="7_w037e"]
+[ext_resource type="Resource" uid="uid://c7lplg754ushc" path="res://Resources/MusicThemes/Courage.tres" id="8_p7k28"]
+
+[sub_resource type="Resource" id="Resource_42om1"]
+script = ExtResource("5_rmxdt")
+DamageFrames = 3
+DamageSound = ExtResource("3_sjgb7")
+DeathSound = ExtResource("5_42om1")
+
+[sub_resource type="Resource" id="Resource_rmxdt"]
+script = ExtResource("6_lmglm")
+BaseDamage = 2
+IFrames = 0.4
+metadata/_custom_type_script = "uid://deb4vsu7xgmm"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uqenf"]
 animations = [{
@@ -45,18 +64,32 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_tli61"]
 radius = 30.0
 
-[node name="Koichi" type="RigidBody2D" unique_id=2003045697]
+[node name="Koichi" type="RigidBody2D" unique_id=2003045697 node_paths=PackedStringArray("Body", "Crown", "Reticle")]
 collision_layer = 2
 collision_mask = 11
 physics_material_override = ExtResource("1_nxm8p")
 contact_monitor = true
 max_contacts_reported = 2
 script = ExtResource("2_uqenf")
+StandOut = ExtResource("3_42om1")
+StandOff = ExtResource("3_42om1")
+StandScene = ExtResource("3_rmxdt")
+InitialDeploymentTimer = 5.0
+Body = NodePath("AnimatedSprite2D")
+Crown = NodePath("Victory")
+Reticle = NodePath("Reticle")
+SpeedGain = 0.6
+MaxSpeedGain = 40.0
+Color = Color(0.20999998, 1, 0.44699997, 1)
+BallName = "Koichi"
+DamageEffectsType = SubResource("Resource_42om1")
+BackgroundTheme = ExtResource("8_p7k28")
+DamagedType = 1
+ContactDamage = SubResource("Resource_rmxdt")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=138950827]
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_uqenf")
-animation = &"victory"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1025713143]
 shape = SubResource("CircleShape2D_tli61")

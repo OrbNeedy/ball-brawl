@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dll78hrus0w0e"
-path="res://.godot/imported/graze.wav-e3bc32117ad59d73450e296e6947fbcf.sample"
+path="res://.godot/imported/graze.wav-bf8c50e2c62e6d279c7d4d8a30a50763.sample"
 
 [deps]
 
-source_file="res://assets/SoundEffects/Touhou/graze.wav"
-dest_files=["res://.godot/imported/graze.wav-e3bc32117ad59d73450e296e6947fbcf.sample"]
+source_file="res://Assets/SoundEffects/Touhou/graze.wav"
+dest_files=["res://.godot/imported/graze.wav-bf8c50e2c62e6d279c7d4d8a30a50763.sample"]
 
 [params]
 

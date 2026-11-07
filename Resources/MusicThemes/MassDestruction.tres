@@ -1,6 +1,6 @@
 [gd_resource type="Resource" format=3 uid="uid://cxnxn7rg8hs6g"]
 
-[ext_resource type="AudioStream" uid="uid://b0h8ug7o3vysa" path="res://assets/BackgroundMusic/Mass Destruction - Persona Live Band.mp3" id="1_yv7d2"]
+[ext_resource type="AudioStream" uid="uid://b0h8ug7o3vysa" path="res://Assets/BackgroundMusic/Mass Destruction - Persona Live Band.mp3" id="1_yv7d2"]
 [ext_resource type="Script" uid="uid://dvbj6o5xkcyb0" path="res://Resources/MusicThemes/MusicTheme.cs" id="2_mowbv"]
 
 [resource]

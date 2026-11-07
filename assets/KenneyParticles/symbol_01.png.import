@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dkv4dthfjybew"
-path="res://.godot/imported/symbol_01.png-ff0ae01c1d8a5476147f51623b8b834d.ctex"
+path="res://.godot/imported/symbol_01.png-df7c933bc9deeba32247f7eb64a59177.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/KenneyParticles/symbol_01.png"
-dest_files=["res://.godot/imported/symbol_01.png-ff0ae01c1d8a5476147f51623b8b834d.ctex"]
+source_file="res://Assets/KenneyParticles/symbol_01.png"
+dest_files=["res://.godot/imported/symbol_01.png-df7c933bc9deeba32247f7eb64a59177.ctex"]
 
 [params]
 

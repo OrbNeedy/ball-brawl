@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b05spmk63fjct"
-path="res://.godot/imported/FirstInjury_edited.png-cb9d1d53cec1dc24efb1814cf6211f19.ctex"
+path="res://.godot/imported/FirstInjury_edited.png-a3423c4957677037ac8676b45b0010f2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/CharacterBalls/DIO/FirstInjury_edited.png"
-dest_files=["res://.godot/imported/FirstInjury_edited.png-cb9d1d53cec1dc24efb1814cf6211f19.ctex"]
+source_file="res://Assets/CharacterBalls/DIO/FirstInjury_edited.png"
+dest_files=["res://.godot/imported/FirstInjury_edited.png-a3423c4957677037ac8676b45b0010f2.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c8f2rn12ea4l0"
-path="res://.godot/imported/Sakuya.png-ea2b8b7339f7d9585a4c6be013f44aa2.ctex"
+path="res://.godot/imported/Sakuya.png-4ee466c5fab3d65079d656bc66efd577.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/CharacterBalls/Sakuya/Sakuya.png"
-dest_files=["res://.godot/imported/Sakuya.png-ea2b8b7339f7d9585a4c6be013f44aa2.ctex"]
+source_file="res://Assets/CharacterBalls/Sakuya/Sakuya.png"
+dest_files=["res://.godot/imported/Sakuya.png-4ee466c5fab3d65079d656bc66efd577.ctex"]
 
 [params]
 

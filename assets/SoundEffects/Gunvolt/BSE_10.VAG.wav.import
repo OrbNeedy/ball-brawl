@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://ctt2bwacops1q"
-path="res://.godot/imported/BSE_10.VAG.wav-167ce0a8245c5f3e5937867bd7b8d386.sample"
+path="res://.godot/imported/BSE_10.VAG.wav-59411783328862aee8d3210e0a26a7ee.sample"
 
 [deps]
 
-source_file="res://assets/SoundEffects/Gunvolt/BSE_10.VAG.wav"
-dest_files=["res://.godot/imported/BSE_10.VAG.wav-167ce0a8245c5f3e5937867bd7b8d386.sample"]
+source_file="res://Assets/SoundEffects/Gunvolt/BSE_10.VAG.wav"
+dest_files=["res://.godot/imported/BSE_10.VAG.wav-59411783328862aee8d3210e0a26a7ee.sample"]
 
 [params]
 

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" format=3 uid="uid://copqc5mfyeqoq"]
 
 [ext_resource type="Script" uid="uid://dvbj6o5xkcyb0" path="res://Resources/MusicThemes/MusicTheme.cs" id="1_lk3ba"]
-[ext_resource type="AudioStream" uid="uid://cyd1tmyc8prih" path="res://assets/BackgroundMusic/[Len'en Arrange] Layers Above.mp3" id="1_rlbq2"]
+[ext_resource type="AudioStream" uid="uid://cyd1tmyc8prih" path="res://Assets/BackgroundMusic/[Len'en Arrange] Layers Above.mp3" id="1_rlbq2"]
 
 [resource]
 script = ExtResource("1_lk3ba")

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dljuuyd6c8prr"
-path="res://.godot/imported/Flashfield0.png-d29bf6df7fb0ff5c9c718bd6a4020a49.ctex"
+path="res://.godot/imported/Flashfield0.png-4e8fdbf6237cff82995e343e9c077a94.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/CharacterBalls/Gunvolt/Flashfield0.png"
-dest_files=["res://.godot/imported/Flashfield0.png-d29bf6df7fb0ff5c9c718bd6a4020a49.ctex"]
+source_file="res://Assets/CharacterBalls/Gunvolt/Flashfield0.png"
+dest_files=["res://.godot/imported/Flashfield0.png-4e8fdbf6237cff82995e343e9c077a94.ctex"]
 
 [params]
 

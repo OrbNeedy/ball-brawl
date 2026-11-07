@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://ddmgg2jlwl3q8"]
 
 [ext_resource type="Script" uid="uid://dddh5jy4aq4aq" path="res://Projectiles/Stands/Orpheus.cs" id="1_2hrmr"]
-[ext_resource type="Texture2D" uid="uid://c7mwx52qnfppl" path="res://assets/Persona/PST_001.TMX_1_edited.png" id="1_6g886"]
+[ext_resource type="Texture2D" uid="uid://c7mwx52qnfppl" path="res://Assets/Persona/PST_001.TMX_1_edited.png" id="1_6g886"]
 [ext_resource type="PackedScene" uid="uid://dwfx7piywqk4w" path="res://Projectiles/Agi.tscn" id="2_7xwy5"]
-[ext_resource type="Texture2D" uid="uid://cyxc5cf5fjjv0" path="res://assets/FireEffects/Part 12/586.png" id="2_r5jrp"]
-[ext_resource type="AudioStream" uid="uid://bonj8gue874xp" path="res://assets/SoundEffects/Persona 3/Ragnarok.wav" id="3_cgmwk"]
+[ext_resource type="Texture2D" uid="uid://cyxc5cf5fjjv0" path="res://Assets/FireEffects/Part 12/586.png" id="2_r5jrp"]
+[ext_resource type="AudioStream" uid="uid://bonj8gue874xp" path="res://Assets/SoundEffects/Persona 3/Ragnarok.wav" id="3_cgmwk"]
 [ext_resource type="Script" uid="uid://deb4vsu7xgmm" path="res://Resources/DamageData/DamageData.cs" id="3_xtymp"]
 [ext_resource type="Script" uid="uid://qp6hjhv6tlrw" path="res://Scripts/FunctioningAnimatedSprite.cs" id="5_n52ur"]
 

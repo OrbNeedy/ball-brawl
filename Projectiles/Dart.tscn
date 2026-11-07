@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://u4lq3x0eeo4f"]
 
 [ext_resource type="Script" uid="uid://c8ewgp85pnfkd" path="res://Projectiles/Dart.cs" id="1_ntgle"]
-[ext_resource type="Texture2D" uid="uid://bhmrqb51urr4n" path="res://assets/Gunvolt/Bolt.png" id="1_wqtsu"]
+[ext_resource type="Texture2D" uid="uid://bhmrqb51urr4n" path="res://Assets/Gunvolt/Bolt.png" id="1_wqtsu"]
 [ext_resource type="Script" uid="uid://deb4vsu7xgmm" path="res://Resources/DamageData/DamageData.cs" id="2_2k4g8"]
 
 [sub_resource type="Resource" id="Resource_xwygl"]

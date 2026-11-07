@@ -26,6 +26,8 @@ public partial class Koichi : Ball
             DamageTaken += Stand.OwnerDamageTaken;
             EmitSignal(SignalName.SpawnProjectile, Stand);
 
+            SoundEffectManager.Instance.PlaySound(StandOut, Position);
+
             Deployed = true;
         } else
         {

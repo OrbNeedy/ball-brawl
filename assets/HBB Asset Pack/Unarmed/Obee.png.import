@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c5qxdk6wa0iri"
-path="res://.godot/imported/Obee.png-150864fd56b85768c177ce4612b4f778.ctex"
+path="res://.godot/imported/Obee.png-d5fc42ca11303a8f653f5726fdcae702.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/HBB Asset Pack/Unarmed/Obee.png"
-dest_files=["res://.godot/imported/Obee.png-150864fd56b85768c177ce4612b4f778.ctex"]
+source_file="res://Assets/HBB Asset Pack/Unarmed/Obee.png"
+dest_files=["res://.godot/imported/Obee.png-d5fc42ca11303a8f653f5726fdcae702.ctex"]
 
 [params]
 

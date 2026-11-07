@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://vruasf2hflvy"
-path="res://.godot/imported/ACT2_First_Appearance_edited.png-d61ce3d979fbf7191d3bae7d042e1841.ctex"
+path="res://.godot/imported/ACT2_First_Appearance_edited.png-c8c25192ef9a55991aefca860a197129.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/CharacterBalls/Koichi/ACT2_First_Appearance_edited.png"
-dest_files=["res://.godot/imported/ACT2_First_Appearance_edited.png-d61ce3d979fbf7191d3bae7d042e1841.ctex"]
+source_file="res://Assets/CharacterBalls/Koichi/ACT2_First_Appearance_edited.png"
+dest_files=["res://.godot/imported/ACT2_First_Appearance_edited.png-c8c25192ef9a55991aefca860a197129.ctex"]
 
 [params]
 
