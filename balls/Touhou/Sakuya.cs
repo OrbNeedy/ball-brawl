@@ -86,7 +86,7 @@ public partial class Sakuya : Ball
             KnifeTimer += delta;
             if (TimeStopped)
             {
-                KnifeTimer += delta * 2;
+                KnifeTimer += delta * 3;
             }
         } else
         {
@@ -122,7 +122,7 @@ public partial class Sakuya : Ball
                     {
                         Vector2 offset = Position.DirectionTo(closest.Position).Rotated(i * rotation);
                         Vector2 position = basePosition + (offset * 200);
-                        SpawnKnife(position, position.DirectionTo(closest.Position) * 180, 0, 3);
+                        SpawnKnife(position, position.DirectionTo(closest.Position) * 180, 0, 2);
                     }
                 } else
                 {
@@ -130,7 +130,7 @@ public partial class Sakuya : Ball
                     Vector2 dir = Position.DirectionTo(closest.Position) * 400;
                     for (int i = -2; i <= 2; i++)
                     {
-                        SpawnKnife(Position, dir.Rotated(rotation * i), 3, 4);
+                        SpawnKnife(Position, dir.Rotated(rotation * i), 3, 3);
                     }
                 }
             }
@@ -253,6 +253,27 @@ public partial class Sakuya : Ball
 
         return base.PreDealUnspecifiedDamage(data);
     }
+
+    public override float GetSpeedGain()
+    {
+        if (TimeStopped)
+        {
+            return base.GetSpeedGain() + 1;
+        }
+
+        return base.GetSpeedGain();
+    }
+
+    public override float GetMaxSpeedGain()
+    {
+        if (TimeStopped)
+        {
+            return base.GetMaxSpeedGain() + 40;
+        }
+
+        return base.GetMaxSpeedGain();
+    }
+
 
     public override void OnDamaged(int damage)
     {

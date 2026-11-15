@@ -33,6 +33,13 @@ public partial class GlobalTimeState : Node
 
     public override void _Process(double delta)
     {
+        if (Input.IsActionJustReleased("Screenshot"))
+        {
+            ViewportTexture texture = GetTree().Root.GetViewport().GetTexture();
+            double time = Time.GetUnixTimeFromSystem();
+            texture.GetImage().SavePng($"C:/Users/usuario/Downloads/BallBrawlScreenshot_{time}.png");
+        }
+
         if (ModificationDuration <= 0)
         {
             TimeScale = 1;

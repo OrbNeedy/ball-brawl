@@ -64,4 +64,24 @@ public partial class Dio : Ball
 
         return base.ModifyDealtContactDamage(ball);
     }
+
+    public override float GetSpeedGain()
+    {
+        if (TimeStopped)
+        {
+            return base.GetSpeedGain() + 0.4f;
+        }
+
+        return base.GetSpeedGain();
+    }
+
+    public override float GetMaxSpeedGain()
+    {
+        if (TimeStopped)
+        {
+            return base.GetMaxSpeedGain() + 80;
+        }
+
+        return base.GetMaxSpeedGain();
+    }
 }

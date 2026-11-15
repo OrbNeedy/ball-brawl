@@ -18,7 +18,7 @@
 
 [sub_resource type="Resource" id="Resource_ds8m7"]
 script = ExtResource("8_ds8m7")
-BaseDamage = 3
+BaseDamage = 6
 metadata/_custom_type_script = "uid://deb4vsu7xgmm"
 
 [sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_je2fp"]
@@ -115,14 +115,16 @@ Prevasion1 = ExtResource("4_eawli")
 Prevasion2 = ExtResource("5_doqw3")
 PrevasionBody = NodePath("SubViewportContainer/SubViewport/AnimatedSprite2D")
 ViewportContainer = NodePath("SubViewportContainer")
+InitialCollisionMasks = 11
 PrevasionChance = 0.15
 MaxPrevasionTimer = 1.4
 PrevasionColor = Color(0.32941177, 0.32156864, 0.81960785, 1)
+MaxDashCooldown = 8.0
 Body = NodePath("AnimatedSprite2D2")
 Crown = NodePath("Victory")
 Reticle = NodePath("Reticle")
-SpeedGain = 1.0
-MaxSpeedGain = 60.0
+SpeedGain = 0.8
+MaxSpeedGain = 100.0
 Power = 4
 Color = Color(0.32941177, 0.32156864, 0.81960785, 1)
 BallName = "Asimov"

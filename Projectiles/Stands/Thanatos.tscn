@@ -103,6 +103,7 @@ BraveBladeUse = 1
 HitsLeft = 9999
 Damage = SubResource("Resource_2w57d")
 MaxHitCooldown = 0.6
+CanBeReflected = false
 TimeLeft = 9999.0
 body = NodePath("AnimatedSprite2D")
 

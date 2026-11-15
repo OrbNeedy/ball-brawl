@@ -45,8 +45,11 @@ public partial class Tasouken : Weapon
                 {
                     newCut.TeamName = TeamName;
                 }
-                newCut.Rotate(Main.rng.RandfRange(0, (float)Math.Tau));
+                Vector2 center = GetViewportRect().Size / 2f;
+
                 newCut.Position = Holder.Position + new Vector2(200, 0).Rotated(Main.rng.RandfRange(0, (float)Math.Tau));
+                newCut.Rotation = newCut.Position.DirectionTo(center).Angle();
+                newCut.Rotate(Main.rng.RandfRange((float)Math.PI / -2f, (float)Math.PI / 2f));
                 newCut.TimeLeft = 1.8;
                 newCut.Delay = 0.7;
                 newCut.Damage.BaseDamage = 6;

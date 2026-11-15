@@ -13,8 +13,12 @@ public partial class Weapon : RigidBody2D
     public DamageData Damage;
     [Export]
     public WeaponClashType ClashType = WeaponClashType.None;
+    
     [Export]
     public Ball Holder;
+    [Export]
+    public AnimatedSprite2D Body;
+    
     [Export]
     public bool TimeResistant = false;
     public bool TimeStopped { get => GlobalTimeState.Instance.TimeStopDuration > 0; }

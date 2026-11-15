@@ -142,9 +142,9 @@ public partial class Asimov : Ball
 
     public override DamageModification ModifyAllDamage(DamageData data)
     {
-        if (DashCooldown <= 0 && StartupTimer <= MaxStartupTimer && data.BaseDamage > 0)
+        if (DashCooldown <= 0 && StartupTimer <= MaxStartupTimer)
         {
-            return new(-1);
+            return new(-4);
         }
         
         return base.ModifyAllDamage(data);

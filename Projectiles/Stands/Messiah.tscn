@@ -60,6 +60,7 @@ MaxGodHandTimer = 2.5
 HitsLeft = 99999
 Damage = SubResource("Resource_wxmke")
 MaxHitCooldown = 0.8
+CanBeReflected = false
 TimeLeft = 9999.0
 body = NodePath("AnimatedSprite2D")
 TimeResistant = true

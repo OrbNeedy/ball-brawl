@@ -18,6 +18,7 @@ public partial class Projectile : Area2D
     public delegate void SpawnBallEventHandler(Ball node);
     [Signal]
     public delegate void SpawnParticlesEventHandler(SelfDeletingParticles node);
+
     [Export]
     public string TeamName = "";
     [Export]
@@ -31,6 +32,8 @@ public partial class Projectile : Area2D
 
     [Export]
     public bool StoppableByFlashfield = false;
+    [Export]
+    public bool CanBeReflected = true;
     public DamageModification Modifier = new();
 
     [Export]
@@ -61,6 +64,27 @@ public partial class Projectile : Area2D
     {
         TeamName = ball.TeamName;
         Modifier = ball.GetContactDamageModifier();
+    }
+
+    public void OnReflect(Ball ball = null, double timeModification = 0, 
+        DamageModification modifier = new())
+    {
+        if (!CanBeReflected) return;
+        
+        // Unaffiliate to source
+        RemoveFromGroup(TeamName);
+        if (ball != null && IsInstanceValid(ball))
+        {
+            TeamName = ball.TeamName;
+            AddToGroup(TeamName);
+        } 
+
+        // Reflect
+        Velocity *= -1;
+
+        // Compound modifier if applicable
+        Modifier.CompoundModification(modifier);
+        TimeLeft += timeModification;
     }
 
     public override void _EnterTree()

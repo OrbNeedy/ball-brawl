@@ -136,6 +136,7 @@ FireParticles = ExtResource("2_pkh6b")
 HitsLeft = 9999
 Damage = SubResource("Resource_nt0nl")
 MaxHitCooldown = 0.04
+CanBeReflected = false
 TimeLeft = 2.0
 body = NodePath("AnimatedSprite2D")
 

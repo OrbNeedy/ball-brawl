@@ -70,6 +70,7 @@ KnifeScene = ExtResource("3_ghhay")
 MaxAttack = 4
 MaxAttackCooldown = 0.04
 MaxTimeStopDuration = 2.5
+MaxDodgeCooldown = 9.0
 TimeStopSoundEffect = ExtResource("4_l1n04")
 DodgeSoundEffect = ExtResource("5_w36qq")
 Body = NodePath("AnimatedSprite2D")

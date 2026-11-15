@@ -1,0 +1,11 @@
+[gd_resource type="Resource" format=3 uid="uid://djbr82m52gidd"]
+
+[ext_resource type="AudioStream" uid="uid://me5pk1tr4enj" path="res://Assets/BackgroundMusic/Theme Of Zero - Mega Man X3 (Audio Only).mp3" id="1_yyppi"]
+[ext_resource type="Script" uid="uid://dvbj6o5xkcyb0" path="res://Resources/MusicThemes/MusicTheme.cs" id="2_xlq74"]
+
+[resource]
+script = ExtResource("2_xlq74")
+Theme = ExtResource("1_yyppi")
+SongName = "Theme Of Zero"
+AuthorName = "The Nostalgia Dude"
+Volume = 0.25

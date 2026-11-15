@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://me5pk1tr4enj"
+path="res://.godot/imported/Theme Of Zero - Mega Man X3 (Audio Only).mp3-6b04b528694993dd176d72ca3eae339d.mp3str"
+
+[deps]
+
+source_file="res://Assets/BackgroundMusic/Theme Of Zero - Mega Man X3 (Audio Only).mp3"
+dest_files=["res://.godot/imported/Theme Of Zero - Mega Man X3 (Audio Only).mp3-6b04b528694993dd176d72ca3eae339d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

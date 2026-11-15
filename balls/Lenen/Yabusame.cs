@@ -125,8 +125,8 @@ public partial class Yabusame : Ball
             {
                 TranscendantBullets bullet = BulletScene.Instantiate<TranscendantBullets>();
                 bullet.Position = Position;
-                bullet.Damage.BaseDamage = 2;
-                bullet.OwnerSetup(this);
+                bullet.Damage.BaseDamage = 1;
+                bullet.TeamName = TeamName;
                 bullet.Velocity = baseVel.Rotated(0.1f * i) * (MinBulletSpeed + (speedChange * k));
                 
                 EmitSignal(SignalName.SpawnProjectile, bullet);
@@ -149,7 +149,8 @@ public partial class Yabusame : Ball
                 TranscendantBullets bullet = BulletScene.Instantiate<TranscendantBullets>();
                 bullet.Position = ContinuousPosition;
                 // bullet.Damage.BaseDamage = 1;
-                bullet.OwnerSetup(this);
+                
+                bullet.TeamName = TeamName;
                 bullet.Velocity = ContinuousDirection.Rotated(rotation * i) * 200;
                 bullet.ContinuousRotation = contRot;
                 bullet.TeleportLimit = 8;

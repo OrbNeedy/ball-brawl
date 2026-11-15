@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://b2byeyukn647q"]
+
+[ext_resource type="Texture2D" uid="uid://dwu5xgllxerfb" path="res://Assets/Weapons/z_saber_vector_by_saiol1000_ddesod2-fullview-1402944841.png" id="1_cp7fp"]
+[ext_resource type="Script" uid="uid://bhas1orncflko" path="res://Weapons/ZSaber.cs" id="1_mmiwe"]
+[ext_resource type="AudioStream" uid="uid://dhmt8vct4tt4h" path="res://Assets/SoundEffects/Megaman/zer_se_slash_s.wav" id="2_gccg0"]
+[ext_resource type="Texture2D" uid="uid://wi2enkitv6xw" path="res://Assets/Weapons/black_z_saber_vector_by_saiol1000_ddeso9o-fullview-1206610841.png" id="2_mmiwe"]
+[ext_resource type="Script" uid="uid://deb4vsu7xgmm" path="res://Resources/DamageData/DamageData.cs" id="2_xe3p2"]
+[ext_resource type="AudioStream" uid="uid://dhx167b0enq51" path="res://Assets/SoundEffects/Megaman/zer_se_slash_l.wav" id="3_2xfcm"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mmiwe"]
+friction = 0.0
+
+[sub_resource type="Resource" id="Resource_52fih"]
+script = ExtResource("2_xe3p2")
+BaseDamage = 5
+metadata/_custom_type_script = "uid://deb4vsu7xgmm"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xe3p2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_cp7fp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_mmiwe")
+}],
+"loop": true,
+"name": &"deletion",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ex62b"]
+size = Vector2(16, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xe3p2"]
+size = Vector2(20, 104)
+
+[node name="ZSaber" type="RigidBody2D" unique_id=197338362 node_paths=PackedStringArray("Body")]
+collision_layer = 8
+collision_mask = 10
+mass = 0.001
+physics_material_override = SubResource("PhysicsMaterial_mmiwe")
+gravity_scale = 0.0
+center_of_mass_mode = 1
+center_of_mass = Vector2(0, 40)
+contact_monitor = true
+max_contacts_reported = 2
+linear_damp_mode = 1
+angular_damp_mode = 1
+script = ExtResource("1_mmiwe")
+CutSound = ExtResource("2_gccg0")
+HeavyCutSound = ExtResource("3_2xfcm")
+MaxModeChangeTimer = 8.0
+Damage = SubResource("Resource_52fih")
+ClashType = 1
+Body = NodePath("AnimatedSprite2D")
+InitialLayer = 8
+InitialMask = 14
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=846741295]
+rotation = 1.5707964
+scale = Vector2(0.125, 0.125)
+sprite_frames = SubResource("SpriteFrames_xe3p2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=218150584]
+shape = SubResource("RectangleShape2D_ex62b")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1620479819]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=167126342]
+position = Vector2(0, -20)
+shape = SubResource("RectangleShape2D_xe3p2")
+
+[connection signal="body_entered" from="." to="." method="OnBodyEntered"]
+[connection signal="area_entered" from="Area2D" to="." method="OnProjectileHit"]

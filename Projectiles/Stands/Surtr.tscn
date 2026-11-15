@@ -36,6 +36,7 @@ RagnarokScene = ExtResource("2_l8k0b")
 HitsLeft = 9999
 Damage = SubResource("Resource_nh1iu")
 MaxHitCooldown = 0.4
+CanBeReflected = false
 TimeLeft = 9999.0
 body = NodePath("AnimatedSprite2D")
 

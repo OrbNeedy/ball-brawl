@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://b7m7xnnldh8m1"]
+
+[ext_resource type="PhysicsMaterial" uid="uid://cpy03a25nm6av" path="res://Resources/HBBMaterial.tres" id="1_4ixen"]
+[ext_resource type="Texture2D" uid="uid://cxwoj66jfkwqm" path="res://Assets/CharacterBalls/Zero/ZeroDead_edited.png" id="1_36ax0"]
+[ext_resource type="Texture2D" uid="uid://cci64c0oegv5h" path="res://Assets/CharacterBalls/Zero/ZeroNeutral_edited.png" id="1_gfg2h"]
+[ext_resource type="Script" uid="uid://dvie307643ebk" path="res://balls/MegamanX/Zero.cs" id="2_agtcm"]
+[ext_resource type="Texture2D" uid="uid://bcd08gpwarmik" path="res://Assets/CharacterBalls/Zero/ZeroVictory_edited.png" id="3_4ixen"]
+[ext_resource type="Resource" uid="uid://i5rhn5ci7v7c" path="res://Resources/DamageStyles/MegamanDamageStyle.tres" id="3_o2oa2"]
+[ext_resource type="Resource" uid="uid://djbr82m52gidd" path="res://Resources/MusicThemes/ThemeOfZero.tres" id="4_o2oa2"]
+[ext_resource type="Script" uid="uid://deb4vsu7xgmm" path="res://Resources/DamageData/DamageData.cs" id="5_r2ryk"]
+[ext_resource type="Texture2D" uid="uid://cimtt63eu2e2w" path="res://Assets/Misc/Victory.png" id="6_q4mut"]
+[ext_resource type="PackedScene" uid="uid://b7iqthahfbccv" path="res://DynamicObjects/Reticle.tscn" id="10_q0d1h"]
+[ext_resource type="PackedScene" uid="uid://b2byeyukn647q" path="res://Weapons/ZSaber.tscn" id="11_o2oa2"]
+
+[sub_resource type="Resource" id="Resource_s0etl"]
+script = ExtResource("5_r2ryk")
+BaseDamage = 4
+IFrames = 0.1
+metadata/_custom_type_script = "uid://deb4vsu7xgmm"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nebhv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_36ax0")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_gfg2h")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_4ixen")
+}],
+"loop": true,
+"name": &"victory",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5a8nd"]
+radius = 30.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o2oa2"]
+radius = 384.0
+
+[node name="Zero" type="RigidBody2D" unique_id=2036231727 node_paths=PackedStringArray("ZSaber", "Joint", "Body", "Crown", "Reticle")]
+collision_layer = 2
+collision_mask = 11
+physics_material_override = ExtResource("1_4ixen")
+contact_monitor = true
+max_contacts_reported = 2
+script = ExtResource("2_agtcm")
+ZSaber = NodePath("ZSaber")
+Joint = NodePath("PinJoint2D")
+Body = NodePath("AnimatedSprite2D")
+Crown = NodePath("Victory")
+Reticle = NodePath("Reticle")
+SpeedGain = 2.0
+MaxSpeedGain = 100.0
+Power = 2
+Color = Color(0.91, 0.19656003, 0.14560002, 1)
+BallName = "Zero"
+DamageEffectsType = ExtResource("3_o2oa2")
+BackgroundTheme = ExtResource("4_o2oa2")
+DamagedType = 1
+ContactDamage = SubResource("Resource_s0etl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=852426291]
+sprite_frames = SubResource("SpriteFrames_nebhv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1997249838]
+shape = SubResource("CircleShape2D_5a8nd")
+
+[node name="Victory" type="Sprite2D" parent="." unique_id=1585186630]
+visible = false
+position = Vector2(15.999998, -24)
+rotation = 0.5235988
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("6_q4mut")
+
+[node name="ZSaber" parent="." unique_id=197338362 node_paths=PackedStringArray("Holder") instance=ExtResource("11_o2oa2")]
+position = Vector2(39.999996, -30)
+rotation = 0.2617994
+scale = Vector2(0.99999994, 0.99999994)
+center_of_mass = Vector2(-40, 40)
+Holder = NodePath("..")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="." unique_id=740808922]
+node_a = NodePath("..")
+node_b = NodePath("../ZSaber")
+bias = 0.9
+motor_target_velocity = 25.132742
+
+[node name="Reticle" parent="." unique_id=1812006893 instance=ExtResource("10_q0d1h")]
+
+[node name="Detection" type="Area2D" parent="." unique_id=1804099252]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection" unique_id=1572511167]
+shape = SubResource("CircleShape2D_o2oa2")
+
+[connection signal="body_entered" from="." to="." method="OnBodyEntered"]
+[connection signal="body_entered" from="Detection" to="." method="AddDetectedBall"]
+[connection signal="body_exited" from="Detection" to="." method="RemoveDetectedBall"]

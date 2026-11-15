@@ -554,6 +554,7 @@ StartingSound = ExtResource("3_mfnds")
 HitsLeft = 9999
 Damage = SubResource("Resource_vef15")
 MaxHitCooldown = 0.2
+CanBeReflected = false
 TimeLeft = 1.4
 body = NodePath("Layer1")
 

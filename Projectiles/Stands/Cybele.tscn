@@ -39,6 +39,7 @@ HealSelfCooldown = 2.0
 HitsLeft = 9999
 Damage = SubResource("Resource_ienvj")
 MaxHitCooldown = 0.4
+CanBeReflected = false
 TimeLeft = 9999.0
 body = NodePath("AnimatedSprite2D")
 

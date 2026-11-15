@@ -38,6 +38,8 @@ public partial class Main : Node2D
     [Export]
     public MusicTheme ThemeOverride;
     [Export]
+    public PackedScene BackgroundOverride;
+    [Export]
     public float TeamSetupRotation = 0;
     List<Ball> Entrances = new();
     int CurrentEntrance = 0;
@@ -63,6 +65,16 @@ public partial class Main : Node2D
 
     public override void _Ready()
     {
+        if (BackgroundOverride != null) 
+        {
+            Background bg = BackgroundOverride.Instantiate<Background>();
+            bg.BallsViewport = BallsViewport;
+            bg.ProjectilesViewport = ProjectilesViewport;
+            
+            BackgroundContainer.AddChild(bg);
+            return;
+        }
+
         if (Backgrounds.Length <= 0) return;
 
         int selected = rng.RandiRange(0, Backgrounds.Length - 1);
@@ -75,13 +87,6 @@ public partial class Main : Node2D
 
     public override void _Process(double delta)
     {
-        if (Input.IsActionJustReleased("Screenshot"))
-        {
-            ViewportTexture texture = GetTree().Root.GetViewport().GetTexture();
-            double time = Time.GetUnixTimeFromSystem();
-            texture.GetImage().SavePng($"C:/Users/usuario/Downloads/BallBrawlScreenshot_{time}.png");
-        }
-
         if (Input.IsActionJustReleased("Accept"))
         {
             SetupBalls();

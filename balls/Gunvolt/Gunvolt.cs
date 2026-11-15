@@ -110,17 +110,17 @@ public partial class Gunvolt : Ball
                 dart.Position = Position + AimDirection * 38;
                 dart.TeamName = TeamName;
                 dart.OnBallTagged += AddTag;
-                dart.Velocity = AimDirection * 400;
+                dart.Velocity = AimDirection * 600;
 
                 EmitSignal(SignalName.SpawnProjectile, dart);
                 SoundEffectManager.Instance.PlaySound(DartShoot, Position, 1f);
                 ShootCount++;
-                if (ShootCount >= 3)
+                if (ShootCount >= 5)
                 {
                     ShootCount = 0;
                     DartCooldown = MaxDartCooldown;
                 }
-                ShootCooldown = 0.15;
+                ShootCooldown = 0.1;
             } else
             {
                 ShootCooldown -= delta;
@@ -138,6 +138,8 @@ public partial class Gunvolt : Ball
 
     public void AddTag(Ball ball)
     {
+        if (ball == this) return;
+        
         Arcs[nextTag].Target = ball;
         Arcs[nextTag].TimeLeft = CurrentFlashfield;
         SoundEffectManager.Instance.PlaySound(BallTag, Position, 1f);

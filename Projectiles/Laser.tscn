@@ -47,6 +47,7 @@ script = ExtResource("1_foy5f")
 HitsLeft = 9999
 Damage = SubResource("Resource_816el")
 MaxHitCooldown = 0.06
+CanBeReflected = false
 body = NodePath("AnimatedSprite2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1757564677]

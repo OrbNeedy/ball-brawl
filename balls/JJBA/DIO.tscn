@@ -83,6 +83,7 @@ MaxTimeResistance = 1.0
 
 [node name="RoadSign" parent="." unique_id=1847600600 node_paths=PackedStringArray("Holder") instance=ExtResource("6_2d51f")]
 position = Vector2(0, -108)
+center_of_mass = Vector2(0, 104)
 Holder = NodePath("..")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1337093598]

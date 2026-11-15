@@ -72,7 +72,7 @@ Body = NodePath("AnimatedSprite2D")
 Crown = NodePath("Victory")
 Reticle = NodePath("Reticle")
 SpeedGain = 1.0
-MaxSpeedGain = 40.0
+MaxSpeedGain = 120.0
 DefaultGravityScale = 0.0
 Power = 2
 Color = Color(0.80000055, 0.23573753, 0.70001006, 1)
@@ -92,6 +92,7 @@ shape = SubResource("CircleShape2D_xut38")
 [node name="Tasouken" parent="." unique_id=425615914 node_paths=PackedStringArray("Holder") instance=ExtResource("6_7r065")]
 position = Vector2(32, -24)
 rotation = 0.34906584
+center_of_mass = Vector2(-24, 32)
 max_contacts_reported = 2
 Holder = NodePath("..")
 

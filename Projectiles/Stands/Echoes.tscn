@@ -85,6 +85,7 @@ Range = 375.0
 HitsLeft = 9999
 Damage = SubResource("Resource_xk3ev")
 MaxHitCooldown = 0.6
+CanBeReflected = false
 TimeLeft = 9999.0
 body = NodePath("AnimatedSprite2D")
 

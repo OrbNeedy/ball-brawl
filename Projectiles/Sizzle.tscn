@@ -33,6 +33,7 @@ script = ExtResource("1_atptc")
 HitsLeft = 9999
 Damage = SubResource("Resource_6l7th")
 MaxHitCooldown = 0.08
+CanBeReflected = false
 TimeLeft = 8.0
 body = NodePath("AnimatedSprite2D")
 

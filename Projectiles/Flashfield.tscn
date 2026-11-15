@@ -130,8 +130,7 @@ EndSound = ExtResource("3_2len5")
 HitsLeft = 9999
 Damage = SubResource("Resource_ult8f")
 MaxHitCooldown = 0.2
-CanBeDodged = false
-Almighty = true
+CanBeReflected = false
 TimeLeft = 2.0
 body = NodePath("AnimatedSprite2D")
 

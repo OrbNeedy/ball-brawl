@@ -9,7 +9,7 @@ friction = 0.0
 
 [sub_resource type="Resource" id="Resource_1yck1"]
 script = ExtResource("2_vj8ao")
-BaseDamage = 3
+BaseDamage = 4
 metadata/_custom_type_script = "uid://deb4vsu7xgmm"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xvetr"]

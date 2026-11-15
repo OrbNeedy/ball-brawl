@@ -1,0 +1,121 @@
+[gd_scene format=3 uid="uid://b7s3glklnv1ua"]
+
+[ext_resource type="Script" uid="uid://dsthw3j28grav" path="res://UIElements/Backgrounds/PalaceBackground.cs" id="1_5eutb"]
+[ext_resource type="Texture2D" uid="uid://bg5uog1bjtox4" path="res://Assets/Misc/PalaceBackground.png" id="1_iqxtt"]
+[ext_resource type="Texture2D" uid="uid://du425uyeh0kmb" path="res://Assets/Misc/PalaceReflectionMask.png" id="3_gxt3c"]
+[ext_resource type="Shader" uid="uid://ccx1p30v5j5g6" path="res://UIElements/Backgrounds/Shaders/PalaceBackgroundReflection.gdshader" id="3_ynjen"]
+[ext_resource type="Texture2D" uid="uid://c0y1pa1hhtm8g" path="res://Assets/Persona/Full-Moon-Hikes-4253739798.png" id="4_crc7k"]
+[ext_resource type="Texture2D" uid="uid://b05spmk63fjct" path="res://Assets/CharacterBalls/DIO/FirstInjury_edited.png" id="6_0pa2q"]
+[ext_resource type="Texture2D" uid="uid://crlerctfmpmtg" path="res://Assets/CharacterBalls/Sakuya/Sakuya2.png" id="7_kvu3y"]
+[ext_resource type="Texture2D" uid="uid://cci64c0oegv5h" path="res://Assets/CharacterBalls/Zero/ZeroNeutral_edited.png" id="8_2bjc0"]
+[ext_resource type="Texture2D" uid="uid://c5cpajindhy4u" path="res://Assets/CharacterBalls/Yaorochi/talk_6_11_edited.png" id="9_ynjen"]
+[ext_resource type="Texture2D" uid="uid://duf1yafx646it" path="res://Assets/Weapons/Le02Tasouken.png" id="10_crc7k"]
+[ext_resource type="Texture2D" uid="uid://dc7xft0o87peb" path="res://Assets/CharacterBalls/DIO/TheWorld.png" id="11_ix2c8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_crc7k"]
+shader = ExtResource("3_ynjen")
+shader_parameter/Target = ExtResource("4_crc7k")
+shader_parameter/Offset = Vector2(0, 0)
+shader_parameter/Center = Vector2(0.5, 0.5)
+shader_parameter/Scale = 1.10000005225
+
+[node name="PalaceBackground" type="Control" unique_id=797091173 node_paths=PackedStringArray("Background", "Reflections", "BallsViewport", "ProjectilesViewport")]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+script = ExtResource("1_5eutb")
+Background = NodePath("Parallax2D")
+Reflections = NodePath("Parallax2D/Control/Reflection")
+BallsViewport = NodePath("SubViewportContainer/SubViewport")
+ProjectilesViewport = NodePath("SubViewportContainer/SubViewport")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1593272942]
+scroll_offset = Vector2(0, 3312)
+repeat_size = Vector2(0, 3312)
+autoscroll = Vector2(0, 16)
+
+[node name="Control" type="Control" parent="Parallax2D" unique_id=1626582813]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[node name="Palace" type="TextureRect" parent="Parallax2D/Control" unique_id=712548349]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -2664.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("1_iqxtt")
+
+[node name="Reflection" type="TextureRect" parent="Parallax2D/Control" unique_id=548983462]
+material = SubResource("ShaderMaterial_crc7k")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -2664.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("3_gxt3c")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1403525177]
+visible = false
+layout_mode = 0
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1218430314]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 0
+
+[node name="FirstInjuryEdited" type="Sprite2D" parent="SubViewportContainer/SubViewport" unique_id=1390148023]
+position = Vector2(808, 231.99998)
+scale = Vector2(0.78, 0.78)
+texture = ExtResource("6_0pa2q")
+flip_h = true
+
+[node name="Sakuya2" type="Sprite2D" parent="SubViewportContainer/SubViewport" unique_id=943666868]
+position = Vector2(896, 504)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("7_kvu3y")
+
+[node name="ZeroNeutralEdited" type="Sprite2D" parent="SubViewportContainer/SubViewport" unique_id=807837045]
+position = Vector2(296, 224)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("8_2bjc0")
+
+[node name="Talk601Edited" type="Sprite2D" parent="SubViewportContainer/SubViewport" unique_id=792053107]
+position = Vector2(304, 424)
+scale = Vector2(0.88, 0.88)
+texture = ExtResource("9_ynjen")
+
+[node name="Le02Tasouken" type="Sprite2D" parent="SubViewportContainer/SubViewport" unique_id=1372050434]
+position = Vector2(360, 384)
+rotation = 0.80983275
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("10_crc7k")
+flip_v = true
+
+[node name="TheWorld" type="Sprite2D" parent="SubViewportContainer/SubViewport" unique_id=653614676]
+position = Vector2(888, 144)
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("11_ix2c8")

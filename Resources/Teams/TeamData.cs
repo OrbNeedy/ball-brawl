@@ -7,7 +7,7 @@ public partial class TeamData : Resource
     [Export]
     public String TeamName;
     [Export]
-    public Color TeamColor = new Color();
+    public Color TeamColor = Colors.White;
     [Export]
     public float SpawnDistance;
     [Export]

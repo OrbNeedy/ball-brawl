@@ -15,8 +15,17 @@ public partial class SusanoO : Stand
         Offset = new Vector2(0, -160);
     }
 
+    public override void StandOffProcess(double delta)
+    {
+        Sword.Monitoring = Monitoring;
+        Sword.Monitorable = Monitorable;
+    }
+
     public override void StandOutProcess(double delta)
     {
+        Sword.Monitoring = Monitoring;
+        Sword.Monitorable = Monitorable;
+
         Sword.Rotate((float)(Math.PI * delta * -4));
 
         Position = StandOwner.Position + Offset;

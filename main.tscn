@@ -1,16 +1,18 @@
 [gd_scene format=3 uid="uid://t3u8836alvoq"]
 
 [ext_resource type="Script" uid="uid://bvr05obmaod6a" path="res://Main.cs" id="1_0xm2m"]
-[ext_resource type="PackedScene" uid="uid://bvmypmj64u8ti" path="res://UIElements/Backgrounds/MirrorReflections.tscn" id="2_5vw27"]
+[ext_resource type="PackedScene" uid="uid://dnfpjhg24trs7" path="res://UIElements/Backgrounds/DreamRealm.tscn" id="2_4c57u"]
 [ext_resource type="PackedScene" uid="uid://ce3nnno1cd3ve" path="res://UIElements/Board.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://bvmypmj64u8ti" path="res://UIElements/Backgrounds/MirrorReflections.tscn" id="3_4c57u"]
 [ext_resource type="PackedScene" uid="uid://nblvtfu05jgs" path="res://UIElements/HealthUI.tscn" id="3_h2yge"]
-[ext_resource type="PackedScene" uid="uid://cyxxtddm6l8e7" path="res://UIElements/Backgrounds/Space.tscn" id="3_kek77"]
-[ext_resource type="PackedScene" uid="uid://ct48drmrhwffg" path="res://balls/JJBA/Koichi.tscn" id="4_4c57u"]
-[ext_resource type="Resource" uid="uid://c7lplg754ushc" path="res://Resources/MusicThemes/Courage.tres" id="4_efxa6"]
-[ext_resource type="PackedScene" uid="uid://boubdq6ms7jv8" path="res://balls/Lenen/Yaorochi.tscn" id="5_4c57u"]
+[ext_resource type="PackedScene" uid="uid://cyxxtddm6l8e7" path="res://UIElements/Backgrounds/Space.tscn" id="4_efxa6"]
+[ext_resource type="PackedScene" uid="uid://b7s3glklnv1ua" path="res://UIElements/Backgrounds/PalaceBackground.tscn" id="5_dg77c"]
 [ext_resource type="Script" uid="uid://b3s2piwpt1lay" path="res://WorldViewportContainer.cs" id="6_272bh"]
+[ext_resource type="Script" uid="uid://bid6x8uroegjt" path="res://Resources/Teams/TeamData.cs" id="6_ycdy4"]
 [ext_resource type="PackedScene" uid="uid://dhmb5cfrj22lg" path="res://UIElements/Information.tscn" id="7_4c57u"]
+[ext_resource type="Resource" uid="uid://c4nvx2x5bio05" path="res://Resources/Teams/CuttingWinds.tres" id="7_w48qg"]
 [ext_resource type="PackedScene" uid="uid://cbsjpdohpx3p7" path="res://UIElements/VictoryScreen.tscn" id="8_efxa6"]
+[ext_resource type="Resource" uid="uid://lkaon7rfmrec" path="res://Resources/Teams/LawsOfVampirism.tres" id="8_vivmo"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_272bh"]
 
@@ -25,7 +27,7 @@ process_mode = 3
 script = ExtResource("1_0xm2m")
 WorldPosition = NodePath("WorldPosition")
 WorldSize = NodePath("WorldSize")
-Backgrounds = [ExtResource("2_5vw27"), ExtResource("3_kek77")]
+Backgrounds = [ExtResource("2_4c57u"), ExtResource("3_4c57u"), ExtResource("4_efxa6"), ExtResource("5_dg77c")]
 ProjectileContainer = NodePath("SubViewportContainer/SubViewport/Balls/BallsViewport/Projectiles")
 BallContainer = NodePath("SubViewportContainer/SubViewport/Balls/BallsViewport/Balls")
 HealthUI = NodePath("Interface/HealthUI")
@@ -34,8 +36,9 @@ InfoUI = NodePath("Interface/Information")
 BallsViewport = NodePath("SubViewportContainer/SubViewport/Balls/BallsViewport")
 ProjectilesViewport = NodePath("SubViewportContainer/SubViewport/Balls/BallsViewport")
 BackgroundContainer = NodePath("SubViewportContainer/SubViewport/Background/BackgroundViewport/Control")
-ThemeOverride = ExtResource("4_efxa6")
-IndependentBalls = Array[PackedScene]([ExtResource("4_4c57u"), ExtResource("5_4c57u")])
+BackgroundOverride = ExtResource("5_dg77c")
+TeamsInvolved = Array[ExtResource("6_ycdy4")]([ExtResource("7_w48qg"), ExtResource("8_vivmo")])
+IndependentBalls = Array[PackedScene]([])
 viewport = NodePath("SubViewportContainer")
 
 [node name="Board" parent="." unique_id=1516484126 instance=ExtResource("2_h2yge")]
@@ -45,20 +48,20 @@ viewport = NodePath("SubViewportContainer")
 [node name="HealthUI" parent="Interface" unique_id=1835592621 instance=ExtResource("3_h2yge")]
 
 [node name="Information" parent="Interface" unique_id=385514175 instance=ExtResource("7_4c57u")]
-offset_left = 288.0
-offset_top = 128.0
-offset_right = -288.0
-offset_bottom = -8.0
+
+[node name="Music" parent="Interface/Information" index="0" unique_id=1818204121]
+offset_left = -196.0
+offset_top = 624.0
+offset_bottom = 647.0
 
 [node name="VictoryScreen" parent="Interface" unique_id=930555032 instance=ExtResource("8_efxa6")]
 visible = false
 
 [node name="WorldPosition" type="Marker2D" parent="." unique_id=1708476967]
-position = Vector2(288, 128)
 gizmo_extents = 1000.0
 
 [node name="WorldSize" type="Marker2D" parent="." unique_id=134426527]
-position = Vector2(864, 640)
+position = Vector2(1152, 648)
 gizmo_extents = 1000.0
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=498584817 node_paths=PackedStringArray("BackgroundNode", "BallsNode")]
@@ -122,3 +125,5 @@ process_mode = 1
 
 [node name="Projectiles" type="Node2D" parent="SubViewportContainer/SubViewport/Balls/BallsViewport" unique_id=429807202]
 process_mode = 1
+
+[editable path="Interface/Information"]

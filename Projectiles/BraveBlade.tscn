@@ -104,6 +104,7 @@ SlashSound = ExtResource("2_xlhaf")
 HitsLeft = 9999
 Damage = SubResource("Resource_e1e6e")
 MaxHitCooldown = 3.0
+CanBeReflected = false
 body = NodePath("AnimatedSprite2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=812238178]

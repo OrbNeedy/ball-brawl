@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://dnfpjhg24trs7"]
+
+[ext_resource type="Script" uid="uid://jydnat6jseun" path="res://UIElements/Backgrounds/DreamRealm.cs" id="1_17y8u"]
+[ext_resource type="PackedScene" uid="uid://cseqnegcilomp" path="res://UIElements/Backgrounds/Planet.tscn" id="2_cjwfu"]
+
+[node name="DreamRealm" type="Control" unique_id=1873275535 node_paths=PackedStringArray("Background", "Planets1", "Planets2", "Planets3")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_17y8u")
+PlanetScene = ExtResource("2_cjwfu")
+Background = NodePath("Back")
+Planets1 = NodePath("Planets1")
+Planets2 = NodePath("Planets2")
+Planets3 = NodePath("Planets3")
+InitialColor = Color(0.081599995, 0.091199994, 0.12, 1)
+TargetColor = Color(0.2, 0.05, 0.05, 1)
+FlashColor = Color(1, 0.16862746, 0.39215687, 1)
+
+[node name="Back" type="ColorRect" parent="." unique_id=181810500]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.081599995, 0.091199994, 0.12, 1)
+
+[node name="Planets1" type="Parallax2D" parent="." unique_id=619902444]
+repeat_size = Vector2(2000, 0)
+autoscroll = Vector2(-70, 0)
+
+[node name="Planets2" type="Parallax2D" parent="." unique_id=483091411]
+repeat_size = Vector2(2000, 0)
+autoscroll = Vector2(-50, 0)
+
+[node name="Planets3" type="Parallax2D" parent="." unique_id=1888795869]
+repeat_size = Vector2(2000, 0)
+autoscroll = Vector2(-10, 0)

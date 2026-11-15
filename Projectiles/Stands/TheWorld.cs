@@ -81,14 +81,14 @@ public partial class TheWorld : Stand
 
             if (distance <= Range && Position.DistanceTo(StandOwner.Position) <= Range)
             {
-                Velocity = Position.DirectionTo(closestBall.Position) * 400;
+                Velocity = Position.DirectionTo(closestBall.Position) * 800;
             } else
             {
-                MoveToOwner(new Vector2(-40, -64));
+                MoveToOwner(new Vector2(-40, -64), 800);
             }
         } else
         {
-            MoveToOwner(new Vector2(-40, -64));
+            MoveToOwner(new Vector2(-40, -64), 800);
         }
     }
 
