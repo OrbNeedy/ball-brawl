@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bjqrb4lv12xy3"]
+
+[ext_resource type="PackedScene" uid="uid://bto66xyf6tobk" path="res://Assets/Models/BetterCross_Base.glb" id="1_g2qo6"]
+[ext_resource type="Script" uid="uid://ctipivp66td4j" path="res://UIElements/Backgrounds/NativeCross.cs" id="2_axnvu"]
+[ext_resource type="Shader" uid="uid://kt7q7uye0b2x" path="res://UIElements/Backgrounds/Shaders/NativeCross.gdshader" id="2_ox7tv"]
+[ext_resource type="Texture2D" uid="uid://ck16tgawv1xlg" path="res://Assets/Models/BetterCross_Base_CrossOpacityMap.png" id="3_1wfcx"]
+[ext_resource type="Texture2D" uid="uid://ddi2hssa07oll" path="res://Assets/Misc/NewDreamNoise.png" id="3_ox7tv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1wfcx"]
+render_priority = 0
+shader = ExtResource("2_ox7tv")
+shader_parameter/noise = ExtResource("3_ox7tv")
+shader_parameter/border_map = ExtResource("3_1wfcx")
+shader_parameter/alpha = 1.0
+
+[node name="BetterCross_Base" unique_id=951634009 node_paths=PackedStringArray("cross") instance=ExtResource("1_g2qo6")]
+script = ExtResource("2_axnvu")
+cross = NodePath("Cube")
+
+[node name="Cube" parent="." index="0" unique_id=1435326301]
+cast_shadow = 0
+surface_material_override/0 = SubResource("ShaderMaterial_1wfcx")

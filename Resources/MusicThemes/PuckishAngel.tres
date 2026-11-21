@@ -1,0 +1,11 @@
+[gd_resource type="Resource" format=3 uid="uid://b3qp2h71vsrde"]
+
+[ext_resource type="AudioStream" uid="uid://dsglw82he6aoy" path="res://Assets/BackgroundMusic/【東方音弾遊戯 -REVIVED-】Puckish Angel BGA.wav" id="1_es5u4"]
+[ext_resource type="Script" uid="uid://dvbj6o5xkcyb0" path="res://Resources/MusicThemes/MusicTheme.cs" id="1_l0ppo"]
+
+[resource]
+script = ExtResource("1_l0ppo")
+Theme = ExtResource("1_es5u4")
+SongName = "Puckish Angel"
+AuthorName = "Utuka"
+Volume = 0.6

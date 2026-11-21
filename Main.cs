@@ -34,6 +34,7 @@ public partial class Main : Node2D
     SubViewport ProjectilesViewport;
     [Export]
     Control BackgroundContainer;
+    Background background;
 
     [Export]
     public MusicTheme ThemeOverride;
@@ -67,18 +68,18 @@ public partial class Main : Node2D
     {
         if (BackgroundOverride != null) 
         {
-            Background bg = BackgroundOverride.Instantiate<Background>();
-            bg.BallsViewport = BallsViewport;
-            bg.ProjectilesViewport = ProjectilesViewport;
+            background = BackgroundOverride.Instantiate<Background>();
+            background.BallsViewport = BallsViewport;
+            background.ProjectilesViewport = ProjectilesViewport;
             
-            BackgroundContainer.AddChild(bg);
+            BackgroundContainer.AddChild(background);
             return;
         }
 
         if (Backgrounds.Length <= 0) return;
 
         int selected = rng.RandiRange(0, Backgrounds.Length - 1);
-        Background background = Backgrounds[selected].Instantiate<Background>();
+        background = Backgrounds[selected].Instantiate<Background>();
         background.BallsViewport = BallsViewport;
         background.ProjectilesViewport = ProjectilesViewport;
 
@@ -153,14 +154,23 @@ public partial class Main : Node2D
             count++;
         }
 
-        String randTeam = (String)RandFromList(SelectedTeams.Keys.ToArray());
-        Ball randBall = (Ball)RandFromList(SelectedTeams[randTeam].ToArray());
+        List<MusicTheme> themes = new();
+        foreach (string key in SelectedTeams.Keys)
+        {
+            foreach (Ball ball in SelectedTeams[key])
+            {
+                if (ball.BackgroundTheme != null)
+                {
+                    themes.Add(ball.BackgroundTheme);
+                }
+            }
+        }
         
-        BackgroundMusicManager.Instance.CurrentTheme = randBall.BackgroundTheme;
         if (ThemeOverride != null)
         {
-            BackgroundMusicManager.Instance.CurrentTheme = ThemeOverride;
+            themes = new() { ThemeOverride };
         }
+        BackgroundMusicManager.Instance.SetList(themes.ToArray());
         
         if (Entrances.Count > 0)
         {
@@ -209,6 +219,8 @@ public partial class Main : Node2D
         ball.BallDead += OnBallDead;
         ball.SpawnParticles += AddParticle;
         ball.SpawnNode += AddNode;
+        ball.BackgroundSignal += background.OnReceiveSignal;
+        //ball.BackgroundSignal += (s, p) => { GD.Print("Signal: " + s); };
         TeamWon += ball.Won;
 
         BallContainer.AddChild(ball);

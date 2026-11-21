@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bsjqutlhxqklu"]
+
+[ext_resource type="Texture2D" uid="uid://b7btb0g3g3d07" path="res://Assets/Sheets/LotusLandStoryBullets.png" id="1_3jqda"]
+[ext_resource type="Script" uid="uid://bbdr02j4p5151" path="res://Projectiles/FallingProjectile.cs" id="1_upka5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_upka5"]
+atlas = ExtResource("1_3jqda")
+region = Rect2(96, 16, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l70lx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_upka5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3jqda"]
+radius = 6.0
+
+[node name="FallingProjectile" type="Area2D" unique_id=2019000722]
+script = ExtResource("1_upka5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1295163358]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_l70lx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1745362659]
+shape = SubResource("CircleShape2D_3jqda")

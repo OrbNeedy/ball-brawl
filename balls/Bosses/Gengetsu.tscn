@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://s8syeodnjgde"]
+
+[ext_resource type="PhysicsMaterial" uid="uid://cpy03a25nm6av" path="res://Resources/HBBMaterial.tres" id="1_7lo5s"]
+[ext_resource type="Script" uid="uid://c7573h7ri7v4h" path="res://balls/Bosses/Gengetsu.cs" id="2_5idgh"]
+[ext_resource type="Resource" uid="uid://m8rcreqm38v3" path="res://Resources/DamageStyles/TouhouDamageStyle.tres" id="3_3r17o"]
+[ext_resource type="Resource" uid="uid://cedw6njqpk8hi" path="res://Resources/Entrances/GengetsuEntrance.tres" id="3_6sl70"]
+[ext_resource type="Texture2D" uid="uid://bfiom6csdnw53" path="res://Assets/CharacterBalls/Gengetsu/CircleGen2.png" id="3_cpn3e"]
+[ext_resource type="Resource" uid="uid://b3qp2h71vsrde" path="res://Resources/MusicThemes/PuckishAngel.tres" id="4_axs1n"]
+[ext_resource type="Texture2D" uid="uid://bjppc4ko5r1fu" path="res://Assets/CharacterBalls/Gengetsu/CircleGen0.png" id="4_srak8"]
+[ext_resource type="Texture2D" uid="uid://byupbsmfqd328" path="res://Assets/CharacterBalls/Gengetsu/CircleGen1.png" id="5_rdd3v"]
+[ext_resource type="Script" uid="uid://deb4vsu7xgmm" path="res://Resources/DamageData/DamageData.cs" id="6_jw7hq"]
+[ext_resource type="PackedScene" uid="uid://b7iqthahfbccv" path="res://DynamicObjects/Reticle.tscn" id="6_srak8"]
+[ext_resource type="Shader" uid="uid://bvynwmnfcgfas" path="res://balls/Bosses/GengetsuTeleport.gdshader" id="7_1djix"]
+[ext_resource type="Texture2D" uid="uid://rnr7tn504o13" path="res://Assets/Misc/Crown.png" id="7_rdd3v"]
+[ext_resource type="Texture2D" uid="uid://cu48lcepdgq6r" path="res://Assets/Weapons/06_03.png" id="11_ex7l0"]
+[ext_resource type="Texture2D" uid="uid://7rup0fscgkyh" path="res://Assets/CharacterBalls/Gengetsu/CircleMug.png" id="13_ak2vf"]
+
+[sub_resource type="Resource" id="Resource_1djix"]
+script = ExtResource("6_jw7hq")
+metadata/_custom_type_script = "uid://deb4vsu7xgmm"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jw7hq"]
+shader = ExtResource("7_1djix")
+shader_parameter/progress = 0.0
+shader_parameter/strength = 0.25
+shader_parameter/time = 0.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xnlfa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_cpn3e")
+}],
+"loop": false,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_srak8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_rdd3v")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_ex7l0")
+}],
+"loop": false,
+"name": &"new_animation",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_rdd3v")
+}],
+"loop": false,
+"name": &"victory",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4q1mk"]
+radius = 30.0
+
+[node name="Gengetsu" type="RigidBody2D" unique_id=1964366792 node_paths=PackedStringArray("Body", "Crown", "Reticle")]
+collision_layer = 2
+collision_mask = 11
+physics_material_override = ExtResource("1_7lo5s")
+gravity_scale = 0.0
+contact_monitor = true
+max_contacts_reported = 2
+script = ExtResource("2_5idgh")
+InitialCollisionLayers = 2
+InitialCollisionMasks = 11
+Body = NodePath("AnimatedSprite2D")
+Crown = NodePath("Crown")
+Reticle = NodePath("Reticle")
+SpeedGain = 0.8
+MaxSpeedGain = 60.0
+DefaultGravityScale = 0.0
+Power = 6
+Color = Color(1, 0.94, 0.94, 1)
+BallName = "Gengetsu"
+DamageEffectsType = ExtResource("3_3r17o")
+BackgroundTheme = ExtResource("4_axs1n")
+Entrance = ExtResource("3_6sl70")
+Boss = true
+ContactDamage = SubResource("Resource_1djix")
+MaxLife = 300
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=159323504]
+texture_filter = 1
+material = SubResource("ShaderMaterial_jw7hq")
+sprite_frames = SubResource("SpriteFrames_xnlfa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1400124120]
+shape = SubResource("CircleShape2D_4q1mk")
+
+[node name="Crown" type="Sprite2D" parent="." unique_id=1380362890]
+visible = false
+texture_filter = 1
+position = Vector2(0, -30)
+texture = ExtResource("7_rdd3v")
+
+[node name="CircleMug" type="Sprite2D" parent="Crown" unique_id=1076451780]
+z_index = -1
+position = Vector2(-26, 30)
+texture = ExtResource("13_ak2vf")
+
+[node name="Reticle" parent="." unique_id=1812006893 instance=ExtResource("6_srak8")]
+
+[connection signal="body_entered" from="." to="." method="OnBodyEntered"]

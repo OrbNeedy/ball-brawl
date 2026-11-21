@@ -1,26 +1,295 @@
 [gd_scene format=3 uid="uid://lkc086vgfq25"]
 
-[ext_resource type="PackedScene" uid="uid://8h6n4r0oiqt3" path="res://Assets/Models/BetterCross.glb" id="1_b8xo4"]
-[ext_resource type="Script" uid="uid://bfcyqogccfqq7" path="res://Assets/Models/BetterCross.cs" id="2_vh0tp"]
+[ext_resource type="PackedScene" uid="uid://bjqrb4lv12xy3" path="res://UIElements/Backgrounds/NativeCross.tscn" id="1_b8xo4"]
+[ext_resource type="Script" uid="uid://dae5hyrnhcp64" path="res://UIElements/Backgrounds/GengetsuBossBackground.cs" id="1_fcben"]
+[ext_resource type="Script" uid="uid://b7bgdn2xj8hdo" path="res://UIElements/Backgrounds/Camera3d.cs" id="1_yxm5m"]
+[ext_resource type="PackedScene" uid="uid://dem0snta67u0p" path="res://Assets/Models/MoonPlanet.glb" id="2_vh0tp"]
+[ext_resource type="Texture2D" uid="uid://d3yooyo3wvynm" path="res://Assets/KenneyParticles/smoke_01.png" id="3_fth01"]
+[ext_resource type="Texture2D" uid="uid://bxltaqth87tox" path="res://Assets/Misc/Fog2.png" id="4_755jy"]
+[ext_resource type="Script" uid="uid://n3ldeypot53p" path="res://UIElements/Backgrounds/MovingFog.cs" id="4_fgo0x"]
+[ext_resource type="Texture2D" uid="uid://bmsv3ofn4qjfr" path="res://Assets/Misc/Fog4.png" id="5_j8cs5"]
+[ext_resource type="Script" uid="uid://brc7q5fqw4c2h" path="res://Assets/Models/MoonPlanet.cs" id="5_nr6ok"]
+[ext_resource type="Texture2D" uid="uid://cqnu4lfev4nyt" path="res://Assets/Misc/Fog0.png" id="6_pa34y"]
+[ext_resource type="Texture2D" uid="uid://do4cbfopomkbu" path="res://Assets/Misc/Clouds3.png" id="7_wjc5t"]
+[ext_resource type="Texture2D" uid="uid://tqulcdfeysbc" path="res://Assets/KenneyParticles/smoke_06.png" id="8_wjc5t"]
+[ext_resource type="Script" uid="uid://ba31amhvvghu6" path="res://UIElements/Backgrounds/FalseBackground.cs" id="13_7nrj5"]
+[ext_resource type="Texture2D" uid="uid://coms857mkmw6d" path="res://Assets/Backgrounds/DreamSpace.png" id="13_gn820"]
+[ext_resource type="Texture2D" uid="uid://cxvvnjnplnbat" path="res://Assets/Backgrounds/DreamBlobs.png" id="15_26jjv"]
+[ext_resource type="Texture2D" uid="uid://dv67jkhcufml6" path="res://Assets/Backgrounds/BreakingAnim.png" id="16_7nrj5"]
+[ext_resource type="Script" uid="uid://1k5aakdkhf5g" path="res://UIElements/Backgrounds/Transition.cs" id="17_j4le3"]
 
-[node name="SubViewportContainer" type="SubViewportContainer" unique_id=1003858284]
-offset_right = 1152.0
-offset_bottom = 648.0
+[sub_resource type="Environment" id="Environment_vh0tp"]
+background_mode = 1
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 0.4
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7nrj5"]
+atlas = ExtResource("16_7nrj5")
+region = Rect2(2880, 0, 288, 162)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4le3"]
+atlas = ExtResource("16_7nrj5")
+region = Rect2(0, 0, 288, 162)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7jr18"]
+atlas = ExtResource("16_7nrj5")
+region = Rect2(288, 0, 288, 162)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yskk7"]
+atlas = ExtResource("16_7nrj5")
+region = Rect2(576, 0, 288, 162)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7i5ks"]
+atlas = ExtResource("16_7nrj5")
+region = Rect2(864, 0, 288, 162)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fus5u"]
+atlas = ExtResource("16_7nrj5")
+region = Rect2(1152, 0, 288, 162)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xvrol"]
+atlas = ExtResource("16_7nrj5")
+region = Rect2(1440, 0, 288, 162)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_30p12"]
+atlas = ExtResource("16_7nrj5")
+region = Rect2(1728, 0, 288, 162)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_syww4"]
+atlas = ExtResource("16_7nrj5")
+region = Rect2(2016, 0, 288, 162)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mpatd"]
+atlas = ExtResource("16_7nrj5")
+region = Rect2(2304, 0, 288, 162)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yvf1a"]
+atlas = ExtResource("16_7nrj5")
+region = Rect2(2592, 0, 288, 162)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ocd48"]
+atlas = ExtResource("16_7nrj5")
+region = Rect2(2880, 0, 288, 162)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_30p12"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7nrj5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4le3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7jr18")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yskk7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7i5ks")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fus5u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xvrol")
+}],
+"loop": false,
+"name": &"default",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_30p12")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_syww4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mpatd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yvf1a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ocd48")
+}],
+"loop": false,
+"name": &"disappear",
+"speed": 6.0
+}]
+
+[node name="GengetsuBossBackground" type="Control" unique_id=1208512547]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fcben")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1003858284]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 stretch = true
 
-[node name="SubViewport" type="SubViewport" parent="." unique_id=380571722]
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=380571722]
 handle_input_locally = false
 size = Vector2i(1152, 648)
 render_target_update_mode = 4
 
-[node name="Camera3D" type="Camera3D" parent="SubViewport" unique_id=1215170450]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0055742264)
+[node name="World" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=289219539]
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewport" unique_id=90507765]
-transform = Transform3D(0.9218632, -0.23059551, 0.31143865, 0, 0.8036804, 0.59506124, -0.3875156, -0.5485651, 0.7408833, 1.3599863, 4.7927394, 0)
-shadow_enabled = true
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/World" unique_id=1215170450]
+transform = Transform3D(1, 0, 0, 0, 0.9848078, -0.1736482, 0, 0.1736482, 0.9848078, 0, -2.928476, 0.14178693)
+environment = SubResource("Environment_vh0tp")
+script = ExtResource("1_yxm5m")
 
-[node name="BetterCross" parent="SubViewport" unique_id=1684919162 instance=ExtResource("1_b8xo4")]
-transform = Transform3D(-0.49827993, 0.5109389, -0.7004703, 0.52846444, 0.81946576, 0.22181351, 0.6873445, -0.25964838, -0.67833644, 4.1533213, 0, -14.04076)
-script = ExtResource("2_vh0tp")
-YRotation = 3.0
+[node name="BetterCross_Base" parent="SubViewportContainer/SubViewport/World" unique_id=951634009 instance=ExtResource("1_b8xo4")]
+transform = Transform3D(0.90466696, -0.40435869, 0.1344309, 0.36184216, 0.89559084, 0.25881904, -0.22505082, -0.18550229, 0.95652544, 0.033704996, 2.3841858e-07, -9.41728)
+
+[node name="MoonPlanet" parent="SubViewportContainer/SubViewport/World" unique_id=592431971 instance=ExtResource("2_vh0tp")]
+transform = Transform3D(-0.9064179, 0.4216347, -0.025113225, 0.37231213, 0.76947767, -0.5189296, -0.1994746, -0.47971717, -0.85444796, -1.2583988, 0, -19.816925)
+script = ExtResource("5_nr6ok")
+InitialRotation = Vector3(0.5455983, -3.1122098, 0.45064482)
+TargetRotation = Vector3(0, -0.41887903, 0)
+
+[node name="Front1" type="Sprite3D" parent="SubViewportContainer/SubViewport/World" unique_id=1737549905]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.1981764, 0, -12.019144)
+modulate = Color(0.6, 0.6, 1, 1)
+texture = ExtResource("3_fth01")
+script = ExtResource("4_fgo0x")
+MaxMove = Vector2(30, 20)
+SineScale = Vector2(1.3, 0.6)
+SineOffset = Vector2(0, 0.235)
+
+[node name="BackFog" type="Sprite3D" parent="SubViewportContainer/SubViewport/World" unique_id=1225676106]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.78320694, 2.3601441, -26.956085)
+flip_h = true
+flip_v = true
+modulate = Color(0, 0, 0.87, 0.7411765)
+pixel_size = 0.02
+texture = ExtResource("4_755jy")
+script = ExtResource("4_fgo0x")
+
+[node name="Back2" type="Sprite3D" parent="SubViewportContainer/SubViewport/World" unique_id=1592127661]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, 7.7542877, -2.8356814, -12.824099)
+modulate = Color(0, 0, 0.87, 0.5137255)
+texture = ExtResource("5_j8cs5")
+script = ExtResource("4_fgo0x")
+
+[node name="Front2" type="Sprite3D" parent="SubViewportContainer/SubViewport/World" unique_id=821672829]
+transform = Transform3D(1.6, 0, 0, 0, 1, 0, 0, 0, 1, 5.642494, 2.7062254, -10.993882)
+modulate = Color(0.6, 0.6, 1, 0.8784314)
+texture = ExtResource("6_pa34y")
+script = ExtResource("4_fgo0x")
+MaxMove = Vector2(30, 10)
+SineScale = Vector2(1.5, 1.2)
+SineOffset = Vector2(0, 32.5)
+
+[node name="Back3" type="Sprite3D" parent="SubViewportContainer/SubViewport/World" unique_id=450438651]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.662613, 4.7443047, -25.7742)
+flip_h = true
+modulate = Color(0.6, 0.6, 1, 1)
+pixel_size = 0.02
+texture = ExtResource("7_wjc5t")
+script = ExtResource("4_fgo0x")
+MaxMove = Vector2(30, 20)
+SineScale = Vector2(1.9, 0.8)
+SineOffset = Vector2(0, -1)
+
+[node name="FrontLeft" type="Sprite3D" parent="SubViewportContainer/SubViewport/World" unique_id=187984267]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, -10.873467, -1.247405, -12.029198)
+modulate = Color(0, 0, 0.87, 0.69803923)
+texture = ExtResource("5_j8cs5")
+script = ExtResource("4_fgo0x")
+
+[node name="VeryBack" type="Sprite3D" parent="SubViewportContainer/SubViewport/World" unique_id=1632392799]
+transform = Transform3D(1.3, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.7295685, -40.58367)
+modulate = Color(0, 0, 0.8666667, 1)
+pixel_size = 0.1
+texture = ExtResource("6_pa34y")
+script = ExtResource("4_fgo0x")
+
+[node name="Front" type="Sprite3D" parent="SubViewportContainer/SubViewport/World" unique_id=546632264]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, -8.6475315, 2.9566298, -13.661252)
+flip_h = true
+modulate = Color(0.6, 0.6, 1, 1)
+texture = ExtResource("8_wjc5t")
+script = ExtResource("4_fgo0x")
+MaxMove = Vector2(30, 15)
+SineScale = Vector2(1.7, 0.8)
+SineOffset = Vector2(0, 32)
+
+[node name="Front3" type="Sprite3D" parent="SubViewportContainer/SubViewport/World" unique_id=189463032]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.328433, -11.917103)
+flip_v = true
+modulate = Color(0.6, 0.6, 1, 1)
+texture = ExtResource("7_wjc5t")
+script = ExtResource("4_fgo0x")
+MaxMove = Vector2(30, 10)
+SineScale = Vector2(2.2, 0.7)
+SineOffset = Vector2(0, 1.5)
+
+[node name="FalseBackground" type="Control" parent="." unique_id=1378873078 node_paths=PackedStringArray("parallax", "blobs", "cover")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("13_7nrj5")
+parallax = NodePath("Parallax2D")
+blobs = NodePath("Blobs")
+cover = NodePath("DarkCover")
+
+[node name="Parallax2D" type="Parallax2D" parent="FalseBackground" unique_id=2071898755]
+repeat_size = Vector2(1152, 648)
+autoscroll = Vector2(0, -20)
+
+[node name="Space" type="TextureRect" parent="FalseBackground/Parallax2D" unique_id=1715019004]
+texture_filter = 1
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("13_gn820")
+
+[node name="Blobs" type="TextureRect" parent="FalseBackground" unique_id=284145550]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("15_26jjv")
+
+[node name="DarkCover" type="ColorRect" parent="FalseBackground" unique_id=1136844273]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Transition" type="AnimatedSprite2D" parent="." unique_id=1241004250]
+texture_filter = 1
+position = Vector2(576, 324)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_30p12")
+script = ExtResource("17_j4le3")
+
+[connection signal="Brighten" from="." to="FalseBackground" method="ShowBehind"]
+[connection signal="MoveToTarget" from="." to="SubViewportContainer/SubViewport/World/MoonPlanet" method="ShowMoon"]
+[connection signal="MoveToTarget" from="." to="Transition" method="StartBreaking"]
+[connection signal="Pulse" from="." to="FalseBackground" method="Pulse"]
+[connection signal="FinishedRotating" from="SubViewportContainer/SubViewport/World/MoonPlanet" to="SubViewportContainer/SubViewport/World/BetterCross_Base" method="ShowCross"]
+[connection signal="TransitionFinished" from="Transition" to="FalseBackground" method="Deactivate"]
+[connection signal="animation_finished" from="Transition" to="Transition" method="OnAnimationFinished"]

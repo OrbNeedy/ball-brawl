@@ -96,12 +96,19 @@ public partial class Asimov : Ball
             if (StartupTimer < MaxStartupTimer)
             {
                 ClosestBall = GetClosestBall();
-                LastDirection = Position.DirectionTo(ClosestBall.Position);
+                if (ClosestBall != null)
+                {
+                    LastDirection = Position.DirectionTo(ClosestBall.Position);
+                } else
+                {
+                    LastDirection = new Vector2(1, 0).Rotated(Main.rng.RandfRange(0, (float)Math.Tau));
+                }
             }
         } else
         {
             if (StartupTimer >= MaxStartupTimer)
             {
+                //EmitSignal(SignalName.BackgroundSignal, "show", new float[0]);
                 Flashfield flashfield = FlashfieldScene.Instantiate<Flashfield>();
                 flashfield.Damage.BaseDamage = 2;
                 flashfield.MaxHitCooldown = 0.08;
@@ -112,12 +119,7 @@ public partial class Asimov : Ball
                 AddChild(flashfield);
 
                 //ApplyForce(new Vector2(0, -1200));
-                Vector2 velocity = new Vector2(850, 0).Rotated(Main.rng.RandfRange(0, (float)Math.Tau));
-                if (ClosestBall != null && IsInstanceValid(ClosestBall))
-                {
-                    velocity = LastDirection * 850;
-                }
-                TargetVelocity = velocity;
+                TargetVelocity = LastDirection * 850;
                 LinearVelocity = TargetVelocity;
 
                 DashCooldown = MaxDashCooldown;

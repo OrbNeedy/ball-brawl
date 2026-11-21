@@ -1,0 +1,6 @@
+[gd_resource type="Resource" format=3 uid="uid://cedw6njqpk8hi"]
+
+[ext_resource type="Script" uid="uid://bod5vi42xh11h" path="res://Resources/Entrances/GengetsuEntrance.cs" id="1_28bvf"]
+
+[resource]
+script = ExtResource("1_28bvf")

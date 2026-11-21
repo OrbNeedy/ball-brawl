@@ -56,6 +56,8 @@ public partial class Ball : RigidBody2D
     [Signal]
     public delegate void DamageTakenEventHandler(float newLifePercent, int damageTaken, Ball ball);
     [Signal]
+    public delegate void BackgroundSignalEventHandler(string signal, params float[] args);
+    [Signal]
     public delegate void BallDeadEventHandler(Ball ball);
     [Signal]
     public delegate void SpawnProjectileEventHandler(Projectile node);

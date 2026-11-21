@@ -8,11 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://cyxxtddm6l8e7" path="res://UIElements/Backgrounds/Space.tscn" id="4_efxa6"]
 [ext_resource type="PackedScene" uid="uid://b7s3glklnv1ua" path="res://UIElements/Backgrounds/PalaceBackground.tscn" id="5_dg77c"]
 [ext_resource type="Script" uid="uid://b3s2piwpt1lay" path="res://WorldViewportContainer.cs" id="6_272bh"]
-[ext_resource type="Script" uid="uid://bid6x8uroegjt" path="res://Resources/Teams/TeamData.cs" id="6_ycdy4"]
+[ext_resource type="Resource" uid="uid://b3qp2h71vsrde" path="res://Resources/MusicThemes/PuckishAngel.tres" id="6_vivmo"]
+[ext_resource type="PackedScene" uid="uid://lkc086vgfq25" path="res://UIElements/Backgrounds/GengetsuBossBackground.tscn" id="6_w48qg"]
 [ext_resource type="PackedScene" uid="uid://dhmb5cfrj22lg" path="res://UIElements/Information.tscn" id="7_4c57u"]
-[ext_resource type="Resource" uid="uid://c4nvx2x5bio05" path="res://Resources/Teams/CuttingWinds.tres" id="7_w48qg"]
+[ext_resource type="PackedScene" uid="uid://d3eckp6bp3qsv" path="res://balls/Gunvolt/Asimov.tscn" id="7_dg77c"]
 [ext_resource type="PackedScene" uid="uid://cbsjpdohpx3p7" path="res://UIElements/VictoryScreen.tscn" id="8_efxa6"]
-[ext_resource type="Resource" uid="uid://lkaon7rfmrec" path="res://Resources/Teams/LawsOfVampirism.tres" id="8_vivmo"]
+[ext_resource type="PackedScene" uid="uid://s8syeodnjgde" path="res://balls/Bosses/Gengetsu.tscn" id="8_ycdy4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_272bh"]
 
@@ -36,9 +37,10 @@ InfoUI = NodePath("Interface/Information")
 BallsViewport = NodePath("SubViewportContainer/SubViewport/Balls/BallsViewport")
 ProjectilesViewport = NodePath("SubViewportContainer/SubViewport/Balls/BallsViewport")
 BackgroundContainer = NodePath("SubViewportContainer/SubViewport/Background/BackgroundViewport/Control")
-BackgroundOverride = ExtResource("5_dg77c")
-TeamsInvolved = Array[ExtResource("6_ycdy4")]([ExtResource("7_w48qg"), ExtResource("8_vivmo")])
-IndependentBalls = Array[PackedScene]([])
+ThemeOverride = ExtResource("6_vivmo")
+BackgroundOverride = ExtResource("6_w48qg")
+TeamSetupRotation = 90.0
+IndependentBalls = Array[PackedScene]([ExtResource("7_dg77c"), ExtResource("8_ycdy4")])
 viewport = NodePath("SubViewportContainer")
 
 [node name="Board" parent="." unique_id=1516484126 instance=ExtResource("2_h2yge")]

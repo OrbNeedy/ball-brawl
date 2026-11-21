@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://78olewpmlpdv"]
+
+[ext_resource type="Texture2D" uid="uid://b7btb0g3g3d07" path="res://Assets/Sheets/LotusLandStoryBullets.png" id="1_1cw35"]
+[ext_resource type="Script" uid="uid://do5mvidtyq02d" path="res://Projectiles/Shine.cs" id="1_ktuph"]
+[ext_resource type="Script" uid="uid://deb4vsu7xgmm" path="res://Resources/DamageData/DamageData.cs" id="2_6ldim"]
+
+[sub_resource type="Resource" id="Resource_au0v3"]
+script = ExtResource("2_6ldim")
+BaseDamage = 4
+IFrames = 0.0
+Almighty = true
+metadata/_custom_type_script = "uid://deb4vsu7xgmm"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ktuph"]
+atlas = ExtResource("1_1cw35")
+region = Rect2(112, 16, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6ldim"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ktuph")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0b0ky"]
+radius = 4.0
+
+[node name="Shine" type="Area2D" unique_id=638443652 node_paths=PackedStringArray("Ray", "body")]
+collision_layer = 4
+collision_mask = 11
+script = ExtResource("1_ktuph")
+Ray = NodePath("RayCast2D")
+Damage = SubResource("Resource_au0v3")
+TimeLeft = 16.0
+body = NodePath("AnimatedSprite2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=128971420]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_6ldim")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=159938050]
+shape = SubResource("CircleShape2D_0b0ky")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=568949124]
+rect = Rect2(-16, -16, 32, 32)
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=161775867]
+target_position = Vector2(32, 0)
+
+[connection signal="body_entered" from="." to="." method="BodyCollision"]
+[connection signal="body_exited" from="." to="." method="BodyExit"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="DeleteProjectile"]

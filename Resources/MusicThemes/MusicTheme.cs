@@ -12,7 +12,11 @@ public partial class MusicTheme : Resource
     [Export]
     public float StartingTime = 0.0f;
     [Export]
+    public float LoopStart = 0.0f;
+    [Export]
     public float EndingTime = 0.0f;
+    [Export]
+    public float LoopEnd = 0.0f;
     [Export]
     public float Volume = 1.0f;
 }
